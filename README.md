@@ -9,7 +9,7 @@ This linter plugin for [SublimeLinter][docs] provides an interface to [lslint](_
 SublimeLinter 3 must be installed in order to use this plugin. If SublimeLinter 3 is not installed, please follow the instructions [here][installation].
 
 ### Linter installation
-Before using this plugin, you must ensure that `lslint` is installed on your system **and in your path**. To install `lslint`, do the following:
+Before using this plugin, you must ensure that `lslint` is installed or otherwise available on your system . To acquire `lslint`, do the following:
 
 #### Option 1: lslint standalone
 * Refer to [Makopo/lslint](https://github.com/Makopo/lslint).
@@ -28,7 +28,7 @@ In order for `lslint` to be executed by SublimeLinter, you must ensure that its 
 Once you have installed and configured `lslint`, you can proceed to install the SublimeLinter-contrib-lslint plugin if it is not yet installed.
 
 ### Plugin installation
-Please use [Package Control][pc] to install the linter plugin. This will ensure that the plugin will be updated when new versions are available. If you want to install from source so you can modify the source code, you probably know what you are doing so we won’t cover that here.
+Please use [Package Control][pc] to install the linter plugin. This will ensure that the plugin will be updated when new versions are available. If you want to install from source so you can modify the source code, you probably know what you are doing so we won't cover that here.
 
 To install via Package Control, do the following:
 
