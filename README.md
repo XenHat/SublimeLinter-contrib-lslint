@@ -3,7 +3,7 @@ SublimeLinter-contrib-lslint
 
 [![Build Status](https://travis-ci.org/XenHat/SublimeLinter-contrib-lslint.svg?branch=master)](https://travis-ci.org/Xenhat/SublimeLinter-contrib-lslint)
 
-This linter plugin for [SublimeLinter][docs] provides an interface to [lslint](__linter_homepage__). It will be used with files that have the “__LSL__” syntax.
+This linter plugin for [SublimeLinter][docs] provides an interface to [lslint][lslint-homepage]. It will be used with files that have the `lsl` and `ossl` syntax.
 
 ## Installation
 SublimeLinter 3 must be installed in order to use this plugin. If SublimeLinter 3 is not installed, please follow the instructions [here][installation].
@@ -12,7 +12,7 @@ SublimeLinter 3 must be installed in order to use this plugin. If SublimeLinter 
 Before using this plugin, you must ensure that `lslint` is installed or otherwise available on your system . To acquire `lslint`, do the following:
 
 #### Option 1: lslint standalone
-* Refer to [Makopo/lslint](https://github.com/Makopo/lslint).
+* Refer to the [lslint homepage][lslint-homepage].
 
 #### Option 2: Binary provided by the sublime-text-lsl plugin
 * Refer to [Makopo/sublime-text-lsl](https://github.com/Makopo/sublime-text-lsl) and add the binary provided by the plugin to your path (advanced users)
@@ -29,6 +29,9 @@ Once you have installed and configured `lslint`, you can proceed to install the 
 
 ### Plugin installation
 Please use [Package Control][pc] to install the linter plugin. This will ensure that the plugin will be updated when new versions are available. If you want to install from source so you can modify the source code, you probably know what you are doing so we won't cover that here.
+
+
+**Note** For the time being, please add this repository to the package manager as described in the [package manager user manual](https://packagecontrol.io/docs/usage)
 
 To install via Package Control, do the following:
 
@@ -72,3 +75,4 @@ Thank you for helping out!
 [settings]: http://sublimelinter.readthedocs.org/en/latest/settings.html
 [linter-settings]: http://sublimelinter.readthedocs.org/en/latest/linter_settings.html
 [inline-settings]: http://sublimelinter.readthedocs.org/en/latest/settings.html#inline-settings
+[lslint-homepage]: https://github.com/Makopo/lslint
