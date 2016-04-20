@@ -1,25 +1,26 @@
 SublimeLinter-contrib-lslint
 ================================
 
-[![Build Status](https://travis-ci.org/SublimeLinter/SublimeLinter-contrib-lslint.svg?branch=master)](https://travis-ci.org/SublimeLinter/SublimeLinter-contrib-lslint)
+[![Build Status](https://travis-ci.org/XenHat/SublimeLinter-contrib-lslint.svg?branch=master)](https://travis-ci.org/Xenhat/SublimeLinter-contrib-lslint)
 
-This linter plugin for [SublimeLinter][docs] provides an interface to [lslint](__linter_homepage__). It will be used with files that have the “__syntax__” syntax.
+This linter plugin for [SublimeLinter][docs] provides an interface to [lslint](__linter_homepage__). It will be used with files that have the “__LSL__” syntax.
 
 ## Installation
 SublimeLinter 3 must be installed in order to use this plugin. If SublimeLinter 3 is not installed, please follow the instructions [here][installation].
 
 ### Linter installation
-Before using this plugin, you must ensure that `lslint` is installed on your system. To install `lslint`, do the following:
+Before using this plugin, you must ensure that `lslint` is installed on your system **and in your path**. To install `lslint`, do the following:
 
-1. Install Other.
+#### Option 1: lslint standalone
+* Refer to [Makopo/lslint](https://github.com/Makopo/lslint).
 
-1. Install `lslint` by typing the following in a terminal:
-   ```
-   <package manager> install lslint
-   ```
+#### Option 2: Binary provided by the sublime-text-lsl plugin
+* Refer to [Makopo/sublime-text-lsl](https://github.com/Makopo/sublime-text-lsl) and add the binary provided by the plugin to your path (advanced users)
+
+**Note:** While the plugin above itself is not required for `sublimeLinter-lslint` to work, both plugins are entirely separated and can be used together without conflicts.
 
 
-**Note:** This plugin requires `lslint` __version__ or later.
+*This plugin requires* `lslint` __0.4.2__ *or later.*
 
 ### Linter configuration
 In order for `lslint` to be executed by SublimeLinter, you must ensure that its path is available to SublimeLinter. Before going any further, please read and follow the steps in [“Finding a linter executable”](http://sublimelinter.readthedocs.org/en/latest/troubleshooting.html#finding-a-linter-executable) through “Validating your PATH” in the documentation.
