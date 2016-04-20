@@ -1,0 +1,2016 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"face_skin",
+				"face_skin_color"
+			],
+			[
+				"gone_k",
+				"gone_key"
+			],
+			[
+				"llGetAgentL",
+				"llGetAgentList	(list) function"
+			],
+			[
+				"ch",
+				"CHANGED_OWNER	integer"
+			],
+			[
+				"a",
+				"alphabetical"
+			],
+			[
+				"all",
+				"all"
+			],
+			[
+				"special_thank",
+				"special_thanks_file"
+			],
+			[
+				"childSet",
+				"childSetLabelArg"
+			],
+			[
+				"secondlife",
+				"secondlife"
+			],
+			[
+				"LtGray",
+				"LtGray"
+			],
+			[
+				"face_skin_texture",
+				"face_skin_texture2"
+			],
+			[
+				"separat",
+				"separator"
+			],
+			[
+				"LL_",
+				"LL_ENDL"
+			],
+			[
+				"LOW",
+				"LOW_POWER_BUILD"
+			],
+			[
+				"L_W",
+				"LOW_POWER_BUILD"
+			],
+			[
+				"PV",
+				"PVDataColorizer"
+			],
+			[
+				"LLUICo",
+				"LLUIColorTable"
+			],
+			[
+				"LLUIColorta",
+				"lluicolortable"
+			],
+			[
+				"EmphasisColor",
+				"EmphasisColorHueShiftLeft"
+			],
+			[
+				"llRand",
+				"llFrand	(float) function"
+			],
+			[
+				"LAbel",
+				"LabelTextColor"
+			],
+			[
+				"num",
+				"numeric"
+			],
+			[
+				"Polarity",
+				"PolarityText"
+			],
+			[
+				"LtGr",
+				"LtGray"
+			],
+			[
+				"LLCon",
+				"LLCachedControl"
+			],
+			[
+				"LL",
+				"LLColor4"
+			],
+			[
+				"login_page",
+				"login_page_source"
+			],
+			[
+				"sUse",
+				"sUseDisplayNames"
+			],
+			[
+				"llLinkPrimitive",
+				"llSetLinkPrimitiveParamsFast	(void) function"
+			],
+			[
+				"OFF",
+				"OFF"
+			],
+			[
+				"PVData",
+				"PVData"
+			],
+			[
+				"CMAKE_CXX",
+				"CMAKE_CXX_FLAGS_RELEASE"
+			],
+			[
+				"ASML_",
+				"ASMLIB_LIBRARIES"
+			],
+			[
+				"VS2",
+				"VS2012"
+			],
+			[
+				"BOOL",
+				"BOOL"
+			],
+			[
+				"LINK_",
+				"PRIM_LINK_TARGET	integer"
+			],
+			[
+				"map",
+				"map"
+			],
+			[
+				"mew",
+				"PRIM_MEDIA_WHITELIST	integer"
+			],
+			[
+				"i",
+				"i"
+			],
+			[
+				"CHANGED_OWNER",
+				"CHANGED_OWNER	integer"
+			],
+			[
+				"llSensorRe",
+				"llSensorRepeat	(void) function"
+			],
+			[
+				"end",
+				"end"
+			],
+			[
+				"bLinkfor",
+				"bLinkForNames"
+			],
+			[
+				"xlGetLink",
+				"xlGetLinkFromName"
+			],
+			[
+				"llList2List",
+				"llList2ListStrided	(list) function"
+			],
+			[
+				"xlget",
+				"xlGetLinkFromName"
+			],
+			[
+				"llSetLinkP",
+				"llSetLinkPrimitiveParamsFast	(void) function"
+			],
+			[
+				"CMAKE_CXX_FLAGS",
+				"CMAKE_CXX_FLAGS_RELWITHDEBINFO"
+			],
+			[
+				"prim_rot",
+				"PRIM_ROT_LOCAL	integer"
+			],
+			[
+				"Text",
+				"TextDefaultColor"
+			],
+			[
+				"FALSE",
+				"false"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "linter.py",
+			"settings":
+			{
+				"buffer_size": 873,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/AutoHotkey/AutoHotkey.sublime-build",
+					""
+				],
+				[
+					"Packages/AutoHotkey/AutoHotkey.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/AutoHotkey/AutoHotkey.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				"Syntax Check"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 61.0,
+		"last_filter": "status ba",
+		"selected_items":
+		[
+			[
+				"status ba",
+				"View: Toggle Status Bar"
+			],
+			[
+				"toggle ta",
+				"View: Toggle Tabs"
+			],
+			[
+				"date",
+				"InsertDate: Default"
+			],
+			[
+				"reindent",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"spaces",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"uniq",
+				"Permute Lines: Unique"
+			],
+			[
+				"leading",
+				"Trimmer: Trim leading AND trailing whitespace."
+			],
+			[
+				"wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"filter",
+				"Filter Lines: Filter With String"
+			],
+			[
+				"saveall",
+				"File: Save All"
+			],
+			[
+				"empt",
+				"Trimmer: Delete empty lines."
+			],
+			[
+				"empty",
+				"Trimmer: Delete empty lines."
+			],
+			[
+				"empt ",
+				"Trimmer: Delete empty lines."
+			],
+			[
+				"preview",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"diff",
+				"Set Syntax: Diff"
+			],
+			[
+				"disable ",
+				"Package Control: Disable Package"
+			],
+			[
+				"minima",
+				"View: Toggle Minimap"
+			],
+			[
+				"disable",
+				"Package Control: Disable Package"
+			],
+			[
+				"remove ",
+				"Package Control: Remove Package"
+			],
+			[
+				"mark sy",
+				"SublimeLinter: Choose Mark Style"
+			],
+			[
+				"linter",
+				"SublimeLinter: Choose Lint Mode"
+			],
+			[
+				"lslint",
+				"SublimeLinter: Choose Lint Mode"
+			],
+			[
+				"linter plu",
+				"SublimeLinter: Create Linter Plugin"
+			],
+			[
+				"create",
+				"SublimeLinter: Create Linter Plugin"
+			],
+			[
+				"create lin",
+				"SublimeLinter: Create Linter Plugin"
+			],
+			[
+				"settings",
+				"Preferences: Settings - User"
+			],
+			[
+				"lsl",
+				"Set Syntax: LSL"
+			],
+			[
+				"trail",
+				"Trimmer: Trim trailing whitespace."
+			],
+			[
+				"tabs",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"lower",
+				"Convert Case: Lower Case"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"enable l",
+				"SublimeLinter: Enable Linter"
+			],
+			[
+				"WRAP",
+				"Word Wrap: Toggle"
+			],
+			[
+				"sett",
+				"Preferences: Settings - User"
+			],
+			[
+				"status",
+				"View: Toggle Status Bar"
+			],
+			[
+				"stat",
+				"View: Toggle Status Bar"
+			],
+			[
+				"closeall",
+				"File: Close All"
+			],
+			[
+				"savea",
+				"File: Save All"
+			],
+			[
+				"linter disa",
+				"SublimeLinter: Disable Linter"
+			],
+			[
+				"empty l",
+				"Trimmer: Delete empty lines."
+			],
+			[
+				"leadingtra",
+				"Trimmer: Trim leading AND trailing whitespace."
+			],
+			[
+				"batch",
+				"Set Syntax: Batch File"
+			],
+			[
+				"bash",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"figlet",
+				"Figlet: Add Text"
+			],
+			[
+				"tabs ",
+				"View: Toggle Tabs"
+			],
+			[
+				"setting",
+				"Preferences: Settings - User"
+			],
+			[
+				"xml",
+				"Set Syntax: XML"
+			],
+			[
+				"space",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"reind",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"reindnet",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"delete e",
+				"Trimmer: Delete empty lines."
+			],
+			[
+				"collapse",
+				"Trimmer: Collapse lines."
+			],
+			[
+				"settin",
+				"Preferences: Settings - User"
+			],
+			[
+				"colla",
+				"Trimmer: Collapse spaces."
+			],
+			[
+				"collap",
+				"Trimmer: Collapse lines."
+			],
+			[
+				"user",
+				"Preferences: Settings - User"
+			],
+			[
+				"trai",
+				"Trimmer: Trim trailing whitespace."
+			],
+			[
+				"linter war",
+				"SublimeLinter: Make Warnings Passive"
+			],
+			[
+				"lint",
+				"SublimeLinter: Lint This View"
+			],
+			[
+				"markdown",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"save al",
+				"File: Save All"
+			],
+			[
+				"autoit",
+				"AutoHotkey - Compile"
+			],
+			[
+				"caeil",
+				"Package Control: Advanced Install Package"
+			],
+			[
+				"save",
+				"Markdown Preview: Save to HTML"
+			],
+			[
+				"html",
+				"Markdown Preview: Save to HTML"
+			],
+			[
+				"saveh",
+				"Markdown Preview: Save to HTML"
+			],
+			[
+				"m",
+				"Markdown Preview: Save to HTML"
+			],
+			[
+				"enablepa",
+				"Package Control: Enable Package"
+			],
+			[
+				"reins",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"over",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"uni",
+				"Permute Lines: Unique"
+			],
+			[
+				"package contr",
+				"Preferences: Package Control Settings – User"
+			],
+			[
+				"prefe",
+				"Preferences: Settings - User"
+			],
+			[
+				"linter ena",
+				"SublimeLinter: Enable Linter"
+			],
+			[
+				"lint this",
+				"SublimeLinter: Lint This View"
+			],
+			[
+				"togglel",
+				"SublimeLinter: Toggle Linter"
+			],
+			[
+				"toggle",
+				"View: Toggle Tabs"
+			],
+			[
+				"toggle lin",
+				"SublimeLinter: Toggle Linter"
+			],
+			[
+				"toggle li",
+				"SublimeLinter: Toggle Linter"
+			],
+			[
+				"linter sett",
+				"Preferences: SublimeLinter Settings – User"
+			],
+			[
+				"linter:",
+				"SublimeLinter: Disable Debug Mode"
+			],
+			[
+				"lintersett",
+				"Preferences: SublimeLinter Settings – User"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"remove pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"upgrad",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"lead",
+				"Trimmer: Trim leading AND trailing whitespace."
+			],
+			[
+				"compare",
+				"Sublimerge: Compare to Revision..."
+			],
+			[
+				"formatt",
+				"CodeFormatter: Format Code"
+			],
+			[
+				"format",
+				"CodeFormatter: Format Code"
+			],
+			[
+				"leadid",
+				"Trimmer: Trim leading AND trailing whitespace."
+			],
+			[
+				"allspa",
+				"Indentation: Convert to all views to Spaces"
+			],
+			[
+				"prev",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"pre",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markd",
+				"Set Syntax: Markdown"
+			],
+			[
+				"leadi",
+				"Trimmer: Trim leading AND trailing whitespace."
+			],
+			[
+				"train",
+				"Trimmer: Trim trailing whitespace."
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"disab",
+				"Package Control: Disable Package"
+			],
+			[
+				"glsl",
+				"Set Syntax: GLSL"
+			],
+			[
+				"insert da",
+				"InsertDate: Default"
+			],
+			[
+				"c++",
+				"Set Syntax: C++"
+			],
+			[
+				"lint err",
+				"SublimeLinter: Report (Open Files)"
+			],
+			[
+				"install pa",
+				"Package Control: Install Package"
+			],
+			[
+				"remove packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"upgrade",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"package contro sett",
+				"Preferences: Package Control Settings – User"
+			],
+			[
+				"pa",
+				"Preferences: Package Control Settings – User"
+			],
+			[
+				"packa",
+				"Preferences: Package Control Settings – User"
+			],
+			[
+				"all uni",
+				"Line Ending to all views: Unix"
+			],
+			[
+				"all win",
+				"Line Ending to all views: Windows"
+			],
+			[
+				"all tabs",
+				"Indentation: Convert to all views to Tabs"
+			],
+			[
+				"all ta",
+				"Indentation: Convert to all views to Tabs"
+			],
+			[
+				"allv ta",
+				"Indentation: Convert to all views to Tabs"
+			],
+			[
+				"allv",
+				"Line Ending to all views: Unix"
+			],
+			[
+				"saveal",
+				"File: Save All"
+			],
+			[
+				"sublimerge",
+				"Sublimerge: Compare to View..."
+			],
+			[
+				"figle",
+				"Figlet: Add Text"
+			],
+			[
+				"add",
+				"Figlet: Add Text"
+			],
+			[
+				"merge compare",
+				"Sublimerge: Compare to Revision..."
+			],
+			[
+				"reindebt",
+				"Preferences: InsertDate Keybindings - Default"
+			],
+			[
+				"deleteem",
+				"Trimmer: Delete empty lines."
+			],
+			[
+				"toggleta",
+				"View: Toggle Tabs"
+			],
+			[
+				"toggle tabs",
+				"View: Toggle Tabs"
+			],
+			[
+				"unix",
+				"Line Ending: Unix"
+			]
+		],
+		"width": 510.0
+	},
+	"console":
+	{
+		"height": 304.0,
+		"history":
+		[
+			"xmllint",
+			"lslint",
+			"xmllint",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": false,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/E/portable/Sublime Text 3/Data/Packages/SublimeLinter-contrib-lslint"
+	],
+	"file_history":
+	[
+		"/C/Users/xenhat/AppData/Roaming/Polarity Legacy/logs/Polarity Legacy.log",
+		"/E/devel/secondlife/viewers/polarity.lemon-development-fastbuild/indra/newview/pvdata.cpp",
+		"/C/Users/xenhat/AppData/Local/Temp/sl_script_0c93cc41b0775f705e6a4c59c6ed65b2.lsl",
+		"/C/Users/xenhat/AppData/Roaming/Polarity/user_settings/settings.xml",
+		"/E/portable/Overclocking & stuff/LinX.lnk",
+		"/E/portable/Overclocking & stuff/HWiNFO64.lnk",
+		"/E/portable/Overclocking & stuff/Display Driver Uninstaller.lnk",
+		"/E/portable/Overclocking & stuff/Custom Resolution Utility.lnk",
+		"/E/portable/Overclocking & stuff/Crystal Disk Info.lnk",
+		"/E/portable/Overclocking & stuff/MPC-HC.lnk",
+		"/E/portable/Overclocking & stuff/OpenBroadcaster.lnk",
+		"/E/portable/Overclocking & stuff/prime95.lnk",
+		"/E/portable/Overclocking & stuff/Process Hacker.lnk",
+		"/E/portable/Overclocking & stuff/Process Monitor.lnk",
+		"/E/portable/Overclocking & stuff/Space Sniffer.lnk",
+		"/E/portable/Overclocking & stuff/AS SSD Benchmark.lnk",
+		"/E/portable/Overclocking & stuff/BitVice SSH.lnk",
+		"/E/portable/Overclocking & stuff/Crystal Disk Mark (Shizuku).lnk",
+		"/E/devel/secondlife/viewers/polarity.graphicstack-import/indra/newview/app_settings/settings_polarity.xml",
+		"/E/devel/secondlife/viewers/polarity.graphicstack-import/indra/newview/llstartup.cpp",
+		"/E/devel/secondlife/viewers/polarity.graphicstack-import/indra/newview/exopostprocess.cpp",
+		"/E/devel/secondlife/viewers/polarity.graphicstack-import/indra/newview/llfloaterpreference.cpp",
+		"/E/devel/secondlife/viewers/polarity.graphicstack-import/indra/newview/pipeline.cpp",
+		"/E/devel/secondlife/viewers/polarity.graphicstack-import/indra/newview/app_settings/shaders/class1/deferred/blurLightF.glsl",
+		"/E/devel/secondlife/viewers/polarity.graphicstack-import/indra/newview/llviewershadermgr.cpp",
+		"/C/Users/xenhat/AppData/Local/Temp/sl_script_5f8ad3f3917b44ab58da956f77ea7d96.lsl",
+		"/C/Users/xenhat/AppData/Roaming/Polarity_old/user_settings/settings.xml",
+		"/D/xenhat/Downloads/HJ4JdgEuxln2.txt",
+		"/F/MediaMeta.xml",
+		"/G/MediaMeta.xml",
+		"/F/devel/secondlife/viewers/polarity.graphicstack-import/indra/newview/llworld.cpp",
+		"/F/devel/secondlife/viewers/polarity.graphicstack-import/indra/newview/llfloaterauction.cpp",
+		"/F/devel/secondlife/viewers/polarity.graphicstack-import/indra/newview/llviewermessage.cpp",
+		"/F/devel/secondlife/viewers/polarity.graphicstack-import/indra/newview/skins/default/xui/en/notifications.xml",
+		"/F/devel/secondlife/viewers/alchemy-dire/autobuild.xml",
+		"/C/Users/xenhat/AppData/Local/Temp/Rar$DIa0.127/README",
+		"/C/Users/xenhat/AppData/Local/Temp/Rar$DIa0.338/COPYING",
+		"/F/devel/secondlife/viewers/polarity.graphicstack-import/indra/newview/pipeline.cpp",
+		"/F/devel/secondlife/viewers/niranv.black-dragon-viewer/indra/newview/llfloaterpreference.cpp",
+		"/F/devel/secondlife/viewers/niranv.black-dragon-viewer/indra/newview/llviewercontrol.cpp",
+		"/F/devel/secondlife/viewers/niranv.black-dragon-viewer/indra/newview/llviewershadermgr.cpp",
+		"/F/devel/secondlife/viewers/polarity.graphicstack-import/indra/newview/app_settings/settings_polarity.xml",
+		"/F/devel/secondlife/viewers/niranv.black-dragon-viewer/indra/newview/pipeline.cpp",
+		"/F/devel/secondlife/viewers/polarity.graphicstack-import/indra/newview/exopostprocess.cpp",
+		"/F/devel/secondlife/viewers/polarity.graphicstack-import/indra/newview/llfloaterpreference.cpp",
+		"/F/devel/secondlife/viewers/polarity.graphicstack-import/indra/newview/pipeline.h",
+		"/C/Users/xenhat/Dropbox/cool hacks/New Text Document.txt",
+		"/F/devel/secondlife/viewers/niranv.black-dragon-viewer/indra/newview/app_settings/settings.xml",
+		"/C/Program Files (x86)/Black Dragon/app_settings/settings.xml",
+		"/F/devel/secondlife/viewers/niranv.black-dragon-viewer/indra/newview/skins/default/xui/en/panel_machinima.xml",
+		"/F/devel/secondlife/viewers/niranv.black-dragon-viewer/indra/newview/skins/default/xui/en/panel_preferences_graphics1.xml",
+		"/F/devel/secondlife/viewers/polarity.graphicstack-import/indra/newview/llviewershadermgr.cpp",
+		"/F/devel/secondlife/viewers/polarity.development-maint/indra/newview/viewer_manifest.py",
+		"/F/devel/secondlife/viewers/polarity.development-maint/indra/newview/installers/windows/installer_template.nsi",
+		"/F/devel/secondlife/viewers/polarity.development-maint/indra/newview/English.lproj/InfoPlist.strings",
+		"/F/devel/secondlife/viewers/polarity.development-maint/autobuild.xml",
+		"/F/devel/secondlife/viewers/Exodus/indra/newview/app_settings/settings.xml",
+		"/F/devel/secondlife/viewers/alchemy-dire/indra/newview/pipeline.cpp",
+		"/F/devel/secondlife/viewers/alchemy-dire/indra/newview/llviewershadermgr.cpp",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/newview/lldrawpooltree.cpp",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/newview/pipeline.cpp",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/newview/app_settings/settings_polarity.xml",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/newview/exopostprocess.cpp",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/.hg/patches/2016-04-13_07-14-02_r36139+.diff",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/newview/llfloaterpreference.cpp",
+		"/C/Users/xenhat/AppData/Roaming/Polarity/logs/Polarity.log",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/newview/app_settings/shaders/class1/deferred/materialF.glsl",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/newview/app_settings/shaders/class2/exoshade/gammacorrect/deferred/alphaF.glsl",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/newview/app_settings/shaders/class2/exoshade/gammacorrect/deferred/alphaNonIndexedF.glsl",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/newview/app_settings/shaders/class2/exoshade/gammacorrect/deferred/alphaNonIndexedNoColorF.glsl",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/newview/llviewercontrol.cpp",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/newview/llviewershadermgr.cpp",
+		"/F/devel/secondlife/viewers/alchemy-dire/indra/newview/app_settings/shaders/class1/deferred/materialF.glsl",
+		"/F/devel/secondlife/viewers/polarity.build.shaderswork/indra/newview/llfloaterpreference.cpp",
+		"/F/devel/secondlife/viewers/polarity.build.shaderswork/indra/newview/llviewercontrol.cpp",
+		"/F/devel/secondlife/viewers/polarity.build.shaderswork/indra/newview/pipeline.cpp",
+		"/F/devel/secondlife/viewers/polarity.development-maint/indra/newview/res/viewerRes.rc",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/newview/app_settings/settings.xml",
+		"/C/Users/xenhat/AppData/Local/Temp/sl_script_fdff31ae1c1d40a16ea31da9f480d2e9.lsl",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/build-vc140-x86_64/newview/Release/app_settings/settings.xml",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/llxml/llcontrol.cpp",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/llxml/llcontrol.h",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/llxml/llcontrolgroupreader.h",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/llxml/llxmltree.cpp",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/llxml/llxmltree.h",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/newview/llfloatersettingsdebug.cpp",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/llmath/v4math.cpp",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/llmath/v4math.h",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/newview/llagent.cpp",
+		"/F/devel/secondlife/viewers/obsidian-development-rllva/indra/newview/pipeline.cpp",
+		"/F/devel/secondlife/viewers/niranv.black-dragon-viewer/indra/llrender/llshadermgr.h",
+		"/F/devel/secondlife/viewers/niranv.black-dragon-viewer/indra/newview/pipeline.h",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/newview/app_settings/shaders/class1/deferred/sunLightSSAOF.glsl",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/newview/app_settings/shaders/class1/deferred/waterF.glsl",
+		"/F/devel/secondlife/viewers/polarity.lemon-development-fastbuild/indra/cmake/Features.cmake",
+		"/F/devel/secondlife/viewers/polarity.lemon-development-fastbuild/indra/cmake/00-Common.cmake",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/cmake/Features.cmake",
+		"/C/build/polarity.development-shaderswork/indra/cmake/Features.cmake",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/cmake/00-Common.cmake",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/newview/CMakeLists.txt",
+		"/C/build/polarity.development-shaderswork/autobuild.xml",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/newview/fsareasearch.cpp",
+		"/F/devel/secondlife/viewers/polarity.lemon-development-fastbuild/indra/llui/llnotifications.cpp",
+		"/C/Users/xenhat/Dropbox/Xenhat/SL things backups/Norphone/answering_machine/answeringmachine_config.txt",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/newview/skins/default/xui/en/panel_preferences_move.xml",
+		"/C/Users/xenhat/AppData/Local/Temp/sl_script_9bf5fb70b0f0571fe1aa083530fccd7d.lsl",
+		"/Z/libraries_backup/WP_POSTS_BACKUP_IMPORTANT/itarnix.wordpress.2012-07-06.xml_2.txt",
+		"/C/Users/xenhat/AppData/Local/Temp/sl_script_6706628348f3dbd6daddfa265c32ce80.lsl",
+		"/C/Users/xenhat/AppData/Roaming/Polarity/xenhat_liamano/Alteran Stargate Network.txt",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/newview/skins/default/xui/en/floater_fs_area_search.xml",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/newview/llstartup.cpp",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/newview/llviewerwindow.cpp",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/newview/skins/default/xui/en/notifications.xml",
+		"/F/devel/secondlife/viewers/polarity.lemon-development-fastbuild/indra/newview/skins/default/xui/en/notifications.xml",
+		"/C/Users/xenhat/Dropbox/Public/XL_LSL_Todo.md",
+		"/H/xenhat/Downloads/Telegram Desktop/settings (2).xml",
+		"/H/xenhat/Downloads/Telegram Desktop/Polarity log for Xenhat.txt",
+		"/H/xenhat/Documents/ShareX/HotkeysConfig.json.bak",
+		"/C/Users/xenhat/AppData/Local/Temp/sl_script_862536617b4a960b9c42d67bbad9fde3.lsl",
+		"/H/xenhat/Documents/ShareX/Backup/UploadersConfig-2016-01-W04.json",
+		"/Z/libraries_backup/Documents/ShareX/UploadersConfig.json",
+		"/C/Users/xenhat/AppData/Local/Temp/BvSshSftp/Bv004b62/Bv004c2d/sharex_server.rb",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/newview/res/viewerRes.rc",
+		"/F/devel/secondlife/viewers/polarity.lemon-development-fastbuild/indra/newview/CMakeLists.txt",
+		"/F/devel/secondlife/viewers/polarity.lemon-development-fastbuild/indra/newview/installers/windows/installer_template.nsi",
+		"/F/devel/secondlife/viewers/polarity.lemon-development-fastbuild/indra/newview/res/viewerRes.rc",
+		"/F/devel/secondlife/viewers/polarity.development-shaderswork/indra/newview/installers/windows/installer_template.nsi",
+		"/F/devel/secondlife/viewers/polarity.lemon-development-fastbuild/indra/newview/app_settings/settings_polarity.xml"
+	],
+	"find":
+	{
+		"height": 22.0
+	},
+	"find_in_files":
+	{
+		"height": 92.0,
+		"where_history":
+		[
+			"E:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild",
+			"E:\\devel\\secondlife\\viewers\\polarity.graphicstack-import",
+			"F:\\devel\\secondlife\\viewers\\polarity.graphicstack-import,F:\\devel\\secondlife\\viewers\\niranv.black-dragon-viewer",
+			"F:\\devel\\secondlife\\viewers\\polarity.graphicstack-import",
+			"F:\\devel\\secondlife\\viewers\\polarity.graphicstack-import,F:\\devel\\secondlife\\viewers\\niranv.black-dragon-viewer",
+			"F:\\devel\\secondlife\\viewers\\polarity.graphicstack-import",
+			"F:\\devel\\secondlife\\viewers\\polarity.graphicstack-import,F:\\devel\\secondlife\\viewers\\niranv.black-dragon-viewer",
+			";F:\\devel\\secondlife\\viewers\\polarity.graphicstack-import,F:\\devel\\secondlife\\viewers\\niranv.black-dragon-viewer",
+			"F:\\devel\\secondlife\\viewers\\niranv.black-dragon\\;F:\\devel\\secondlife\\viewers\\polarity.graphicstack-import",
+			"F:\\devel\\secondlife\\viewers\\polarity.graphicstack-import",
+			"F:\\devel\\secondlife\\viewers\\polarity.build.shaderswork\\indra",
+			"F:\\devel\\secondlife\\viewers\\polarity.development-maint,F:\\devel\\secondlife\\viewers\\polarity.build.shaderswork\\indra",
+			"F:\\devel\\secondlife\\viewers\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.development-maint",
+			"F:\\devel\\secondlife\\viewers\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.development-shaderswork",
+			"F:\\devel\\secondlife\\viewers\\Exodus\\indra\\newview",
+			"F:\\devel\\secondlife\\viewers\\polarity.development-shaderswork",
+			"F:\\devel\\secondlife\\viewers\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.development-shaderswork",
+			"F:\\devel\\secondlife\\viewers\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.development-shaderswork",
+			"F:\\devel\\secondlife\\viewers\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.development-shaderswork",
+			"F:\\devel\\secondlife\\viewers\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.development-shaderswork",
+			"F:\\devel\\secondlife\\viewers\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.development-shaderswork",
+			"F:\\devel\\secondlife\\viewers\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.development-shaderswork",
+			"F:\\devel\\secondlife\\viewers\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.development-shaderswork",
+			"F:\\devel\\secondlife\\viewers\\",
+			"Z:\\libraries_backup\\WP_POSTS_BACKUP_IMPORTANT",
+			"F:\\devel\\secondlife\\viewers\\polarity.development-shaderswork",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild,F:\\devel\\secondlife\\viewers\\polarity.development-shaderswork",
+			"F:\\devel\\secondlife\\viewers\\polarity.development-shaderswork",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild,F:\\devel\\secondlife\\viewers\\polarity.development-shaderswork",
+			"F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\phoenix.firestorm-lgpl\\indra\\,F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild,F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\phoenix.firestorm-lgpl\\indra\\,F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild,F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild,F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\phoenix.firestorm-lgpl\\indra\\,F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild,F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\phoenix.firestorm-lgpl\\indra\\,F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild,F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"\\F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\phoenix.firestorm-lgpl\\indra\\,F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild,F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild,F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\phoenix.firestorm-lgpl\\indra\\",
+			"F:\\devel\\secondlife\\viewers\\phoenix.firestorm-lgpl\\indra\\newview\\app_settings\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild,F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild,F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild",
+			"F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild,F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild,F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild,F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\phoenix.firestorm-lgpl\\indra,F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild,F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild,F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\phoenix.firestorm-lgpl\\indra,F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild,F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\phoenix.firestorm-lgpl\\indra\\",
+			"F:\\devel\\secondlife\\viewers\\phoenix.firestorm-lgpl\\",
+			"F:\\devel\\secondlife\\viewers\\phoenix.firestorm-lgpl\\indra\\",
+			"F:\\devel\\secondlife\\viewers\\phoenix.firestorm-lgpl\\indra\\newview\\app_settings",
+			"F:\\devel\\secondlife\\viewers\\phoenix.firestorm-lgpl\\indra,F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild,F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild,F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\phoenix.firestorm-lgpl\\indra,F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild,F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild,F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild,F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild,F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild,F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\alchemy-dire,F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild,F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-fastbuild,F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\alchemy-dire,F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\alchemy-dire,F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\rlva,F:\\devel\\secondlife\\viewers\\polarity.development\\",
+			"F:\\devel\\secondlife\\viewers\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.development",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\indra",
+			"F:\\devel\\secondlife\\viewers\\polarity.development",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\indra",
+			"F:\\devel\\secondlife\\viewers\\polarity.development",
+			"F:\\devel\\secondlife\\viewers\\",
+			"F:\\devel\\secondlife\\viewers\\alchemy-dire",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\indra",
+			"F:\\devel\\secondlife\\viewers\\polarity.development",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\indra",
+			"F:\\devel\\secondlife\\viewers\\polarity.development",
+			"F:\\devel\\secondlife\\viewers\\polarity.development-fusion",
+			"F:\\devel\\secondlife\\viewers\\alchemy-dire",
+			"F:\\devel\\secondlife\\viewers\\polarity.development",
+			"F:\\devel\\secondlife\\viewers\\alchemy-dire",
+			"F:\\devel\\secondlife\\viewers\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.development",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\indra",
+			"F:\\devel\\secondlife\\viewers\\polarity.development-mainbranch",
+			"F:\\devel\\secondlife\\viewers\\polarity.development",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\indra",
+			"F:\\devel\\secondlife\\viewers\\polarity.development",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\indra",
+			"F:\\devel\\secondlife\\viewers\\polarity.development",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\indra",
+			"F:\\devel\\secondlife\\viewers\\polarity.development",
+			"F:\\devel\\secondlife\\viewers\\polarity-development",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\indra",
+			"F:\\devel\\secondlife\\viewers\\obsidian-development-rllva",
+			"F:\\devel\\secondlife\\viewers\\alchemy-obsidian-rllva",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\indra",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\",
+			"F:\\devel\\secondlife\\viewers\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\",
+			"F:\\devel\\secondlife\\viewers\\tofu.general-fun-6\\",
+			"F:\\devel\\secondlife\\viewers\\tofu.general-fun6\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\",
+			"F:\\devel\\secondlife\\viewers\\polarity.development\\"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"facetex",
+			"blush",
+			"74634ef5-e1a7-18d9-0eab-71c574a3b9ed",
+			"\"brow\"",
+			"setfacetex",
+			"74634ef5-e1a7-18d9-0eab-71c574a3b9ed",
+			"setfacetex",
+			"brow",
+			"Polarity",
+			"Alchemy",
+			"alchemy",
+			"Uninstall",
+			"uninstall",
+			"200",
+			"PRIM_ALPHA_MODE_MASK,200",
+			"200",
+			"PRIM_ALPHA_MODE_MASK,200",
+			"200",
+			"BLACK",
+			"app_name",
+			"APPNAME",
+			"programf",
+			"VIEWER_CHANNEL",
+			"CHANNEL",
+			" <key>license</key>",
+			"LGPL",
+			"AskForDisplayPreferencesReset",
+			"PVRender_KeepSettingsOnGPUChange",
+			"callbackConfirmDisplayPreferencesReset",
+			"Would you like to reset the graphic preference",
+			"DisableCameraConstraints",
+			"PVCamera_DisableSimConstraint",
+			"debug sett",
+			"debug se",
+			"MainToggleVisible",
+			"restrained ",
+			"restrained",
+			"RLV_SETTING_MAIN",
+			"RestrainedLove",
+			"RestrainedLoveAPI",
+			"PVRender_AutoExposure",
+			"PVRender_DeferredDoFGrain",
+			"PVRender_GodRays",
+			"PVRender_LensFlare",
+			"PVRender_SSR",
+			"PVRender_ToneAdvOpt",
+			"PVRender_ToneAdv",
+			"PVRender_ToneExposure",
+			"PVRender_ToneMapping",
+			"PVRender_ColorGradeTech",
+			"PVRender_Offset",
+			"KERNCOUNT",
+			"MYKERN",
+			"PVRender_ShadowType",
+			"RenderFarClip",
+			"1024",
+			"getParcel",
+			"getRegion",
+			"OfferTeleport",
+			"Join me in",
+			"PVRender_ShadowType",
+			"MYKERN",
+			"PVOverride_RenderShadowBlurDistFactor",
+			"blur_size",
+			"RenderShadowGaussian",
+			"\"RenderSSAOBlurSize",
+			"RenderSSAOBlurSize",
+			"connectrefr",
+			"RenderSSAOBlurSize",
+			"godra",
+			"render_god",
+			"\"RenderGodRays",
+			"RenderGodRays",
+			"ExodusRenderOffset",
+			"RenderOFfset",
+			"PVRender_Offset",
+			"shadowres",
+			"RenderSSAOBlurSize",
+			"Black Dra",
+			"\"RenderSSRResolution",
+			"PVRender_SSRResolution",
+			"RenderSSAO",
+			"USE_SSAO",
+			"RenderSSAOScale",
+			"splitexpo",
+			"PVOverride_RenderReflectionDetail",
+			"RenderDeferredSpotShadowBias:",
+			"RenderDeferredBlurLight",
+			"PVOverride_RenderDeferredBlurLight",
+			"GodRaysDirectional",
+			"\\GodRaysDirectional",
+			"PVRender_GodRaysDirectional",
+			"DISPLAY_GAMMA",
+			"TIME_STEP",
+			"not found",
+			"invalid",
+			"ssao",
+			"\"Render",
+			"ssao",
+			"RenderSSAO",
+			"RenderShadowResolution",
+			"PVOverride_RenderShadowResolution",
+			"PVRender_ShadowResolutionNew",
+			"RenderSSAOEff",
+			"\"RenderSSAO",
+			"RenderSSAO",
+			"\"RenderSSAO",
+			"RenderShadowResolution",
+			"\"RenderShadowResolution",
+			"RenderSSAO",
+			"USE_FILM_GRAIN",
+			"Polarity Viewer Project",
+			"Polarity Vie",
+			"polarity viewer",
+			"LegalCopyright",
+			"LegalCopyrightLegalCopyright",
+			"LegalCopyright",
+			"Copyright",
+			"ExodusRenderAutoExposure",
+			"AutoExposure",
+			"PVRender_AutoExposure",
+			"PVRender_HDR",
+			"PVRender_Offset",
+			"PVRender_HDR",
+			"PVRender_Offset",
+			"invalid",
+			"not found",
+			"GLSL Compilation Error"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"PRIM_ALPHA_MODE_MASK,pupil_mask",
+			"PRIM_ALPHA_MODE_MASK,150",
+			"PVRender_EnableAutoExposure",
+			"PVRender_EnableFilmGrain",
+			"PVRender_EnableGodRays",
+			"PVRender_EnableLensFlare",
+			"PVRender_EnableSSR",
+			"PVRender_ToneMappingControl",
+			"PVRender_ToneMappingExposure",
+			"PVRender_EnableToneMapping",
+			"PVRender_HDRBrightnessOffset",
+			"\"PVRender_SSAOBlurSize",
+			"\"PVRender_GodRays",
+			"PVRender_GodRays",
+			"PVRender_HDROffset",
+			"\"PVRender_SSRResolution",
+			"RenderSSRResolution",
+			"\"PVOverride_RenderShadowResolution",
+			"PVRender_HDROffset",
+			"vec4 shadow_res",
+			"RenderShadowFOVCutoff",
+			"\"PVOverride_RenderSpotShadowOffset",
+			"PVRender_BlurPerformanceMode",
+			"\\n",
+			"</map>\\n",
+			"||",
+			"key>\\n",
+			"||",
+			"</map",
+			"<map",
+			"<key",
+			">PVOverride_Render",
+			"		// <Black Dragon:NiranV> Vector4",
+			"	// <Black Dragon:NiranV> Vector4",
+			"// <Black Dragon:NiranV> Vector4",
+			">/m:1<",
+			"Xen",
+			"jbamount",
+			"PVCamera_KeepPositionOnMove",
+			"Copyright © Polarity Viewer Project 2014-2016",
+			"",
+			"PVRender_",
+			"ExodusRender",
+			"NiranV> Exodus Shaders",
+			"Exodus Shaders",
+			"sDynamicCopyVBOPool(",
+			"glDisableVertexAttribArrayARB(",
+			"glEnableVertexAttribArrayARB(",
+			"glVertexAttribPointerARB(",
+			"PVRender_GodRays",
+			"kOwner",
+			"BLACK",
+			"/",
+			"xlText(",
+			"-Censored2-",
+			"-Censored-",
+			"Censored",
+			"[Censored]",
+			"[CensoredPerson2]",
+			"YYY",
+			"xxx",
+			"xlText(",
+			"llSay(",
+			"_",
+			" ",
+			"",
+			"STAGE",
+			"Polarity Viewer",
+			"  else if (k",
+			" else if (k",
+			"getEffectColor",
+			"useViewerColor",
+			"vwr_color",
+			"* 0.5",
+			"NULL",
+			"chan",
+			"54468168",
+			"xlSetGroup",
+			"\"Polarity",
+			"\"Polarity Legacy\"",
+			"<polarity",
+			"APP_NAME",
+			"<polarity",
+			"</polarity",
+			"</Polarity",
+			"<Polarity",
+			"\"Polarity\"",
+			"Polarity Legacy",
+			"Polarity",
+			"\"PolarityLegacy\"",
+			"\"${APPNAME}\"",
+			"polarity",
+			"</polarity",
+			"<polarity",
+			"PolarityLegacy.",
+			"ROOT_PROJECT_NAME:STRING=PolarityLegacy",
+			"OOT_PROJECT_NAME:STRING=PolarityLegacy",
+			"APP_NAME",
+			"PVMovement_DoNotRotateOnSelfClick",
+			"PVMovement_KeepPositionOnSelfClick",
+			" Settings Sanity check",
+			".ToggleOrBringToFront\"",
+			"\"PVUI_AreaSearchColumnConfig\"",
+			"last_sitting",
+			"sitting_on_me",
+			"isKeyInLinkset(",
+			"",
+			"PVUI_StatusBarClockShowSeconds",
+			"White",
+			">",
+			"face_skin_holed",
+			"face_skin_noshell",
+			"hueShiftRight",
+			"input_new_color",
+			"{\\n\\t",
+			"}\\n",
+			"\\n{",
+			"v",
+			" ",
+			"d",
+			"c",
+			"b",
+			"a",
+			"",
+			"vector|||",
+			"integer|||",
+			"",
+			"containerLightsBaseColor"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "E:\\portable\\Sublime Text 3\\Data\\Packages\\SublimeLinter-contrib-lslint"
+		}
+	],
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "linter.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 873,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								873,
+								873
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"glslvalidator_configured": true,
+							"glslvalidator_enabled": 1,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.exec":
+	{
+		"height": 172.0
+	},
+	"output.find_results":
+	{
+		"height": 92.0
+	},
+	"output.markdown":
+	{
+		"height": 102.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"finde",
+				"Find Results"
+			],
+			[
+				"sett",
+				"C:\\Users\\xenhat\\AppData\\Roaming\\Polarity\\user_settings\\settings.xml"
+			],
+			[
+				"as",
+				"C:\\Users\\xenhat\\AppData\\Roaming\\Polarity\\xenhat_liamano\\Alteran Stargate Network.txt"
+			],
+			[
+				"menu",
+				"F:\\devel\\secondlife\\viewers\\polarity.development\\indra\\newview\\skins\\default\\xui\\en\\menu_viewer.xml"
+			],
+			[
+				"pol",
+				"C:\\Users\\xenhat\\AppData\\Roaming\\Polarity\\logs\\Polarity.log"
+			],
+			[
+				"p",
+				"F:\\devel\\secondlife\\viewers\\polarity.development\\indra\\newview\\skins\\default\\xui\\en\\panel_preferences_general.xml"
+			],
+			[
+				"",
+				"F:\\devel\\secondlife\\viewers\\polarity.development\\indra\\newview\\llviewermessage.cpp"
+			],
+			[
+				"string",
+				"F:\\devel\\secondlife\\viewers\\polarity.development\\indra\\newview\\skins\\default\\xui\\en\\strings.xml"
+			],
+			[
+				"llviewermess",
+				"F:\\devel\\secondlife\\viewers\\polarity.development\\indra\\newview\\llviewermessage.cpp"
+			],
+			[
+				"strings",
+				"F:\\devel\\secondlife\\viewers\\polarity.development\\indra\\newview\\skins\\default\\xui\\en\\strings.xml"
+			],
+			[
+				"strin",
+				"F:\\devel\\secondlife\\viewers\\phoenix.firestorm-lgpl\\indra\\newview\\skins\\default\\xui\\en\\strings.xml"
+			],
+			[
+				"lsl",
+				"C:\\Users\\xenhat\\AppData\\Local\\Temp\\sl_script_c3847f759593e4b1634c422cc55eb215.lsl"
+			],
+			[
+				"pvb",
+				"F:\\devel\\secondlife\\viewers\\polarity.development\\PVbuild_64.bat"
+			],
+			[
+				"llagentc",
+				"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\indra\\newview\\llagentcamera.cpp"
+			],
+			[
+				"fires",
+				"F:\\devel\\secondlife\\viewers\\phoenix.firestorm-lgpl\\indra\\newview\\app_settings\\settings_firestorm.xml"
+			],
+			[
+				"llstart",
+				"F:\\devel\\secondlife\\viewers\\polarity.development\\indra\\newview\\llstartup.cpp"
+			],
+			[
+				"manif",
+				"F:\\devel\\secondlife\\viewers\\polarity.development\\indra\\newview\\viewer_manifest.py"
+			],
+			[
+				"sl",
+				"C:\\Users\\xenhat\\AppData\\Local\\Temp\\sl_script_bcfb5f2bd899f259ab03d2a94333765e.lsl"
+			],
+			[
+				"llwoel",
+				"F:\\devel\\secondlife\\viewers\\polarity.development\\indra\\newview\\llworldmapview.cpp"
+			],
+			[
+				"colors",
+				"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\indra\\newview\\skins\\default\\colors.xml"
+			],
+			[
+				"mw",
+				"F:\\devel\\secondlife\\viewers\\polarity.development\\indra\\newview\\skins\\default\\xui\\en\\menu_viewer.xml"
+			],
+			[
+				"menu_",
+				"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\indra\\newview\\skins\\default\\xui\\en\\menu_viewer.xml"
+			],
+			[
+				"feat",
+				"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\indra\\cmake\\Features.cmake"
+			],
+			[
+				"settings_",
+				"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\indra\\newview\\app_settings\\settings_polarity.xml"
+			],
+			[
+				"me",
+				"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\indra\\newview\\skins\\default\\xui\\en\\menu_viewer.xml"
+			],
+			[
+				"menu_v",
+				"F:\\devel\\secondlife\\viewers\\polarity.development\\indra\\newview\\skins\\default\\xui\\en\\menu_viewer.xml"
+			],
+			[
+				"rlv",
+				"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\indra\\newview\\rlvdefines.h"
+			],
+			[
+				"group",
+				"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\indra\\newview\\llgrouplist.cpp"
+			],
+			[
+				"pres",
+				"F:\\devel\\secondlife\\viewers\\polarity.development\\indra\\newview\\app_settings\\preset_polarity.xml"
+			],
+			[
+				"settings_po",
+				"F:\\devel\\secondlife\\viewers\\polarity.development\\indra\\newview\\app_settings\\settings_polarity.xml"
+			],
+			[
+				"llfl",
+				"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\indra\\llui\\llfloater.cpp"
+			],
+			[
+				"script",
+				"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\indra\\newview\\skins\\default\\xui\\en\\floater_script_ed_prefs.xml"
+			],
+			[
+				"underwa",
+				"C:\\Program Files\\Polarity Test\\app_settings\\shaders\\class1\\environment\\underWaterF.glsl"
+			],
+			[
+				"menu_im_session_showmodes",
+				"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\indra\\newview\\skins\\default\\xui\\en\\menu_im_session_showmodes.xml"
+			],
+			[
+				"main",
+				"F:\\devel\\secondlife\\lsl\\NTAPSU Compatible Scripts\\Nekotech\\container\\v4\\main system.lsl"
+			],
+			[
+				"cpp",
+				"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\indra\\llui\\llui.cpp"
+			],
+			[
+				"ear",
+				"F:\\devel\\secondlife\\lsl\\OpenEmoteTail\\ear.lsl"
+			],
+			[
+				"fxaa",
+				"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\indra\\newview\\app_settings\\shaders\\class1\\deferred\\fxaaF.glsl"
+			],
+			[
+				"00",
+				"F:\\devel\\secondlife\\viewers\\polarity.project-eldric\\indra\\cmake\\00-Common.cmake"
+			],
+			[
+				"find",
+				"Find Results"
+			],
+			[
+				"colo",
+				"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\indra\\newview\\skins\\default\\colors.xml"
+			],
+			[
+				"color",
+				"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\indra\\newview\\skins\\default\\colors.xml"
+			],
+			[
+				"graph",
+				"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\indra\\newview\\skins\\default\\xui\\en\\panel_preferences_graphics1.xml"
+			],
+			[
+				"pvc",
+				"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\indra\\newview\\pvcommon.cpp"
+			],
+			[
+				"nt",
+				"F:\\devel\\secondlife\\lsl\\NT-101 eyes\\NT-101 Optimized.lsl"
+			],
+			[
+				"cont",
+				"F:\\devel\\secondlife\\viewers\\polarity.lemon-development-fastbuild\\indra\\newview\\skins\\default\\xui\\en\\fonts.xml"
+			],
+			[
+				"nt-101",
+				"F:\\devel\\secondlife\\lsl\\NT-101 eyes\\NT-101 Optimized.lsl"
+			],
+			[
+				"nt-",
+				"F:\\devel\\secondlife\\lsl\\NT-101 eyes\\NT-101 Optimized.lsl"
+			],
+			[
+				"age",
+				"C:\\Users\\xenhat\\AppData\\Local\\Temp\\be800682-b749-423d-9f1d-32fb193fbee7\\live\\lemon\\agents.xml"
+			],
+			[
+				"agents",
+				"C:\\Users\\xenhat\\AppData\\Local\\Temp\\be800682-b749-423d-9f1d-32fb193fbee7\\live\\lemon\\agents.xml"
+			],
+			[
+				"pvdata",
+				"D:\\devel\\secondlife\\viewers\\polarity.development-pvdata\\indra\\newview\\pvdata.cpp"
+			],
+			[
+				"ovda",
+				"C:\\src\\polarity-development\\indra\\newview\\pvdata.cpp"
+			],
+			[
+				"sec",
+				"C:\\Users\\Xenhat\\AppData\\Roaming\\SecondLife\\logs\\SecondLife.log"
+			],
+			[
+				"op",
+				"C:\\Users\\Xenhat\\AppData\\Roaming\\Polarity\\logs\\Polarity.log"
+			],
+			[
+				"res",
+				"Find Results"
+			],
+			[
+				"seet",
+				"D:\\src\\viewers\\polarity.polarity-lemon\\indra\\newview\\app_settings\\settings_polarity.xml"
+			],
+			[
+				"pvda",
+				"D:\\src\\viewers\\polarity.croissant-pvdata\\indra\\newview\\pvdata.cpp"
+			],
+			[
+				"autobui",
+				"D:\\src\\viewers\\polarity.lemon-2015\\autobuild.xml"
+			],
+			[
+				"floaterava",
+				"D:\\src\\viewers\\polarity.polarity-lemon\\indra\\newview\\llfloateravatarpicker.cpp"
+			],
+			[
+				"pvo",
+				"D:\\src\\viewers\\polarity.polarity-lemon\\indra\\llcommon\\pvomp.h"
+			],
+			[
+				"imagew",
+				"D:\\src\\viewers\\polarity.polarity-lemon\\indra\\llimage\\llimageworker.cpp"
+			],
+			[
+				"appv",
+				"D:\\src\\viewers\\polarity.polarity-lemon\\indra\\newview\\llappviewer.cpp"
+			],
+			[
+				"pv",
+				"D:\\src\\viewers\\polarity.polarity-lemon\\PVbuild_compiled.bat"
+			],
+			[
+				"opti",
+				"D:\\Dropbox\\Polarity Viewer\\optimization_notes.mdown"
+			],
+			[
+				"inspect",
+				"C:\\Program Files\\Polarity Test\\skins\\default\\xui\\en\\inspect_avatar.xml"
+			],
+			[
+				"inspe",
+				"C:\\Program Files\\Polarity Test\\skins\\default\\xui\\en\\inspect_avatar.xml"
+			],
+			[
+				"log",
+				"C:\\Users\\Xenhat\\AppData\\Roaming\\Polarity\\logs\\Polarity.log"
+			],
+			[
+				"pola",
+				"C:\\Users\\Xenhat\\AppData\\Roaming\\Polarity\\logs\\Polarity.log"
+			],
+			[
+				"pvasm",
+				"\\\\FLAILOVEN\\src (Buildbox)\\polarity-lemon\\indra\\llcommon\\pvasmlib.h"
+			],
+			[
+				"pvasml",
+				"\\\\FLAILOVEN\\src (Buildbox)\\polarity-lemon\\indra\\llcommon\\pvasmlib.h"
+			],
+			[
+				"pva",
+				"\\\\FLAILOVEN\\src (Buildbox)\\polarity-lemon\\indra\\llcommon\\pvasmlib.h"
+			],
+			[
+				"asmlib.",
+				"\\\\FLAILOVEN\\src (Buildbox)\\polarity-lemon\\build-vc120-x86_64\\packages\\include\\asmlib.h"
+			],
+			[
+				"findre",
+				"Find Results"
+			],
+			[
+				"llsys",
+				"F:\\src\\viewers\\polarity-cheezburgr-stock\\indra\\llcommon\\llsys.cpp"
+			],
+			[
+				"varia",
+				"F:\\src\\viewers\\polarity-cheezburgr-stock\\indra\\cmake\\Variables.cmake"
+			],
+			[
+				"session",
+				"F:\\src\\viewers\\polarity-cheezburgr-stock\\indra\\newview\\skins\\default\\xui\\en\\floater_im_session.xml"
+			],
+			[
+				"stat",
+				"F:\\src\\viewers\\polarity-lemon\\indra\\newview\\llstatusbar.cpp"
+			],
+			[
+				"xml",
+				"F:\\src\\viewers\\polarity-cheezburgr-stock\\indra\\newview\\skins\\default\\xui\\en\\panel_instant_message.xml"
+			],
+			[
+				"colors.x",
+				"F:\\src\\viewers\\polarity-cheezburgr-stock\\indra\\newview\\skins\\default\\colors.xml"
+			],
+			[
+				"auotbu",
+				"F:\\src\\viewers\\polarity-cheezburgr-stock\\autobuild.xml"
+			],
+			[
+				"colorm",
+				"F:\\src\\viewers\\polarity-cheezburgr-stock\\indra\\newview\\pvavatarcolormgr.cpp"
+			],
+			[
+				"auto",
+				"F:\\src\\viewers\\polarity-lemon\\autobuild.xml"
+			],
+			[
+				"pvas",
+				"F:\\src\\viewers\\polarity-lemon\\indra\\llcommon\\pvasmlib.h"
+			],
+			[
+				"stub",
+				"D:\\src\\lsl\\NTAPSU\\-NT- NTAPSU v0.21b -JBs-.lsl"
+			],
+			[
+				"221",
+				"D:\\src\\lsl\\M3K\\Extras\\PSU System\\NTAPSU\\NTAPSU_NT-221.lsl"
+			],
+			[
+				"strack",
+				"D:\\src\\lsl\\M3K\\Extras\\PSU System\\NTAPSU\\NTAPSU_NT-221_Stackheap.lsl"
+			],
+			[
+				"primit",
+				"F:\\src\\viewers\\polarity-lemon\\indra\\llprimitive\\llprimitive.cpp"
+			],
+			[
+				"machi",
+				"F:\\src\\viewers\\polarity-lemon\\indra\\newview\\skins\\default\\xui\\en\\panel_machinima.xml"
+			],
+			[
+				"progress",
+				"F:\\src\\viewers\\polarity-lemon\\indra\\newview\\llprogressview.cpp"
+			],
+			[
+				"startup",
+				"F:\\src\\viewers\\polarity-lemon\\indra\\newview\\llstartup.cpp"
+			],
+			[
+				"startu",
+				"F:\\src\\viewers\\polarity-lemon\\indra\\newview\\llstartup.cpp"
+			],
+			[
+				"netma",
+				"F:\\src\\viewers\\polarity-lemon\\indra\\newview\\llnetmap.cpp"
+			],
+			[
+				"textures",
+				"F:\\src\\viewers\\polarity-lemon\\indra\\newview\\skins\\default\\textures\\textures.xml"
+			],
+			[
+				"llcommon/",
+				"F:\\src\\viewers\\polarity-cheezburgr-stock\\indra\\llcommon\\pvasmlib.h"
+			],
+			[
+				"text",
+				"F:\\src\\viewers\\polarity-lemon\\indra\\newview\\skins\\default\\textures\\textures.xml"
+			],
+			[
+				"texture",
+				"F:\\src\\viewers\\polarity-lemon\\indra\\newview\\skins\\default\\textures\\textures.xml"
+			],
+			[
+				"fsdata",
+				"D:\\src\\viewers\\phoenix-firestorm-lgpl\\indra\\newview\\fsdata.cpp"
+			],
+			[
+				"simdm",
+				"D:\\src\\viewers\\polarity-cheezburgr\\indra\\llmath\\llsimdmath.h"
+			],
+			[
+				"data.x",
+				"C:\\Users\\voaxe\\AppData\\Local\\Temp\\e4b86668-ef43-4d26-9abe-f2f322f98827\\app\\pvdata\\pvdata.xml"
+			],
+			[
+				"settings",
+				"D:\\src\\viewers\\polarity-cheezburgr\\indra\\newview\\app_settings\\settings.xml"
+			],
+			[
+				"notifica",
+				"D:\\src\\viewers\\polarity-cheezburgr\\indra\\newview\\skins\\default\\xui\\en\\notifications.xml"
+			],
+			[
+				"login",
+				"D:\\src\\viewers\\polarity-cheezburgr\\indra\\newview\\llpanellogin.cpp"
+			],
+			[
+				"noti",
+				"D:\\src\\viewers\\polarity-cheezburgr\\indra\\newview\\skins\\default\\xui\\en\\notifications.xml"
+			],
+			[
+				".log",
+				"C:\\Users\\voaxe\\AppData\\Roaming\\Polarity\\logs\\Polarity.log"
+			],
+			[
+				"autoi",
+				"C:\\src\\viewers\\polarityviewer.polarity-kiwi\\autobuild.xml"
+			],
+			[
+				"meow",
+				"D:\\viewers\\polarity-automerge-test\\PVbuild_compiled_meow.bat"
+			],
+			[
+				"vieewre",
+				"D:\\viewers\\polarity-automerge-test\\indra\\newview\\viewer_manifest.py"
+			],
+			[
+				"llst",
+				"D:\\portable\\Sublime Text 3\\Data\\Packages\\User\\Preferences.sublime-settings"
+			],
+			[
+				"prog",
+				"D:\\viewers\\plvr-new-aaaa\\indra\\newview\\llprogressview.cpp"
+			],
+			[
+				"prefe",
+				"C:\\src\\viewers\\plvr-new-aaaa\\indra\\newview\\skins\\default\\xui\\en\\floater_camera.xml"
+			],
+			[
+				"bla",
+				"D:\\src\\viewers\\black-dragon-viewer\\indra\\newview\\llagentcamera.cpp"
+			],
+			[
+				"test",
+				"C:\\src\\viewers\\plvr-new-aaaa\\indra\\newview\\skins\\default\\xui\\en\\floater_testing_buttons.xml"
+			],
+			[
+				"cmake",
+				"C:\\src\\viewers\\plvr-new-aaaa\\indra\\newview\\CMakeLists.txt"
+			],
+			[
+				"llfloaterre",
+				"C:\\src\\viewers\\plvr-new-aaaa\\indra\\newview\\llviewerfloaterreg.cpp"
+			],
+			[
+				"pipe",
+				"C:\\src\\viewers\\plvr-new-aaaa\\indra\\newview\\pipeline.cpp"
+			],
+			[
+				"floater",
+				"C:\\src\\viewers\\plvr-new-aaaa\\indra\\newview\\skins\\default\\xui\\en\\floater_tools.xml"
+			],
+			[
+				"featu",
+				"C:\\src\\viewers\\plvr-new-aaaa\\indra\\newview\\featuretable.txt"
+			],
+			[
+				"machin",
+				"C:\\src\\viewers\\plvr-new-aaaa\\indra\\newview\\skins\\default\\xui\\en\\panel_machinima.xml"
+			],
+			[
+				"graphics",
+				"C:\\src\\viewers\\plvr-new-aaaa\\indra\\newview\\skins\\default\\xui\\en\\panel_preferences_graphics1.xml"
+			],
+			[
+				"achi",
+				"C:\\src\\viewers\\plvr-new-aaaa\\indra\\newview\\skins\\default\\xui\\en\\panel_machinima.xml"
+			],
+			[
+				"tex",
+				"C:\\src\\viewers\\plvr-new-aaaa\\indra\\newview\\skins\\default\\textures\\textures.xml"
+			],
+			[
+				"mahni",
+				"C:\\src\\viewers\\plvr-new-aaaa\\indra\\newview\\skins\\default\\xui\\en\\panel_machinima.xml"
+			],
+			[
+				"fk",
+				"D:\\src\\lsl\\kemono-clothing-hider\\presets\\Clothing\\FK-UBER armor.lsl"
+			],
+			[
+				"toolbar",
+				"C:\\src\\viewers\\plvr-new-aaaa\\indra\\newview\\skins\\default\\xui\\en\\panel_toolbar_view.xml"
+			],
+			[
+				"autob",
+				"C:\\src\\viewers\\plvr-new-aaaa\\autobuild.xml"
+			],
+			[
+				"llviewerte",
+				"C:\\src\\viewers\\plvr-new-aaaa\\indra\\newview\\llviewertexturelist.cpp"
+			],
+			[
+				"fs",
+				"C:\\src\\viewers\\plvr-new-aaaa\\indra\\newview\\fsdata.cpp"
+			],
+			[
+				"autobuild",
+				"C:\\src\\viewers\\plvr-new-aaaa\\autobuild.xml"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 335.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 378.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": false,
+	"side_bar_visible": false,
+	"side_bar_width": 213.0,
+	"status_bar_visible": false,
+	"template_settings":
+	{
+	}
+}
