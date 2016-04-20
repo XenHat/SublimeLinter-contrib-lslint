@@ -9,18 +9,11 @@ This linter plugin for [SublimeLinter][docs] provides an interface to [lslint][l
 SublimeLinter 3 must be installed in order to use this plugin. If SublimeLinter 3 is not installed, please follow the instructions [here][installation].
 
 ### Linter installation
-Before using this plugin, you must ensure that `lslint` is installed or otherwise available on your system . To acquire `lslint`, do the following:
+Before using this plugin, you must ensure that the `sublime-text-lsl` plugin is installed as it provides both the lslint binary and the syntax definitions required for this linter to work.
 
-#### Option 1: lslint standalone
-* Refer to the [lslint homepage][lslint-homepage].
+* Refer to [Makopo/sublime-text-lsl](https://github.com/Makopo/sublime-text-lsl) and add the binary provided by the plugin to your path. Automatic configuration *may* happen in the future.
 
-#### Option 2: Binary provided by the sublime-text-lsl plugin
-* Refer to [Makopo/sublime-text-lsl](https://github.com/Makopo/sublime-text-lsl) and add the binary provided by the plugin to your path (advanced users)
-
-**Note:** While the plugin above itself is not required for `sublimeLinter-lslint` to work, both plugins are entirely separated and can be used together without conflicts.
-
-
-*This plugin requires* `lslint` __0.4.2__ *or later.*
+**Note** *This plugin requires* `lslint` __0.4.2__ *or later.*
 
 ### Linter configuration
 In order for `lslint` to be executed by SublimeLinter, you must ensure that its path is available to SublimeLinter. Before going any further, please read and follow the steps in [“Finding a linter executable”](http://sublimelinter.readthedocs.org/en/latest/troubleshooting.html#finding-a-linter-executable) through “Validating your PATH” in the documentation.
