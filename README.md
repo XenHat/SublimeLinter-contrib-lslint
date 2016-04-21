@@ -1,7 +1,7 @@
 SublimeLinter-contrib-lslint
 ================================
 
-[![Build Status](https://travis-ci.org/XenHat/SublimeLinter-contrib-lslint.svg?branch=master)](https://travis-ci.org/Xenhat/SublimeLinter-contrib-lslint)
+[![Build Status](https://travis-ci.org/XenHat/SublimeLinter-contrib-lslint.svg?branch=master)](https://travis-ci.org/XenHat/SublimeLinter-contrib-lslint)
 
 This linter plugin for [SublimeLinter][docs] provides an interface to [lslint][lslint-homepage]. It will be used with files that have the `lsl` and `ossl` syntax.
 
