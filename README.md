@@ -20,6 +20,8 @@ In order for `lslint` to be executed by SublimeLinter, you must ensure that its 
 
 Once you have installed and configured `lslint`, you can proceed to install the SublimeLinter-contrib-lslint plugin if it is not yet installed.
 
+**Note** *An experimental binary pair is available at* [OciiDii-Works/lslint](https://github.com/Ociidii-Works/lslint) *which has been compiled with VS2015 and may eventually provide better, linter-friendly output.*
+
 ### Plugin installation
 Please use [Package Control][pc] to install the linter plugin. This will ensure that the plugin will be updated when new versions are available. If you want to install from source so you can modify the source code, you probably know what you are doing so we won't cover that here.
 
