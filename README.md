@@ -23,10 +23,12 @@ Once you have installed and configured `lslint`, you can proceed to install the 
 **Note** *An experimental binary pair is available at* [OciiDii-Works/lslint](https://github.com/Ociidii-Works/lslint) *which has been compiled with VS2015 and may eventually provide better, linter-friendly output.*
 
 ### Plugin installation
+
+**Note** This package is not yet in the public repository. To use this linter immediately, please add this repository to the package manager as described in the [package manager user manual](https://packagecontrol.io/docs/usage).
+Then, you can proceed to  the installation as usual:
+
+
 Please use [Package Control][pc] to install the linter plugin. This will ensure that the plugin will be updated when new versions are available. If you want to install from source so you can modify the source code, you probably know what you are doing so we won't cover that here.
-
-
-**Note** For the time being, please add this repository to the package manager as described in the [package manager user manual](https://packagecontrol.io/docs/usage)
 
 To install via Package Control, do the following:
 
