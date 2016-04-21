@@ -16,7 +16,7 @@ from SublimeLinter.lint import Linter, util
 class Lslint(Linter):
     """Provides an interface to lslint."""
 
-    syntax = ('lsl', 'ossl' )
+    syntax = ('lsl', 'ossl')
     cmd = 'lslint'
     executable = None
     version_args = '-V'
