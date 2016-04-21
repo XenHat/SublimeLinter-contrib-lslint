@@ -37,14 +37,8 @@ To install via Package Control, do the following:
 1. When the plugin list appears, type `lslint`. Among the entries you should see `SublimeLinter-contrib-lslint`. If that entry is not highlighted, use the keyboard or mouse to select it.
 
 ## Settings
-For general information on how SublimeLinter works with settings, please see [Settings][settings]. For information on generic linter settings, please see [Linter Settings][linter-settings].
 
-In addition to the standard SublimeLinter settings, SublimeLinter-contrib-lslint provides its own settings. Those marked as “Inline Setting” or “Inline Override” may also be [used inline][inline-settings].
-
-|Setting|Description|Inline Setting|Inline Override|
-|:------|:----------|:------------:|:-------------:|
-|foo|Something.|&#10003;| |
-|bar|Something else.| |&#10003;|
+No settings yet.
 
 ## Contributing
 If you would like to contribute enhancements or fixes, please do the following:
