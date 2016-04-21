@@ -24,7 +24,7 @@ class Lslint(Linter):
     version_requirement = '>= 0.4.2'
     regex = r'''(?xi)
     ((?P<warning> WARN)|(?P<error>ERROR))
-    \:\:\s\(\s+(?P<line>\d+),\s+(?P<col>\d+)
+    \:\:\s\(\s*(?P<line>\d+),\s*(?P<col>\d+)
     \)\:\s(?P<message>.*)
     '''
     multiline = True
