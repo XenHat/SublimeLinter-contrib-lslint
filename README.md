@@ -21,6 +21,7 @@ Currently, `sublimelinter-contrib-lslint` is intented to be a **companion** to t
 Before going any further, please read and follow the steps in [“Finding a linter executable”](http://sublimelinter.readthedocs.org/en/latest/troubleshooting.html#finding-a-linter-executable) through “Validating your PATH” in the documentation to ensure the linter is working properly with Sublime Text.
 
 **Note** *This plugin requires* `lslint` __0.4.2__ *or later.*
+
 **Note 2** *An experimental `lslint` binary pair is available at* [OciiDii-Works/lslint](https://github.com/Ociidii-Works/lslint) *which has been compiled with Microsoft Visual C++ 14/Visual Studio 2015 and may eventually provide better, linter-friendly output.*
 
 ## Too Long, Didn't read (TL;DR):
