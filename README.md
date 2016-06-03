@@ -10,23 +10,27 @@ If you do not know what a linter is or are new to SublimeLinter, please refer to
 
 ## Requirements and dependencies
 
+### Short version / Quick start:
+
+Install [SublimeLinter 3][installation] and the [Sublime-text-lsl][makopo-subl-lsl] plugin and add the binaries provided by Sublime-text-lsl to your path.
+
+### Long version / Advanced users:
+
 #### SublimeLinter
 
 **SublimeLinter 3** must be installed in order to use this plugin. If SublimeLinter 3 is not installed, please follow the instructions [here][installation].
 
 #### Sublime-Text-LSL
 
-Currently, `sublimelinter-contrib-lslint` is intented to be a **companion** to the **[Sublime-text-lsl][makopo-subl-lsl]** plugin and **relies** on it for the file format and syntax definitions. You need to install Sublime-text-lsl for this linter to be **fully functional**. Automatic configuration *may* happen in the future.
+Currently, `sublimelinter-contrib-lslint` was developed as a **companion** to the **[Sublime-text-lsl][makopo-subl-lsl]** plugin. You are free to use the LSL/OSSL definition files and lslint binary of your choice, however compatibility can only be guaranteed with the [pclewis's lslint](https://github.com/pclewis/lslint) binary and their derivatives, **including [Builder's Brewery's](https://github.com/buildersbrewery/linden-scripting-language) syntax files.
+
+Bottom line: You need a linter executable and LSL/OSSL syntax definition files.
 
 Before going any further, please read and follow the steps in [“Finding a linter executable”](http://sublimelinter.readthedocs.org/en/latest/troubleshooting.html#finding-a-linter-executable) through “Validating your PATH” in the documentation to ensure the linter is working properly with Sublime Text.
 
-**Note** *This plugin requires* `lslint` __0.4.2__ *or later.*
+**Note** *This plugin currently has a hard requirement of* `lslint` __0.4.2__ *or later.*
 
-**Note 2** *An experimental `lslint` binary pair is available at* [OciiDii-Works/lslint](https://github.com/Ociidii-Works/lslint) *which has been compiled with Microsoft Visual C++ 14/Visual Studio 2015 and may eventually provide better, linter-friendly output.*
-
-## Too Long, Didn't read (TL;DR):
-
-Install [SublimeLinter 3][installation] and the [Sublime-text-lsl][makopo-subl-lsl] plugin and add the binaries provided by Sublime-text-lsl to your path.
+**Note 2** *An experimental `lslint` binary pair is available at* [OciiDii-Works/lslint](https://github.com/Ociidii-Works/lslint) *which has been compiled with Microsoft Visual C++ 14/Visual Studio 2015 by me.*
 
 ## SublimeLinter-contrib-lsl installation
 
