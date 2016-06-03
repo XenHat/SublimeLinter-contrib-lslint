@@ -22,7 +22,7 @@ Install [SublimeLinter 3][installation] and the [Sublime-text-lsl][makopo-subl-l
 
 #### Sublime-Text-LSL
 
-Currently, `sublimelinter-contrib-lslint` was developed as a **companion** to the **[Sublime-text-lsl][makopo-subl-lsl]** plugin. You are free to use the LSL/OSSL definition files and lslint binary of your choice, however compatibility can only be guaranteed with the [pclewis's lslint](https://github.com/pclewis/lslint) binary and their derivatives, **including [Builder's Brewery's](https://github.com/buildersbrewery/linden-scripting-language) syntax files.
+Currently, `sublimelinter-contrib-lslint` was developed as a **companion** to the **[Sublime-text-lsl][makopo-subl-lsl]** plugin. You are free to use the LSL/OSSL definition files and lslint binary of your choice, however compatibility can only be guaranteed with the [pclewis's lslint](https://github.com/pclewis/lslint) binary and their derivatives, **including [Builder's Brewery's](https://github.com/buildersbrewery/linden-scripting-language) syntax files**.
 
 Bottom line: You need a linter executable and LSL/OSSL syntax definition files.
 
@@ -74,3 +74,4 @@ Thank you for helping out!
 [inline-settings]: http://sublimelinter.readthedocs.org/en/latest/settings.html#inline-settings
 [makopo-lslint]: https://github.com/Makopo/lslint
 [makopo-subl-lsl]: https://github.com/Makopo/sublime-text-lsl
+
