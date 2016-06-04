@@ -1,36 +1,32 @@
 SublimeLinter-contrib-lslint [![Build Status](https://travis-ci.org/XenHat/SublimeLinter-contrib-lslint.svg?branch=master)](https://travis-ci.org/XenHat/SublimeLinter-contrib-lslint)
 ================================
 
-This linter plugin for [SublimeLinter][docs] provides an interface to [lslint][makopo-lslint]. It will be used with files that have the `lsl` and `ossl` syntax.
+This linter plugin for [SublimeLinter][docs] provides an interface to `lslint`.
+It will be used with files that have the `lsl` and `ossl` syntax.
+
 If you do not know what a linter is or are new to SublimeLinter, please refer to the [SublimeLinter][docs] documentation.
 
-Note: This plugin's packaging and installation process is still very much in it'ss infancy and not considered "final". Be aware that the edges are rough, may cut, and the author aknowledges them as not user-friendly. This is intented to be resolved.
+## 1. Requirements and dependencies
 
-## Requirements and dependencies
+You need to provide a `lslint` binary for this linter to function.
 
-### Short version / Quick start:
+#### Quick Start:
 
-Install [SublimeLinter 3][installation] and the [Sublime-text-lsl][makopo-subl-lsl] plugin and add the binaries provided by Sublime-text-lsl to your path.
+* Install [SublimeLinter 3][installation]
+* Download/clone [my standalone binaries repo][ocdlslint] and [augment your path](https://sublimelinter.readthedocs.io/en/latest/troubleshooting.html#finding-a-linter-executable) with them.
 
-### Long version / Advanced users:
+Continue to Step 2.
 
-#### SublimeLinter
+##### Advanced users:
 
-SublimeLinter 3 must be installed in order to use this plugin. If SublimeLinter 3 is not installed, please follow the instructions [here][installation].
+`Sublimelinter-contrib-lslint` looks for the generic `lslint` executable by name, so you can use any derivative version of [pclewis's lslint](https://github.com/pclewis/lslint) you desire, as long as its version is **0.4.2 or higher**.
 
-#### Sublime-Text-LSL
+Beside my own, common repository/packages including `lslint` are:
+ * [Sublime-text-lsl][makopo-subl-lsl] Package (Available in Package Control)
+ * [pclewis's original lslint][pclewis]
+ * [Builder's Brewery LSL](https://github.com/buildersbrewery/linden-scripting-language)
 
-Currently, `sublimelinter-contrib-lslint` was developed as a companion to the [Sublime-text-lsl][makopo-subl-lsl] plugin. You are free to use the LSL/OSSL definition files and lslint binary of your choice, however compatibility can only be guaranteed with the [pclewis's lslint](https://github.com/pclewis/lslint) binary and their derivatives, including [Builder's Brewery's](https://github.com/buildersbrewery/linden-scripting-language) syntax files.
-
-Bottom line: You need a linter executable and LSL/OSSL syntax definition files.
-
-Before going any further, please read and follow the steps in [“Finding a linter executable”](http://sublimelinter.readthedocs.org/en/latest/troubleshooting.html#finding-a-linter-executable) through “Validating your PATH” in the documentation to ensure the linter is working properly with Sublime Text.
-
-*Note: This plugin currently has a hard requirement of* `lslint` __0.4.2__ *or later.*
-
-*Note 2: An experimental `lslint` binary pair is available at* [OciiDii-Works/lslint](https://github.com/Ociidii-Works/lslint) *which has been compiled with Microsoft Visual C++ 14/Visual Studio 2015 by me.*
-
-## SublimeLinter-contrib-lsl installation
+## 2. Installing the linter
 
 Please use [Package Control][pc] to install the linter plugin. This will ensure that the plugin will be updated when new versions are available. If you want to install from source so you can modify the source code, you probably know what you are doing so we won't cover that here.
 
@@ -62,14 +58,18 @@ Please note that modifications should follow these coding guidelines:
 
 Thank you for helping out!
 
-[docs]: http://sublimelinter.readthedocs.org
-[installation]: http://sublimelinter.readthedocs.org/en/latest/installation.html
-[locating-executables]: http://sublimelinter.readthedocs.org/en/latest/usage.html#how-linter-executables-are-located
-[pc]: https://sublime.wbond.net/installation
+## Special Thanks
+
+* [Makopo][makopo-subl-lsl] for Sublime-Text-LSL and lslint improvements
+* [pclewis][pclewis] for creating and/or providing lslint to the community
+
 [cmd]: http://docs.sublimetext.info/en/sublime-text-3/extensibility/command_palette.html
-[settings]: http://sublimelinter.readthedocs.org/en/latest/settings.html
-[linter-settings]: http://sublimelinter.readthedocs.org/en/latest/linter_settings.html
-[inline-settings]: http://sublimelinter.readthedocs.org/en/latest/settings.html#inline-settings
+[docs]: https://sublimelinter.readthedocs.io/en/latest/
+[installation]: https://sublimelinter.readthedocs.io/en/latest/installation.html
+[linter-settings]: https://sublimelinter.readthedocs.io/en/latest/linter_settings.html
+[locating-executables]: https://sublimelinter.readthedocs.io/en/latest/usage.html#how-linter-executables-are-located
 [makopo-lslint]: https://github.com/Makopo/lslint
 [makopo-subl-lsl]: https://github.com/Makopo/sublime-text-lsl
-
+[ocdlslint]: https://github.com/Ociidii-Works/sublimelinter-contrib-lslint-bin
+[pc]: https://sublime.wbond.net/installation
+[pclewis]: https://github.com/pclewis/lslint
