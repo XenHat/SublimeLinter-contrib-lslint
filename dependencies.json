@@ -1,7 +1,0 @@
-{
-	"*": {
-		"*": [
-			"sublimelinter-contrib-lslint-bin"
-		]
-	}
-}
