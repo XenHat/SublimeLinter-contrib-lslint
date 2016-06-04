@@ -4,7 +4,7 @@
 		{
 			"details": "https://github.com/XenHat/SublimeLinter-contrib-lslint",
 			"author": ["xenhat"],
-			"labens": ["linting"],
+			"labels": ["linting"],
 			"releases": [
 				{
 					"sublime_text": ">=3000",
