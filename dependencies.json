@@ -1,0 +1,16 @@
+{
+	"schema_version": "3.0.0",
+	"packages": [
+		{
+			"details": "https://github.com/Ociidii-Works/sublime-lslint-bin",
+			"author": ["makopo","xenhat"],
+			"labens": ["linting"],
+			"releases": [
+				{
+					"sublime_text": ">=3000",
+					"tags": true
+				}
+			]
+		}
+	]
+}
