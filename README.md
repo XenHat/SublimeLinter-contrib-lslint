@@ -1,12 +1,10 @@
-SublimeLinter-contrib-lslint
+SublimeLinter-contrib-lslint [![Build Status](https://travis-ci.org/XenHat/SublimeLinter-contrib-lslint.svg?branch=master)](https://travis-ci.org/XenHat/SublimeLinter-contrib-lslint)
 ================================
 
 This linter plugin for [SublimeLinter][docs] provides an interface to [lslint][makopo-lslint]. It will be used with files that have the `lsl` and `ossl` syntax.
 If you do not know what a linter is or are new to SublimeLinter, please refer to the [SublimeLinter][docs] documentation.
 
 Note: This plugin's packaging and installation process is still very much in it'ss infancy and not considered "final". Be aware that the edges are rough, may cut, and the author aknowledges them as not user-friendly. This is intented to be resolved.
-
-[![Build Status](https://travis-ci.org/XenHat/SublimeLinter-contrib-lslint.svg?branch=master)](https://travis-ci.org/XenHat/SublimeLinter-contrib-lslint)
 
 ## Requirements and dependencies
 
