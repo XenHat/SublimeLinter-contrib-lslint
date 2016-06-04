@@ -4,7 +4,7 @@ SublimeLinter-contrib-lslint
 This linter plugin for [SublimeLinter][docs] provides an interface to [lslint][makopo-lslint]. It will be used with files that have the `lsl` and `ossl` syntax.
 If you do not know what a linter is or are new to SublimeLinter, please refer to the [SublimeLinter][docs] documentation.
 
-**Note:** This plugin's packaging and installation process is still very much in it'ss infancy and not considered "final". Be aware that the edges are rough, may cut, and the author aknowledges them as not user-friendly. This is intented to be resolved.
+Note: This plugin's packaging and installation process is still very much in it'ss infancy and not considered "final". Be aware that the edges are rough, may cut, and the author aknowledges them as not user-friendly. This is intented to be resolved.
 
 [![Build Status](https://travis-ci.org/XenHat/SublimeLinter-contrib-lslint.svg?branch=master)](https://travis-ci.org/XenHat/SublimeLinter-contrib-lslint)
 
@@ -18,19 +18,19 @@ Install [SublimeLinter 3][installation] and the [Sublime-text-lsl][makopo-subl-l
 
 #### SublimeLinter
 
-**SublimeLinter 3** must be installed in order to use this plugin. If SublimeLinter 3 is not installed, please follow the instructions [here][installation].
+SublimeLinter 3 must be installed in order to use this plugin. If SublimeLinter 3 is not installed, please follow the instructions [here][installation].
 
 #### Sublime-Text-LSL
 
-Currently, `sublimelinter-contrib-lslint` was developed as a **companion** to the **[Sublime-text-lsl][makopo-subl-lsl]** plugin. You are free to use the LSL/OSSL definition files and lslint binary of your choice, however compatibility can only be guaranteed with the [pclewis's lslint](https://github.com/pclewis/lslint) binary and their derivatives, **including [Builder's Brewery's](https://github.com/buildersbrewery/linden-scripting-language) syntax files**.
+Currently, `sublimelinter-contrib-lslint` was developed as a companion to the [Sublime-text-lsl][makopo-subl-lsl] plugin. You are free to use the LSL/OSSL definition files and lslint binary of your choice, however compatibility can only be guaranteed with the [pclewis's lslint](https://github.com/pclewis/lslint) binary and their derivatives, including [Builder's Brewery's](https://github.com/buildersbrewery/linden-scripting-language) syntax files.
 
 Bottom line: You need a linter executable and LSL/OSSL syntax definition files.
 
 Before going any further, please read and follow the steps in [“Finding a linter executable”](http://sublimelinter.readthedocs.org/en/latest/troubleshooting.html#finding-a-linter-executable) through “Validating your PATH” in the documentation to ensure the linter is working properly with Sublime Text.
 
-**Note** *This plugin currently has a hard requirement of* `lslint` __0.4.2__ *or later.*
+*Note: This plugin currently has a hard requirement of* `lslint` __0.4.2__ *or later.*
 
-**Note 2** *An experimental `lslint` binary pair is available at* [OciiDii-Works/lslint](https://github.com/Ociidii-Works/lslint) *which has been compiled with Microsoft Visual C++ 14/Visual Studio 2015 by me.*
+*Note 2: An experimental `lslint` binary pair is available at* [OciiDii-Works/lslint](https://github.com/Ociidii-Works/lslint) *which has been compiled with Microsoft Visual C++ 14/Visual Studio 2015 by me.*
 
 ## SublimeLinter-contrib-lsl installation
 
