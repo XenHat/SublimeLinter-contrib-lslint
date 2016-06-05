@@ -23,7 +23,7 @@ You're advised to install [Will Bond](https://wbond.net)'s [Package Control](htt
   * [Ociidii-works/sublimelinter-contrib-lslint-bin](https://github.com/Ociidii-Works/sublimelinter-contrib-lslint-bin)
 * for syntax highlighting and autocompletion of `lsl` and `ossl` syntax use:
   * [makopo/sublime-text-lsl](https://github.com/makopo/sublime-text-lsl) (also available on Package Control as `LSL`)
-  * see `LSL` subfolder of [buildersbrewery/linden-scripting-language](https://github.com/buildersbrewery/linden-scripting-language)
+  * see `sublimetext/LSL` subfolder of [buildersbrewery/linden-scripting-language](https://github.com/buildersbrewery/linden-scripting-language)
 * Windows users are recommended to use [cmderdev/cmder](https://github.com/cmderdev/cmder)
   * with lslint binary for windows in `cmder/bin/lslint.exe`
   * with ST3 dev **Portable** installed to `cmder/vendor/sublime`
