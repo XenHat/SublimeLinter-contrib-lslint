@@ -18,9 +18,7 @@ You're advised to install [Will Bond](https://wbond.net)'s [Package Control](htt
 * [Sublime Text](https://www.sublimetext.com)
 * [SublimeLinter 3](https://github.com/sublimelinter/sublimelinter3) (see [installation](http://sublimelinter.readthedocs.org/en/latest/installation.html))
 * `Sublimelinter-contrib-lslint` looks for the generic `lslint` executable by name, so you can use any derivative version of pclewis's original lslint you desire as long as its version is **0.4.2 or higher**:
-  * [pclewis/lslint](https://github.com/pclewis/lslint)
-  * [makopo/lslint](https://github.com/makopo/lslint)
-  * [Ociidii-works/sublimelinter-contrib-lslint-bin](https://github.com/Ociidii-Works/sublimelinter-contrib-lslint-bin)
+  * I recommend [makopo/lslint](https://github.com/makopo/lslint)
 * for syntax highlighting and autocompletion of `lsl` and `ossl` syntax use:
   * [makopo/sublime-text-lsl](https://github.com/makopo/sublime-text-lsl) (also available on Package Control as `LSL`)
   * see `sublimetext/LSL` subfolder of [buildersbrewery/linden-scripting-language](https://github.com/buildersbrewery/linden-scripting-language)
