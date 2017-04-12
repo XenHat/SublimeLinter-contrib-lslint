@@ -5,7 +5,7 @@
 [![GitHub license](https://img.shields.io/github/license/XenHat/SublimeLinter-contrib-lslint.svg?style=flat-square)](https://github.com/XenHat/SublimeLinter-contrib-lslint/blob/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/XenHat/SublimeLinter-contrib-lslint.svg?style=flat-square)](https://github.com/XenHat/SublimeLinter-contrib-lslint/issues?utf8=✓&q=is%3Aissue+is%3Aopen)
 
-This [SublimeLinter 3](https://github.com/sublimelinter/sublimelinter3) plugin provides an interface to lslint ([pclewis/lslint](https://github.com/pclewis/lslint), [makopo/lslint](https://github.com/makopo/lslint), [ociidii-works/lslint](https://github.com/ociidii-works/lslint)).
+This [SublimeLinter 3](https://github.com/sublimelinter/sublimelinter3) plugin provides an interface to lslint.
 This plugin applies linting to files that have the `lsl` and `ossl` syntax.
 If you do not know what a linter is or are new to SublimeLinter, please refer to the [SublimeLinter documentation](http://www.sublimelinter.com/en/latest).
 
@@ -17,11 +17,11 @@ You're advised to install [Will Bond](https://wbond.net)'s [Package Control](htt
 
 * [Sublime Text](https://www.sublimetext.com)
 * [SublimeLinter 3](https://github.com/sublimelinter/sublimelinter3) (see [installation](http://sublimelinter.readthedocs.org/en/latest/installation.html))
-* `Sublimelinter-contrib-lslint` looks for the generic `lslint` executable by name, so you can use any derivative version of pclewis's original lslint you desire as long as its version is **0.4.2 or higher**:
-  * I recommend [makopo/lslint](https://github.com/makopo/lslint)
+* `Sublimelinter-contrib-lslint` looks for the generic `lslint` executable by name, therefore is compatible with most derivative versions of pclewis's original lslint. *This linter plugin is configured to support version **0.4.2 or higher***:
+  * Tested against [makopo/lslint](https://github.com/makopo/lslint), therefore recommended.
 * for syntax highlighting and autocompletion of `lsl` and `ossl` syntax use:
-  * [makopo/sublime-text-lsl](https://github.com/makopo/sublime-text-lsl) (also available on Package Control as `LSL`)
-  * see `sublimetext/LSL` subfolder of [buildersbrewery/linden-scripting-language](https://github.com/buildersbrewery/linden-scripting-language)
+  * Syntax definitions from Builder's Brewery (See the `sublimetext/LSL` subfolder of [buildersbrewery/linden-scripting-language](https://github.com/buildersbrewery/linden-scripting-language)
+  * alternatively, [makopo/sublime-text-lsl](https://github.com/makopo/sublime-text-lsl) (also available on Package Control as `LSL`)
 * Windows users are recommended to use [cmderdev/cmder](https://github.com/cmderdev/cmder)
   * with lslint binary for windows in `cmder/bin/lslint.exe`
   * with ST3 dev **Portable** installed to `cmder/vendor/sublime`
