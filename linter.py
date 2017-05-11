@@ -93,6 +93,7 @@ def plugin_loaded():
 
 
 class Lslint(Linter):
+
     """Main implementation of the interface."""
     syntax = ('lsl', 'ossl')
     cmd = 'lslint'
