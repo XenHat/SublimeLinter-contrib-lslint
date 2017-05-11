@@ -44,11 +44,13 @@ MSG = '''\
 
 
 def is_installed():
+"""Check if the LSL package is installed."""
     pkgctrl_settings = sublime.load_settings(PKGCTRL_SETTINGS)
     return LSL_PACKAGE in set(pkgctrl_settings.get('installed_packages', []))
 
 
 def on_navigate(href):
+"""Intermediary logic to install the package or hide the popup."""
     if href.startswith('install'):
         install()
     else:
@@ -56,6 +58,7 @@ def on_navigate(href):
 
 
 def install():
+"""This installs the LSL package from package control."""
     print('Installing `{}` ...'.format(LSL_PACKAGE))
     sublime.active_window().run_command(
         'advanced_install_package', {'packages': LSL_PACKAGE}
@@ -64,10 +67,12 @@ def install():
 
 
 def hide():
+"""Hides the install popup."""
     sublime.active_window().active_view().hide_popup()
 
 
 def plugin_loaded():
+"""Shows a popup to the user to propose the installation of the LSL package."""
         try:
             from package_control import events
             if events.install(LINTER_PACKAGE) and not is_installed() and int(sublime.version()) >= 3124:
@@ -87,6 +92,7 @@ def plugin_loaded():
 
 
 class Lslint(Linter):
+"""This class provides the interface between lslint and SublimeLinter."""
     syntax = ('lsl', 'ossl')
     cmd = 'lslint'
     executable = 'lslint'
