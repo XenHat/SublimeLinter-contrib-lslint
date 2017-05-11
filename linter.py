@@ -119,6 +119,7 @@ class Lslint(Linter):
 
     @classmethod
     def which(cls, cmd):
+        """Find native lslint executable in Operating System path."""
         if not is_installed():
             # we assume the 'lslint' executable is in our PATH
             return None
