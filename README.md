@@ -17,23 +17,18 @@ You're advised to install [Will Bond](https://wbond.net)'s [Package Control](htt
 
 * [Sublime Text](https://www.sublimetext.com)
 * [SublimeLinter 3](https://github.com/sublimelinter/sublimelinter3) (see [installation](http://sublimelinter.readthedocs.org/en/latest/installation.html))
-* `Sublimelinter-contrib-lslint` looks for the generic `lslint` executable by name, therefore is compatible with most derivative versions of pclewis's original lslint. *This linter plugin is configured to support version **0.4.2 or higher***:
-  * Tested against [makopo/lslint](https://github.com/makopo/lslint), therefore recommended.
-* for syntax highlighting and autocompletion of `lsl` and `ossl` syntax use:
-  * Syntax definitions from Builder's Brewery (See the `sublimetext/LSL` subfolder of [buildersbrewery/linden-scripting-language](https://github.com/buildersbrewery/linden-scripting-language)
-  * alternatively, [makopo/sublime-text-lsl](https://github.com/makopo/sublime-text-lsl) (also available on Package Control as `LSL`)
-* Windows users are recommended to use [cmderdev/cmder](https://github.com/cmderdev/cmder)
-  * with lslint binary for windows in `cmder/bin/lslint.exe`
-  * with ST3 dev **Portable** installed to `cmder/vendor/sublime`
-  * with `subl="%CMDER_ROOT%\vendor\sublime\sublime_text.exe" $*` added to `cmder/config/aliases`
+
+## Linter executable
+
+`Sublimelinter-contrib-lslint` looks for the generic `lslint` executable by name, therefore is compatible with most derivative versions of pclewis's original lslint. *Note: This linter plugin is configured to support version **0.4.2 or higher**.*
+
+The plugin will propose to install the [LSL](https://github.com/Makopo/sublime-text-lsl) package if it cannot detect `lslint` in your path.
+
+A more frequently updated version of `lslint` is available at [makopo/lslint](https://github.com/makopo/lslint), and is fully compatible with this linter.
 
 ## Installation
 
 In Sublime Text select from the menu `Tools > Command Palette` (see also [Command Palette](http://docs.sublimetext.info/en/sublime-text-3/extensibility/command_palette.html)), select `Package Control: Install Package` and hit <kbd>Enter ↩</kbd>, then select `SublimeLinter-contrib-lslint` and hit <kbd>Enter ↩</kbd>.
-
-## About linter executables
-
-Please read the sections [`How linter executables are located`](http://sublimelinter.readthedocs.io/en/latest/usage.html#how-linter-executables-are-located) and [`Finding a linter executable`](http://sublimelinter.readthedocs.org/en/latest/troubleshooting.html#finding-a-linter-executable) in the SublimeLinter 3 documentation.
 
 ## Contributing
 
