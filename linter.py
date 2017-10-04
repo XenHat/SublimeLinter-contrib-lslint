@@ -12,46 +12,52 @@ import sublime
 from SublimeLinter.lint import Linter, util
 import os
 
+'''
+SublimeLinter Installer
+'''
 
-LSL_PACKAGE = 'LSL'
+import os
+import sublime
+
+SUBL_LINTER_PKG = 'SublimeLinter'
 PKGCTRL_SETTINGS = 'Package Control.sublime-settings'
 
-LINTER_PACKAGE = 'SublimeLinter-contrib-lslint'
+PKG_NAME = os.path.splitext(
+    os.path.basename(os.path.dirname(__file__))
+)[0]
 
 MSG = '''\
-<div id="lsl-pkg-installer">
+<div id="SublimeLinter-installer">
   <style>
-    #lsl-pkg-installer {{
+    #SublimeLinter-installer {{
       padding: 1rem;
       line-height: 1.5;
     }}
-    #lsl-pkg-installer code {{
+    #SublimeLinter-installer code {{
       background-color: color(var(--background) blend(var(--foreground) 80%));
       line-height: 1;
       padding: 0.25rem;
     }}
-    #lsl-pkg-installer a {{
+    #SublimeLinter-installer a {{
       padding: 0;
       margin: 0;
     }}
   </style>
 
-  {} requires <code>LSL</code> package for enhanced<br>support of
-  the Linden Scripting Language.
+  {} requires <code>SublimeLinter</code> package.
   <br><br>Would you like to install it?<br>
   <br><a href="install">Install</a> <a href="cancel">Cancel</a>
 </div>
-'''.format(LINTER_PACKAGE)
+'''.format(PKG_NAME)
 
 
 def is_installed():
-    """Check if the LSL package is installed."""
     pkgctrl_settings = sublime.load_settings(PKGCTRL_SETTINGS)
-    return LSL_PACKAGE in set(pkgctrl_settings.get('installed_packages', []))
+
+    return SUBL_LINTER_PKG in set(pkgctrl_settings.get('installed_packages', []))
 
 
 def on_navigate(href):
-    """Intermediary logic to install the package or hide the popup."""
     if href.startswith('install'):
         install()
     else:
@@ -59,38 +65,32 @@ def on_navigate(href):
 
 
 def install():
-    """Install the LSL package from package control."""
-    print('Installing `{}` ...'.format(LSL_PACKAGE))
+    print('Installing "{}" ...'.format(SUBL_LINTER_PKG))
     sublime.active_window().run_command(
-        'advanced_install_package', {'packages': LSL_PACKAGE}
+        'advanced_install_package', {'packages': SUBL_LINTER_PKG}
     )
     hide()
 
 
 def hide():
-    """Hide the install popup."""
     sublime.active_window().active_view().hide_popup()
 
 
 def plugin_loaded():
-        """Show a popup to the user to propose the installation of the LSL package."""
-        try:
-            from package_control import events
-            if events.install(LINTER_PACKAGE) and not is_installed() and int(sublime.version()) >= 3124:
-                window = sublime.active_window()
-                view = window.active_view()
-                window.focus_view(view)
-                row = int(view.rowcol(view.visible_region().a)[0] + 1)
-                view.show_popup(
-                    MSG,
-                    location=view.text_point(row, 5),
-                    max_width=800,
-                    max_height=800,
-                    on_navigate=on_navigate
-                )
-        except Exception as e:
-            raise e
+    from package_control import events
 
+    if events.install(PKG_NAME) and not is_installed():
+        window = sublime.active_window()
+        view = window.active_view()
+        window.focus_view(view)
+        row = int(view.rowcol(view.visible_region().a)[0] + 1)
+        view.show_popup(
+            MSG,
+            location=view.text_point(row, 5),
+            max_width=800,
+            max_height=800,
+            on_navigate=on_navigate
+        )
 
 class Lslint(Linter):
     """Main implementation of the interface."""
