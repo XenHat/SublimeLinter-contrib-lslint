@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# coding: utf-8
+#
 # Linter for the Linden Scripting Language
 # using SublimeLinter3, a code checking framework for Sublime Text 3
 #
@@ -10,6 +13,7 @@
 
 import sublime
 from SublimeLinter.lint import Linter, util
+import subprocess
 import os
 
 '''
@@ -93,18 +97,16 @@ def plugin_loaded():
         )
 
 class Lslint(Linter):
-    """Main implementation of the interface."""
 
-    syntax = ('lsl', 'ossl')
+    syntax = ('lsl')
     cmd = 'lslint'
-    executable = 'lslint'
     version_args = '-V'
     version_re = r'(?P<version>\d+\.\d+\.\d+)'
     version_requirement = '>= 0.4.2'
     regex = r'''(?xi)
-    ((?P<warning> WARN)|(?P<error>ERROR))
-    \:\:\s\(\s*(?P<line>\d+),\s*(?P<col>\d+)
-    \)\:\s(?P<message>.*)
+        (?:(?P<warning> WARN)|(?P<error>ERROR))\:\:\s
+        \(\s*(?P<line>\d+),\s*(?P<col>\d+)\)\:\s
+        (?P<message>.*)
     '''
     multiline = True
     line_col_base = (1, 1)
@@ -118,14 +120,23 @@ class Lslint(Linter):
     comment_re = None
 
     @classmethod
-    def which(cls, cmd):
-        """Find native lslint executable in Operating System path."""
-        if not is_installed():
-            # we assume the 'lslint' executable is in our PATH
-            return None
-        elif sublime.platform() == 'linux':
-            return os.path.join(sublime.packages_path(), 'LSL', 'linux', 'lslint')
-        elif sublime.platform() == 'osx':
-            return os.path.join(sublime.packages_path(), 'LSL', 'osx', 'lslint')
-        else:
-            return os.path.join(sublime.packages_path(), 'LSL', 'windows', 'lslint.exe')
+    def which(cls, executable):
+        # 64 if windows64, otherwise nothing, will be appended to platform name below
+        os_arch = ''
+        if os.name == 'nt':
+            output = subprocess.check_output(['wmic', 'os', 'get', 'OSArchitecture'])
+            # extract number only and reverse automatic conversion to binary
+            os_arch = output.split()[1][:2].decode('utf-8')
+
+        print('os_arch: %s' % os_arch)
+        lslpackagepath = os.path.join(sublime.packages_path(), 'LSL',sublime.platform()+os_arch,'lslint')
+        print('SublimeLinter-contrib-lslint: Attempting to auto-configure lslint executable from LSL package at %s' % lslpackagepath)
+        if os.name == 'nt':
+            if os.access(lslpackagepath, os.F_OK):
+                return lslpackagepath
+            else:
+                lslpackagepath = os.path.join(sublime.packages_path(), 'LSL',sublime.platform(),'lslint') # Attempt to fallback to 32-bit windows binary
+                print('SublimeLinter-contrib-lslint: Attempting to auto-configure lslint executable from LSL package at %s' % lslpackagepath)
+
+        return lslpackagepath
+        
