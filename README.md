@@ -38,3 +38,4 @@ Please see [`.github/CONTRIBUTING.md`](.github/CONTRIBUTING.md).
 
 * [@pclewis](https://github.com/pclewis) creating and/or providing lslint to the community
 * [@makopo](https://github.com/makopo) for [makopo/sublime-text-lsl](https://github.com/makopo/sublime-text-lsl) and lslint improvements
+* [@buildersbrewery](https://github.com/buildersbrewery) for care, feeding and additional tips
