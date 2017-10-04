@@ -127,8 +127,6 @@ class Lslint(Linter):
             output = subprocess.check_output(['wmic', 'os', 'get', 'OSArchitecture'])
             # extract number only and reverse automatic conversion to binary
             os_arch = output.split()[1][:2].decode('utf-8')
-
-        print('os_arch: %s' % os_arch)
         lslpackagepath = os.path.join(sublime.packages_path(), 'LSL',sublime.platform()+os_arch,'lslint')
         print('SublimeLinter-contrib-lslint: Attempting to auto-configure lslint executable from LSL package at %s' % lslpackagepath)
         if os.name == 'nt':
@@ -139,4 +137,3 @@ class Lslint(Linter):
                 print('SublimeLinter-contrib-lslint: Attempting to auto-configure lslint executable from LSL package at %s' % lslpackagepath)
 
         return lslpackagepath
-        
