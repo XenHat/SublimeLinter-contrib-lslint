@@ -98,6 +98,7 @@ def plugin_loaded():
             on_navigate=on_navigate
         )
 
+
 class Lslint(Linter):
     """Main implementation of the linter interface."""
 
@@ -125,19 +126,24 @@ class Lslint(Linter):
     @classmethod
     def which(cls, executable):
         """Find native lslint executable in Operating System path."""
+
+        # Make flake8 happy about line length
+        messagestring = ('SublimeLinter-contrib-lslint: Attempting to auto-configure '
+                         'lslint executable from LSL package at %s'
+                         )
+
         # 64 if windows64, otherwise nothing, will be appended to platform name below
         os_arch = ''
         if os.name == 'nt':
             output = subprocess.check_output(['wmic', 'os', 'get', 'OSArchitecture'])
             # extract number only and reverse automatic conversion to binary
             os_arch = output.split()[1][:2].decode('utf-8')
-        lslpackagepath = os.path.join(sublime.packages_path(), 'LSL',sublime.platform()+os_arch,'lslint')
-        print('SublimeLinter-contrib-lslint: Attempting to auto-configure lslint executable from LSL package at %s' % lslpackagepath)
+        lslpackagepath = os.path.join(sublime.packages_path(), 'LSL', sublime.platform()+os_arch, 'lslint')
+        print(messagestring % lslpackagepath)
         if os.name == 'nt':
-            if os.access(lslpackagepath, os.F_OK):
-                return lslpackagepath
-            else:
-                lslpackagepath = os.path.join(sublime.packages_path(), 'LSL',sublime.platform(),'lslint') # Attempt to fallback to 32-bit windows binary
-                print('SublimeLinter-contrib-lslint: Attempting to auto-configure lslint executable from LSL package at %s' % lslpackagepath)
+            if os.access(lslpackagepath, os.F_OK) is not True:
+                # Attempt to fallback to 32-bit windows binary
+                lslpackagepath = os.path.join(sublime.packages_path(), 'LSL', sublime.platform(), 'lslint')
+                print(messagestring % lslpackagepath)
 
         return lslpackagepath
