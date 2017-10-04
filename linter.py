@@ -56,12 +56,14 @@ MSG = '''\
 
 
 def is_installed():
+    """Check if the LSL package is installed."""
     pkgctrl_settings = sublime.load_settings(PKGCTRL_SETTINGS)
 
     return SUBL_LINTER_PKG in set(pkgctrl_settings.get('installed_packages', []))
 
 
 def on_navigate(href):
+    """Intermediary logic to install the package or hide the popup."""
     if href.startswith('install'):
         install()
     else:
@@ -69,6 +71,7 @@ def on_navigate(href):
 
 
 def install():
+    """Install the LSL package from package control."""
     print('Installing "{}" ...'.format(SUBL_LINTER_PKG))
     sublime.active_window().run_command(
         'advanced_install_package', {'packages': SUBL_LINTER_PKG}
@@ -77,10 +80,12 @@ def install():
 
 
 def hide():
+    """Hide the install popup."""
     sublime.active_window().active_view().hide_popup()
 
 
 def plugin_loaded():
+    """Show a popup to the user to propose the installation of the LSL package."""
     from package_control import events
 
     if events.install(PKG_NAME) and not is_installed():
@@ -97,7 +102,7 @@ def plugin_loaded():
         )
 
 class Lslint(Linter):
-
+    """Main implementation of the linter interface."""
     syntax = ('lsl')
     cmd = 'lslint'
     version_args = '-V'
@@ -121,6 +126,7 @@ class Lslint(Linter):
 
     @classmethod
     def which(cls, executable):
+        """Find native lslint executable in Operating System path."""
         # 64 if windows64, otherwise nothing, will be appended to platform name below
         os_arch = ''
         if os.name == 'nt':
