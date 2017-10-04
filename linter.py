@@ -13,15 +13,12 @@
 
 import sublime
 from SublimeLinter.lint import Linter, util
-import subprocess
 import os
+import subprocess
 
 '''
 SublimeLinter Installer
 '''
-
-import os
-import sublime
 
 SUBL_LINTER_PKG = 'SublimeLinter'
 PKGCTRL_SETTINGS = 'Package Control.sublime-settings'
