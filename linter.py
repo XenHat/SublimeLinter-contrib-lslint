@@ -103,6 +103,7 @@ def plugin_loaded():
 
 class Lslint(Linter):
     """Main implementation of the linter interface."""
+
     syntax = ('lsl')
     cmd = 'lslint'
     version_args = '-V'
