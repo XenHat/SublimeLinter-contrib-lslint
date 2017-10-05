@@ -122,7 +122,8 @@ class Lslint(Linter):
     """Main implementation of the linter interface."""
 
     syntax = ('lsl')
-    cmd = 'lslint'
+    cmd = 'lslint -i'
+    executable = 'lslint'
     version_args = '-V'
     version_re = r'(?P<version>\d+\.\d+\.\d+)'
     version_requirement = '>= 0.4.2'
@@ -143,10 +144,10 @@ class Lslint(Linter):
     comment_re = None
 
     @classmethod
-    def which(cls, cmd):
+    def which(cls, executable):
         """Find native lslint executable."""
 
-        os_cmd = cmd + '.exe' if os.name == 'nt' else cmd
+        os_cmd = executable + '.exe' if os.name == 'nt' else executable
         sublime_platform = sublime.platform()
         # print("platform: %s" % sublime_platform)
         if sublime_platform == 'windows':
