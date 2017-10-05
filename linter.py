@@ -147,7 +147,6 @@ class Lslint(Linter):
         """Find native lslint executable."""
 
         os_cmd = cmd + '.exe' if os.name == 'nt' else cmd
-        fullbinarypath = ''
         sublime_platform = sublime.platform()
         # print("platform: %s" % sublime_platform)
         if sublime_platform == 'windows':
