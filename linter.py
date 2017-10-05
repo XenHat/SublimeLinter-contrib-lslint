@@ -100,7 +100,8 @@ def plugin_loaded():
 
 
 def look_for_linter(platform_and_binary):
-    """Look in known subfolders for the linter binary"""
+    """Look in known subfolders for the linter binary."""
+
     binarypathfirst = os.path.join(sublime.packages_path(), 'LSL')
     # print("platform_and_binary: %s" % platform_and_binary)
     try:
