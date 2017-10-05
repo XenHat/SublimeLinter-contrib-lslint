@@ -14,6 +14,7 @@
 import sublime
 from SublimeLinter.lint import Linter, util
 import os
+import platform
 
 '''
 SublimeLinter Installer
@@ -98,6 +99,24 @@ def plugin_loaded():
         )
 
 
+def look_for_linter(platform_and_binary):
+    """Look in known subfolders for the linter binary"""
+    binarypathfirst = os.path.join(sublime.packages_path(), 'LSL')
+    # print("platform_and_binary: %s" % platform_and_binary)
+    try:
+        # sublime-text-lsl's 'LSL' package
+        makopopath = os.path.join(binarypathfirst, platform_and_binary)
+        if os.access(makopopath, os.F_OK):
+            return makopopath
+        # builder's brewery's 'LSL' package
+        bbpath = os.path.join(binarypathfirst, 'bin', 'lslint', platform_and_binary)
+        if os.access(bbpath, os.F_OK):
+            return bbpath
+    except IOError as e:
+            print('%s' % e)
+    return None
+
+
 class Lslint(Linter):
     """Main implementation of the linter interface."""
 
@@ -124,44 +143,23 @@ class Lslint(Linter):
 
     @classmethod
     def which(cls, cmd):
-        """Find native lslint executable in Operating System path."""
+        """Find native lslint executable."""
 
-        # NOTE to Windows users: At the time of writing, there are 3 possible lslint
-        # executables:
-        #   'lslint_v1.0.5_win.zip', for 32-bit Windows XP
-        #   'lslint_v1.0.5_win32.zip' for 32-bit modern Windows
-        #   'lslint_v1.0.5_win64.zip' for 64-bit modern Windows
-        #
-        # For simplity's sake, this autoconfigure script will only look inside
-        #   'Packages/LSL/windows', which is the provided directory
-        # until the need to suppor ta very roamy installation across machines
-        # that cannot unify their operating systems.
-        binarypathfirst = os.path.join(sublime.packages_path(), 'LSL')
-        if os.name == 'nt':
-            cmd += '.exe'
-        binarypathlast = os.path.join(sublime.platform(), cmd)
-        # if (os.access(binarypath, os.F_OK)):
-        try:
-            logprefix = 'SublimeLinter: lslint'
-            # Binary in path
-            # Does not appear to work yet
-            # print(logprefix, "Testing [%s]" % cmd)
-            # if os.access(cmd, os.F_OK):
-            #     print(logprefix, 'Auto-configured lslint binary: [%s]' % cmd)
-            #     return cmd
-            # sublime-text-lsl's 'LSL' package
-            # print(logprefix, "Testing [%s]" % combinedpath)
-            combinedpath = os.path.join(binarypathfirst, binarypathlast)
-            if os.access(combinedpath, os.F_OK):
-                print(logprefix, 'Auto-configured lslint binary: [%s]' % combinedpath)
-                return combinedpath
-            # builder's brewery's 'LSL' package
-            bbpath = os.path.join(binarypathfirst, 'bin', 'lslint', binarypathlast)
-            # print(logprefix, "Testing [%s]" % bbpath)
-            if os.access(bbpath, os.F_OK):
-                print(logprefix, 'Auto-configured lslint binary: [%s]' % bbpath)
-                return bbpath
-        except IOError as e:
-            print(logprefix, 'Could not find a binary to use! (%s)' % e)
+        os_cmd = cmd + '.exe' if os.name == 'nt' else cmd
+        fullbinarypath = ''
+        sublime_platform = sublime.platform()
+        # print("platform: %s" % sublime_platform)
+        if sublime_platform == 'windows':
+            # bitness = platform.architecture()[0][:-3]
+            # print("bitness: %s" % bitness)
+            fullbinarypath = look_for_linter(os.path.join(
+                sublime_platform if platform.release() == 'XP' else
+                'windows' + platform.architecture()[0][:-3], os_cmd)
+            )
+        else:
+            fullbinarypath = look_for_linter(os.path.join(sublime_platform, os_cmd))
 
-        return None
+        # print("Binary: %s" % fullbinarypath)
+        if fullbinarypath is not None:
+            return fullbinarypath
+        return os_cmd
