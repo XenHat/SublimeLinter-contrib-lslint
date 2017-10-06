@@ -1,0 +1,10 @@
+SublimeLinter-contrib-lslint
+-------------------------------
+
+v1.3.1
+
+Added: lsl binary auto-detection
+Added: Install script (Beta)
+
+These changes were possible thanks to https://github.com/buildersbrewery, many thanks
+to them!
