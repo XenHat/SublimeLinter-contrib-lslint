@@ -154,8 +154,8 @@ class Lslint(Linter):
             # bitness = platform.architecture()[0][:-3]
             # print("bitness: %s" % bitness)
             fullbinarypath = look_for_linter(os.path.join(
-                sublime_platform if platform.release() == 'XP' else
-                'windows' + platform.architecture()[0][:-3], os_cmd)
+                sublime_platform + platform.architecture()[0][:-3]
+                if (platform.release() is not 'XP') else None, os_cmd)
             )
         else:
             fullbinarypath = look_for_linter(os.path.join(sublime_platform, os_cmd))
