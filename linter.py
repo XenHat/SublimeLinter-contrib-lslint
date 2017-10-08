@@ -15,6 +15,7 @@ import sublime
 from SublimeLinter.lint import Linter, util
 import os
 import platform
+import re
 
 '''
 SublimeLinter Installer
@@ -128,12 +129,45 @@ def look_for_linter(os_cmd):
             print('%s' % e)
     return None
 
+def look_for_mcpp():
+    """ Try to find mcpp preprocessor """
+    mcpp_binary_name = 'mcpp' + '.exe' if os.name == 'nt' else None
+    mcpp_binary_path = ospath_to_explicit(mcpp_binary_name)
+    # print("DEBUG:: MCPP: %s" % mcpp_binary_path)
+    if mcpp_binary_path is not None:
+        if os.access(mcpp_binary_path, os.F_OK):
+            return mcpp_binary_path
+    return None
+
+
+def ospath_to_explicit(program):
+    """ From https://stackoverflow.com/a/377028/1570096 """
+    import os
+    def is_exe(fpath):
+        return os.path.isfile(fpath) and os.access(fpath, os.X_OK)
+
+    fpath, fname = os.path.split(program)
+    if fpath:
+        if is_exe(program):
+            return program
+    else:
+        for path in os.environ["PATH"].split(os.pathsep):
+            path = path.strip('"')
+            exe_file = os.path.join(path, program)
+            if is_exe(exe_file):
+                return exe_file
+
+    return None
+
+def remove_line_directives(my_string):
+    """ Not a good solution"""
+    # return re.sub("^#line.*\n","",my_string)
+    return re.sub(r'(?m)^\#line.*\n?', '', my_string)
 
 class Lslint(Linter):
     """Main implementation of the linter interface."""
 
     syntax = ('lsl')
-    cmd = 'lslint -i'
     executable = 'lslint'
     version_args = '-V'
     version_re = r'(?P<version>\d+\.\d+\.\d+)'
@@ -149,20 +183,38 @@ class Lslint(Linter):
     error_stream = util.STREAM_BOTH
     selectors = {}
     word_re = None
-    defaults = {}
     inline_settings = None
     inline_overrides = None
     comment_re = None
 
     @classmethod
+    def cmd(self):
+        """ Override cmd definition/function """
+        print("DEBUG :: self.executable.path: %s" % self.executable_path)
+        # TODO: Add user-configurable setting for these
+        # return [self.executable_path, '-m','-l','-S','-#','-i','-u','-w', '-z']
+        return [self.executable_path, '-m','-l','-S','-#','-i','-u','-w']
+
+    @classmethod
     def which(cls, executable):
         """Find native lslint executable."""
 
-        os_cmd = executable + '.exe' if os.name == 'nt' else executable
-        fullbinarypath = look_for_linter(os_cmd)
+        # Look in System path first, then search if not found
+        lslint_binary_name = executable + '.exe' if os.name == 'nt' else executable
+        lslint_binary_path = ospath_to_explicit(lslint_binary_name)
+        if lslint_binary_path is None:
+            lslint_binary_path = look_for_linter(lslint_binary_name)
 
-        # print("Binary: %s" % fullbinarypath)
-        if fullbinarypath is not None:
-            return fullbinarypath
-        # print("Falling back to operating system path")
-        return os_cmd
+        # print("DEBUG:: LSLINT: %s" % lslint_binary_path)
+        # print("whet: %s" % communicate(self, mcpp_found, code))
+        return lslint_binary_path
+
+    @classmethod
+    def run(self, cmd, code):
+        """ Override the default run command to inject preprocessor step """
+        # print("DEBUG:: CMD: %s" % cmd)
+        mcpp_path = look_for_mcpp()
+        linter_result = Linter.communicate(self,mcpp_path,Linter.communicate(self,cmd,code)) \
+                    if mcpp_path is not None else Linter.communicate(self,cmd,code)
+        # print("DEBUG:: output: %s" % linter_result)
+        return linter_result
