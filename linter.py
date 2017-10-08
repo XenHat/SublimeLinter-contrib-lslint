@@ -99,20 +99,31 @@ def plugin_loaded():
         )
 
 
-def look_for_linter(platform_and_binary):
+def look_for_linter(os_cmd):
     """Look in known subfolders for the linter binary."""
 
+    sublime_platform = sublime.platform().strip()
+    # print("sublime_platform: %s" % sublime.platform())
     binarypathfirst = os.path.join(sublime.packages_path(), 'LSL')
-    # print("platform_and_binary: %s" % platform_and_binary)
     try:
-        # sublime-text-lsl's 'LSL' package
-        makopopath = os.path.join(binarypathfirst, platform_and_binary)
-        if os.access(makopopath, os.F_OK):
-            return makopopath
+        # Makopo's 'LSL' package
+        fullbinarypath = os.path.join(binarypathfirst, sublime_platform, os_cmd)
+        if os.access(fullbinarypath, os.F_OK):
+            return fullbinarypath
         # builder's brewery's 'LSL' package
-        bbpath = os.path.join(binarypathfirst, 'bin', 'lslint', platform_and_binary)
-        if os.access(bbpath, os.F_OK):
-            return bbpath
+        # print ('os_cmd: %s' % os_cmd)
+        if sublime_platform == 'windows':
+            arch = platform.architecture()[0][:-3]
+            fullbinarypath = os.path.join(binarypathfirst,
+                                          'bin',
+                                          'lslint',
+                                          sublime_platform + (arch if platform.release() is not 'XP' else None), os_cmd)
+        else:
+            fullbinarypath = os.path.join(binarypathfirst, 'bin', 'lslint', sublime_platform, os_cmd)
+
+        # print("Trying %s" % fullbinarypath)
+        if os.access(fullbinarypath, os.F_OK):
+            return fullbinarypath
     except IOError as e:
             print('%s' % e)
     return None
@@ -148,19 +159,10 @@ class Lslint(Linter):
         """Find native lslint executable."""
 
         os_cmd = executable + '.exe' if os.name == 'nt' else executable
-        sublime_platform = sublime.platform()
-        # print("platform: %s" % sublime_platform)
-        if sublime_platform == 'windows':
-            # bitness = platform.architecture()[0][:-3]
-            # print("bitness: %s" % bitness)
-            fullbinarypath = look_for_linter(os.path.join(
-                sublime_platform + platform.architecture()[0][:-3]
-                if (platform.release() is not 'XP') else None, os_cmd)
-            )
-        else:
-            fullbinarypath = look_for_linter(os.path.join(sublime_platform, os_cmd))
+        fullbinarypath = look_for_linter(os_cmd)
 
         # print("Binary: %s" % fullbinarypath)
         if fullbinarypath is not None:
             return fullbinarypath
+        # print("Falling back to operating system path")
         return os_cmd
