@@ -1,0 +1,6 @@
+SublimeLinter-contrib-lslint
+-------------------------------
+
+v1.3.3
+
+Fixed: Detection of Makopo's LSL package
