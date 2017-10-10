@@ -130,7 +130,7 @@ def look_for_linter(os_cmd):
 
 
 def look_for_mcpp():
-    """ Try to find mcpp preprocessor """
+    """Try to find mcpp preprocessor"""
     mcpp_binary_name = 'mcpp' + '.exe' if os.name == 'nt' else None
     mcpp_binary_path = ospath_to_explicit(mcpp_binary_name)
     if mcpp_binary_path is not None:
@@ -140,7 +140,7 @@ def look_for_mcpp():
 
 
 def ospath_to_explicit(program):
-    """ From https://stackoverflow.com/a/377028/1570096 """
+    """From https://stackoverflow.com/a/377028/1570096"""
     import os
 
     def is_exe(fpath):
@@ -161,13 +161,13 @@ def ospath_to_explicit(program):
 
 
 def remove_line_directives(my_string):
-    """ Not a good solution"""
+    """Not a good solution"""
     # return re.sub("^#line.*\n","",my_string)
     return re.sub(r'(?m)^\#line.*\n?', '', my_string)
 
 
 def getLastOffset(T, inlined_line):
-    """ Yeah """
+    """Yeah"""
     result = 0
     for rest in T:
         for line in rest.pline:
@@ -204,7 +204,7 @@ class Lslint(Linter):
 
     @classmethod
     def cmd(self):
-        """ Override cmd definition/function """
+        """Override cmd definition/function"""
         # TODO: Add user-configurable setting for these
         # return [self.executable_path, '-m','-l','-S','-#','-i','-u','-w', '-z']
         return [self.executable_path, '-m', '-i']
@@ -222,7 +222,7 @@ class Lslint(Linter):
 
     @classmethod
     def run(self, cmd, code):
-        """ Override the default run command to inject preprocessor step """
+        """Override the default run command to inject preprocessor step"""
         mcpp_path = look_for_mcpp()
         # if mcpp_path is not None else Linter.communicate(self,cmd,code)
         if mcpp_path is not None:
