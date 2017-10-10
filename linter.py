@@ -23,84 +23,26 @@ from collections import namedtuple
 SublimeLinter Installer
 '''
 
-SUBL_LINTER_PKG = 'SublimeLinter'
+PKG_NAME = __package__.split('.')[0]
 PKGCTRL_SETTINGS = 'Package Control.sublime-settings'
-
-PKG_NAME = os.path.splitext(
-    os.path.basename(os.path.dirname(__file__))
-)[0]
-
-MSG = '''\
-<div id="SublimeLinter-installer">
-  <style>
-    #SublimeLinter-installer {{
-      padding: 1rem;
-      line-height: 1.5;
-    }}
-    #SublimeLinter-installer code {{
-      background-color: color(var(--background) blend(var(--foreground) 80%));
-      line-height: 1;
-      padding: 0.25rem;
-    }}
-    #SublimeLinter-installer a {{
-      padding: 0;
-      margin: 0;
-    }}
-  </style>
-
-  {} requires <code>SublimeLinter</code> package.
-  <br><br>Would you like to install it?<br>
-  <br><a href="install">Install</a> <a href="cancel">Cancel</a>
-</div>
-'''.format(PKG_NAME)
-
-
-def is_installed():
-    """Check if the LSL package is installed."""
-    pkgctrl_settings = sublime.load_settings(PKGCTRL_SETTINGS)
-
-    return SUBL_LINTER_PKG in set(pkgctrl_settings.get('installed_packages', []))
-
-
-def on_navigate(href):
-    """Intermediary logic to install the package or hide the popup."""
-    if href.startswith('install'):
-        install()
-    else:
-        hide()
-
-
-def install():
-    """Install the LSL package from package control."""
-    print('Installing "{}" ...'.format(SUBL_LINTER_PKG))
-    sublime.active_window().run_command(
-        'advanced_install_package', {'packages': SUBL_LINTER_PKG}
-    )
-    hide()
-
-
-def hide():
-    """Hide the install popup."""
-    sublime.active_window().active_view().hide_popup()
+SUBLINTER_PKG = 'SublimeLinter'
 
 
 def plugin_loaded():
-    """Show a popup to the user to propose the installation of the LSL package."""
-    from package_control import events
 
-    if events.install(PKG_NAME) and not is_installed():
-        window = sublime.active_window()
-        view = window.active_view()
-        window.focus_view(view)
-        row = int(view.rowcol(view.visible_region().a)[0] + 1)
-        view.show_popup(
-            MSG,
-            location=view.text_point(row, 5),
-            max_width=800,
-            max_height=800,
-            on_navigate=on_navigate
-        )
+    try:
+        from package_control import events
+        packagecontrol_settings = sublime.load_settings(PKGCTRL_SETTINGS)
+        sublinter_installed = SUBLINTER_PKG in set(packagecontrol_settings.get('installed_packages', []))
+        if events.install(PKG_NAME) and not sublinter_installed:
+            sublime.active_window().run_command('advanced_install_package', {'packages': SUBLINTER_PKG})
+    except Exception as e:
+        print('%s' % (str(e)))
 
+
+'''
+Additional functions
+'''
 
 def look_for_linter(os_cmd):
     """Look in known subfolders for the linter binary."""
