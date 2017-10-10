@@ -30,7 +30,6 @@ SUBLINTER_PKG = 'SublimeLinter'
 
 def plugin_loaded():
     """ Do something when the plugin is loaded."""
-
     try:
         from package_control import events
         packagecontrol_settings = sublime.load_settings(PKGCTRL_SETTINGS)
@@ -42,87 +41,6 @@ def plugin_loaded():
                                                 {'packages': SUBLINTER_PKG})
     except Exception as e:
         print('%s' % (str(e)))
-
-
-'''
-Additional functions
-'''
-
-
-def look_for_linter(os_cmd):
-    """Look in known subfolders for the linter binary."""
-
-    sublime_platform = sublime.platform().strip()
-    binarypathfirst = os.path.join(sublime.packages_path(), 'LSL')
-    try:
-        # Makopo's 'LSL' package
-        fullbinarypath = os.path.join(binarypathfirst, sublime_platform, os_cmd)
-        if os.access(fullbinarypath, os.F_OK):
-            return fullbinarypath
-        # builder's brewery's 'LSL' package
-        if sublime_platform == 'windows':
-            arch = platform.architecture()[0][:-3]
-            fullbinarypath = os.path.join(binarypathfirst,
-                                          'bin',
-                                          'lslint',
-                                          sublime_platform + (arch if platform.release() is not 'XP' else None), os_cmd)
-        else:
-            fullbinarypath = os.path.join(binarypathfirst, 'bin', 'lslint', sublime_platform, os_cmd)
-
-        if os.access(fullbinarypath, os.F_OK):
-            return fullbinarypath
-    except IOError as e:
-            print('ERROR: {0}'.format(e))
-    return None
-
-
-def look_for_mcpp():
-    """Try to find mcpp preprocessor."""
-    mcpp_binary_name = 'mcpp' + '.exe' if os.name == 'nt' else None
-    mcpp_binary_path = ospath_to_explicit(mcpp_binary_name)
-    if mcpp_binary_path is not None:
-        if os.access(mcpp_binary_path, os.F_OK):
-            return mcpp_binary_path
-    return None
-
-
-def ospath_to_explicit(program):
-    """From https://stackoverflow.com/a/377028/1570096."""
-    import os
-
-    def is_exe(fpath):
-        return os.path.isfile(fpath) and os.access(fpath, os.X_OK)
-
-    fpath, fname = os.path.split(program)
-    if fpath:
-        if is_exe(program):
-            return program
-    else:
-        for path in os.environ["PATH"].split(os.pathsep):
-            path = path.strip('"')
-            exe_file = os.path.join(path, program)
-            if is_exe(exe_file):
-                return exe_file
-
-    return None
-
-
-def remove_line_directives(my_string):
-    """Not a good solution."""
-    # return re.sub("^#line.*\n","",my_string)
-    return re.sub(r'(?m)^\#line.*\n?', '', my_string)
-
-
-def getLastOffset(T, inlined_line):
-    """Yeah."""
-    result = 0
-    for rest in T:
-        for line in rest.pline:
-            if int(rest.pline) >= inlined_line:
-                # Woah, use last result
-                break
-            result = rest.pline
-    return result
 
 
 class Lslint(Linter):
@@ -148,6 +66,83 @@ class Lslint(Linter):
     inline_overrides = None
     comment_re = None
 
+    def winpath(pf, firstp, cmd):
+        """Get conditional path for Microsoft(R) Windows OS."""
+        arch = platform.architecture()[0][:-3]
+        w = pf + (arch if platform.release() is not 'XP' else None)
+        return os.path.join(firstp, 'bin', 'lslint', w, cmd)
+
+    def find_linter(os_cmd):
+        """Look in known subfolders for the linter binary."""
+        st_pf = sublime.platform().strip()
+        parfhalf = os.path.join(sublime.packages_path(), 'LSL')
+        try:
+            # Makopo's 'LSL' package
+            binpath = os.path.join(parfhalf,
+                                   st_pf, os_cmd)
+            if os.access(binpath, os.F_OK):
+                return binpath
+            # builder's brewery's 'LSL' package
+            if st_pf == 'windows':
+                binpath = Lslint.winpath(st_pf, parfhalf, os_cmd)
+            else:
+                binpath = os.path.join(parfhalf,
+                                       'bin',
+                                       'lslint',
+                                       st_pf,
+                                       os_cmd)
+
+            if os.access(binpath, os.F_OK):
+                return binpath
+        except IOError as e:
+            print('ERROR: {0}'.format(e))
+        return None
+
+    def fullpath(program):
+        """From https://stackoverflow.com/a/377028/1570096."""
+        import os
+
+        def is_exe(fpath):
+            return os.path.isfile(fpath) and os.access(fpath, os.X_OK)
+
+        fpath, fname = os.path.split(program)
+        if fpath:
+            if is_exe(program):
+                return program
+        else:
+            for path in os.environ["PATH"].split(os.pathsep):
+                path = path.strip('"')
+                exe_file = os.path.join(path, program)
+                if is_exe(exe_file):
+                    return exe_file
+
+        return None
+
+    def find_mcpp():
+        """Try to find mcpp preprocessor."""
+        mcpp_binary_name = 'mcpp' + '.exe' if os.name == 'nt' else None
+        mcpp_binary_path = Lslint.fullpath(mcpp_binary_name)
+        if mcpp_binary_path is not None:
+            if os.access(mcpp_binary_path, os.F_OK):
+                return mcpp_binary_path
+        return None
+
+    def remove_line_directives(my_string):
+        """Not a good solution."""
+        # return re.sub("^#line.*\n","",my_string)
+        return re.sub(r'(?m)^\#line.*\n?', '', my_string)
+
+    def getLastOffset(T, inlined_line):
+        """Yeah."""
+        result = 0
+        for rest in T:
+            for line in rest.pline:
+                if int(rest.pline) >= inlined_line:
+                    # Woah, use last result
+                    break
+                result = rest.pline
+        return result
+
     @classmethod
     def cmd(self):
         """Override cmd definition/function."""
@@ -169,15 +164,15 @@ class Lslint(Linter):
         # Look in System path first, then search if not found
         lslint_binary_name = executable + ('.exe' if os.name == 'nt'
                                            else executable)
-        lslint_binary_path = ospath_to_explicit(lslint_binary_name)
+        lslint_binary_path = Lslint.fullpath(lslint_binary_name)
         if lslint_binary_path is None:
-            lslint_binary_path = look_for_linter(lslint_binary_name)
+            lslint_binary_path = Lslint.find_linter(lslint_binary_name)
         return lslint_binary_path
 
     @classmethod
     def run(self, cmd, code):
         """Override the default run command to inject preprocessor step."""
-        mcpp_path = look_for_mcpp()
+        mcpp_path = Lslint.find_mcpp()
         # if mcpp_path is not None else Linter.communicate(self,cmd,code)
         if mcpp_path is not None:
             # Capture mcpp output and store into a variable
@@ -220,7 +215,7 @@ class Lslint(Linter):
                     number = token[:-1]  # strip comma
                     n_int = int(number)
                     # print("String attempt:{0}".format(number))
-                    offset = getLastOffset(preproc_bank, n_int)
+                    offset = Lslint.getLastOffset(preproc_bank, n_int)
                     # print("Offset: {0}".format(offset))
                     something = n_int - int(offset)
                     new_line = lint_line.replace(number, str(something))
