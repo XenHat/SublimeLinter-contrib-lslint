@@ -238,7 +238,7 @@ class Lslint(Linter):
                     preproc_bank.append(OutputTuple(pline=str(lc), tline=message[1], file=message[2]))
                 lc += 1
             code = mcpp_output
-            print("DEBUG:: preproc_bank: {0}".format(preproc_bank[2]))
+            # print("DEBUG:: preproc_bank: {0}".format(preproc_bank[2]))
 
         linter_result = Linter.communicate(self, cmd, code)
         # print("DEBUG:: Linter output: {0}".format(linter_result))
@@ -248,33 +248,33 @@ class Lslint(Linter):
             # the error and the code inside the editor so that we can properly show linting
             # visual hints.
             linter_output_lines = linter_result.splitlines(False)
-            print('LINTER_OUT:{0}'.format(linter_output_lines))
+            # print('LINTER_OUT:{0}'.format(linter_output_lines))
             # Get line at which the current file was inserted (TODO: make sure multi-include works)
             fixed_output_lines = []
             for lint_line in linter_output_lines:
                 if lint_line.startswith("TOTAL::") is False:
-                    print('LINE:[{0}]'.format(lint_line))
+                    # print('LINE:[{0}]'.format(lint_line))
                     tokens = lint_line.split(' ')
-                    print('Tokens:[{0}]'.format(tokens))
+                    # print('Tokens:[{0}]'.format(tokens))
                     token = tokens[2]
-                    print("Token:{0}".format(token))
+                    # print("Token:{0}".format(token))
                     number = token[:-1]  # strip comma
                     n_int = int(number)
-                    print("String attempt:{0}".format(number))
+                    # print("String attempt:{0}".format(number))
                     offset = getLastOffset(preproc_bank, n_int)
-                    print("Offset: {0}".format(offset))
+                    # print("Offset: {0}".format(offset))
                     something = n_int-int(offset)
                     new_line = lint_line.replace(number, str(something))
-                    print("Something: {0}".format(something))
-                    print("New Line: {0}".format(new_line))
+                    # print("Something: {0}".format(something))
+                    # print("New Line: {0}".format(new_line))
                     fixed_output_lines.append(new_line)
                     continue
                 else:
                     fixed_output_lines.append(lint_line)
 
-            print("New Lines: {0}".format(fixed_output_lines))
+            # print("New Lines: {0}".format(fixed_output_lines))
             # Transform back into a string
             linter_result = "".join(str(x) for x in fixed_output_lines)
 
-        print("DEBUG:: Linter output: {0}".format(linter_result))
+        # print("DEBUG:: Linter output: {0}".format(linter_result))
         return linter_result
