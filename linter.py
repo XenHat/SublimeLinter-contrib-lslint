@@ -29,7 +29,7 @@ SUBLINTER_PKG = 'SublimeLinter'
 
 
 def plugin_loaded():
-    """ Do something when the plugin is loaded."""
+    """Do something when the plugin is loaded."""
     try:
         from package_control import events
         packagecontrol_settings = sublime.load_settings(PKGCTRL_SETTINGS)
