@@ -34,9 +34,12 @@ def plugin_loaded():
     try:
         from package_control import events
         packagecontrol_settings = sublime.load_settings(PKGCTRL_SETTINGS)
-        sublinter_installed = SUBLINTER_PKG in set(packagecontrol_settings.get('installed_packages', []))
+        sublinter_installed = (SUBLINTER_PKG in
+                               set(packagecontrol_settings.get(
+                                   'installed_packages', [])))
         if events.install(PKG_NAME) and not sublinter_installed:
-            sublime.active_window().run_command('advanced_install_package', {'packages': SUBLINTER_PKG})
+            sublime.active_window().run_command('advanced_install_package',
+                                                {'packages': SUBLINTER_PKG})
     except Exception as e:
         print('%s' % (str(e)))
 
@@ -149,7 +152,14 @@ class Lslint(Linter):
     def cmd(self):
         """Override cmd definition/function."""
         # TODO: Add user-configurable setting for these
-        # return [self.executable_path, '-m','-l','-S','-#','-i','-u','-w', '-z']
+        # return [self.executable_path, '-m',
+        #                               '-l',
+        #                               '-S',
+        #                               '-#',
+        #                               '-i',
+        #                               '-u',
+        #                               '-w',
+        #                               '-z']
         return [self.executable_path, '-m', '-i']
 
     @classmethod
@@ -157,7 +167,8 @@ class Lslint(Linter):
         """Find native lslint executable."""
 
         # Look in System path first, then search if not found
-        lslint_binary_name = executable + '.exe' if os.name == 'nt' else executable
+        lslint_binary_name = executable + ('.exe' if os.name == 'nt'
+                                           else executable)
         lslint_binary_path = ospath_to_explicit(lslint_binary_name)
         if lslint_binary_path is None:
             lslint_binary_path = look_for_linter(lslint_binary_name)
@@ -179,7 +190,9 @@ class Lslint(Linter):
                 if(line.startswith('#line')):
                     message = line.split(' ')
                     # print('message:{0}'.format(message))
-                    preproc_bank.append(OutputTuple(pline=str(lc), tline=message[1], file=message[2]))
+                    preproc_bank.append(OutputTuple(pline=str(lc),
+                                                    tline=message[1],
+                                                    file=message[2]))
                 lc += 1
             code = mcpp_output
             # print("DEBUG:: preproc_bank: {0}".format(preproc_bank[2]))
@@ -187,13 +200,15 @@ class Lslint(Linter):
         linter_result = Linter.communicate(self, cmd, code)
         # print("DEBUG:: Linter output: {0}".format(linter_result))
         if mcpp_path is not None:
-            # Go through every error and replace the line number (from the inlined file)
-            # with the one from the script we fed the precompiler, to restore the link between
-            # the error and the code inside the editor so that we can properly show linting
-            # visual hints.
+            # Go through every error and replace the line number (from the
+            # inlined file) with the one from the script we fed the
+            # precompiler, to restore the link between the error and the code
+            # inside the editor so that we can properly show linting visual
+            # hints.
             linter_output_lines = linter_result.splitlines(False)
             # print('LINTER_OUT:{0}'.format(linter_output_lines))
-            # Get line at which the current file was inserted (TODO: make sure multi-include works)
+            # Get line at which the current file was inserted
+            # TODO: make sure multi-include works
             fixed_output_lines = []
             for lint_line in linter_output_lines:
                 if lint_line.startswith("TOTAL::") is False:
@@ -207,7 +222,7 @@ class Lslint(Linter):
                     # print("String attempt:{0}".format(number))
                     offset = getLastOffset(preproc_bank, n_int)
                     # print("Offset: {0}".format(offset))
-                    something = n_int-int(offset)
+                    something = n_int - int(offset)
                     new_line = lint_line.replace(number, str(something))
                     # print("Something: {0}".format(something))
                     # print("New Line: {0}".format(new_line))
