@@ -45,6 +45,7 @@ def plugin_loaded():
 Additional functions
 '''
 
+
 def look_for_linter(os_cmd):
     """Look in known subfolders for the linter binary."""
 
