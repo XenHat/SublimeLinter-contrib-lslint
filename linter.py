@@ -181,7 +181,7 @@ def getLastOffset(T, inlined_line):
 class Lslint(Linter):
     """Main implementation of the linter interface."""
 
-    syntax = ('lsl')
+    syntax = ('lsl', 'ossl')
     executable = 'lslint'
     version_args = '-V'
     version_re = r'(?P<version>\d+\.\d+\.\d+)'
