@@ -176,7 +176,7 @@ class Lslint(Linter):
         # if mcpp_path is not None else Linter.communicate(self,cmd,code)
         if mcpp_path is not None:
             # Capture mcpp output and store into a variable
-            mcpp_output = Linter.communicate(self, mcpp_path, code)
+            mcpp_output = Linter.communicate(self, mcpp_path + ' -C', code)
             lines = mcpp_output.splitlines(False)
             lc = 0
             OutputTuple = namedtuple('OutputTuple', 'pline tline file')
