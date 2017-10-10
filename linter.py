@@ -208,11 +208,14 @@ class Lslint(Linter):
             for lint_line in linter_output_lines:
                 if lint_line.startswith("TOTAL::") is False:
                     # print('LINE:[{0}]'.format(lint_line))
-                    tokens = lint_line.split(' ')
+                    tokens = lint_line.split(',')
                     # print('Tokens:[{0}]'.format(tokens))
-                    token = tokens[2]
+                    token = tokens[0]
                     # print("Token:{0}".format(token))
-                    number = token[:-1]  # strip comma
+                    token = token.replace("ERROR:: (", "")
+                    token = token.replace("WARN:: (", "")
+                    # print("Token:{0}".format(token))
+                    number = token.strip()
                     n_int = int(number)
                     # print("String attempt:{0}".format(number))
                     offset = Lslint.getLastOffset(preproc_bank, n_int)
