@@ -17,6 +17,8 @@ import os
 import platform
 import re
 
+from collections import namedtuple
+
 '''
 SublimeLinter Installer
 '''
@@ -104,7 +106,6 @@ def look_for_linter(os_cmd):
     """Look in known subfolders for the linter binary."""
 
     sublime_platform = sublime.platform().strip()
-    # print("sublime_platform: %s" % sublime.platform())
     binarypathfirst = os.path.join(sublime.packages_path(), 'LSL')
     try:
         # Makopo's 'LSL' package
@@ -112,7 +113,6 @@ def look_for_linter(os_cmd):
         if os.access(fullbinarypath, os.F_OK):
             return fullbinarypath
         # builder's brewery's 'LSL' package
-        # print ('os_cmd: %s' % os_cmd)
         if sublime_platform == 'windows':
             arch = platform.architecture()[0][:-3]
             fullbinarypath = os.path.join(binarypathfirst,
@@ -122,18 +122,17 @@ def look_for_linter(os_cmd):
         else:
             fullbinarypath = os.path.join(binarypathfirst, 'bin', 'lslint', sublime_platform, os_cmd)
 
-        # print("Trying %s" % fullbinarypath)
         if os.access(fullbinarypath, os.F_OK):
             return fullbinarypath
     except IOError as e:
-            print('%s' % e)
+            print('ERROR: {0}'.format(e))
     return None
+
 
 def look_for_mcpp():
     """ Try to find mcpp preprocessor """
     mcpp_binary_name = 'mcpp' + '.exe' if os.name == 'nt' else None
     mcpp_binary_path = ospath_to_explicit(mcpp_binary_name)
-    # print("DEBUG:: MCPP: %s" % mcpp_binary_path)
     if mcpp_binary_path is not None:
         if os.access(mcpp_binary_path, os.F_OK):
             return mcpp_binary_path
@@ -143,6 +142,7 @@ def look_for_mcpp():
 def ospath_to_explicit(program):
     """ From https://stackoverflow.com/a/377028/1570096 """
     import os
+
     def is_exe(fpath):
         return os.path.isfile(fpath) and os.access(fpath, os.X_OK)
 
@@ -159,10 +159,24 @@ def ospath_to_explicit(program):
 
     return None
 
+
 def remove_line_directives(my_string):
     """ Not a good solution"""
     # return re.sub("^#line.*\n","",my_string)
     return re.sub(r'(?m)^\#line.*\n?', '', my_string)
+
+
+def getLastOffset(T, inlined_line):
+    """ Yeah """
+    result = 0
+    for rest in T:
+        for line in rest.pline:
+            if int(rest.pline) >= inlined_line:
+                # Woah, use last result
+                break
+            result = rest.pline
+    return result
+
 
 class Lslint(Linter):
     """Main implementation of the linter interface."""
@@ -186,14 +200,14 @@ class Lslint(Linter):
     inline_settings = None
     inline_overrides = None
     comment_re = None
+    filename_hack = '@'
 
     @classmethod
     def cmd(self):
         """ Override cmd definition/function """
-        print("DEBUG :: self.executable.path: %s" % self.executable_path)
         # TODO: Add user-configurable setting for these
         # return [self.executable_path, '-m','-l','-S','-#','-i','-u','-w', '-z']
-        return [self.executable_path, '-m','-l','-S','-#','-i','-u','-w']
+        return [self.executable_path, '-m', '-i']
 
     @classmethod
     def which(cls, executable):
@@ -204,17 +218,64 @@ class Lslint(Linter):
         lslint_binary_path = ospath_to_explicit(lslint_binary_name)
         if lslint_binary_path is None:
             lslint_binary_path = look_for_linter(lslint_binary_name)
-
-        # print("DEBUG:: LSLINT: %s" % lslint_binary_path)
-        # print("whet: %s" % communicate(self, mcpp_found, code))
         return lslint_binary_path
 
     @classmethod
     def run(self, cmd, code):
         """ Override the default run command to inject preprocessor step """
-        # print("DEBUG:: CMD: %s" % cmd)
         mcpp_path = look_for_mcpp()
-        linter_result = Linter.communicate(self,mcpp_path,Linter.communicate(self,cmd,code)) \
-                    if mcpp_path is not None else Linter.communicate(self,cmd,code)
-        # print("DEBUG:: output: %s" % linter_result)
+        # if mcpp_path is not None else Linter.communicate(self,cmd,code)
+        if mcpp_path is not None:
+            # Capture mcpp output and store into a variable
+            mcpp_output = Linter.communicate(self, mcpp_path, code)
+            lines = mcpp_output.splitlines(False)
+            lc = 0
+            OutputTuple = namedtuple('OutputTuple', 'pline tline file')
+            preproc_bank = []
+            for line in lines:
+                if(line.startswith('#line')):
+                    message = line.split(' ')
+                    # print('message:{0}'.format(message))
+                    preproc_bank.append(OutputTuple(pline=str(lc), tline=message[1], file=message[2]))
+                lc += 1
+            code = mcpp_output
+            print("DEBUG:: preproc_bank: {0}".format(preproc_bank[2]))
+
+        linter_result = Linter.communicate(self, cmd, code)
+        # print("DEBUG:: Linter output: {0}".format(linter_result))
+        if mcpp_path is not None:
+            # Go through every error and replace the line number (from the inlined file)
+            # with the one from the script we fed the precompiler, to restore the link between
+            # the error and the code inside the editor so that we can properly show linting
+            # visual hints.
+            linter_output_lines = linter_result.splitlines(False)
+            print('LINTER_OUT:{0}'.format(linter_output_lines))
+            # Get line at which the current file was inserted (TODO: make sure multi-include works)
+            fixed_output_lines = []
+            for lint_line in linter_output_lines:
+                if lint_line.startswith("TOTAL::") is False:
+                    print('LINE:[{0}]'.format(lint_line))
+                    tokens = lint_line.split(' ')
+                    print('Tokens:[{0}]'.format(tokens))
+                    token = tokens[2]
+                    print("Token:{0}".format(token))
+                    number = token[:-1]  # strip comma
+                    n_int = int(number)
+                    print("String attempt:{0}".format(number))
+                    offset = getLastOffset(preproc_bank, n_int)
+                    print("Offset: {0}".format(offset))
+                    something = n_int-int(offset)
+                    new_line = lint_line.replace(number, str(something))
+                    print("Something: {0}".format(something))
+                    print("New Line: {0}".format(new_line))
+                    fixed_output_lines.append(new_line)
+                    continue
+                else:
+                    fixed_output_lines.append(lint_line)
+
+            print("New Lines: {0}".format(fixed_output_lines))
+            # Transform back into a string
+            linter_result = "".join(str(x) for x in fixed_output_lines)
+
+        print("DEBUG:: Linter output: {0}".format(linter_result))
         return linter_result
