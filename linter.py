@@ -112,15 +112,15 @@ def remove_line_directives(my_string):
         return re.sub(r'(?m)^\#line.*\n?', '', my_string)
 
 
-def getLastOffset(T, inlined_line):
+def getLastOffset(tuple_list, inlined_line):
     """Yeah."""
     result = 0
-    for rest in T:
-        for line in rest.pline:
-            if int(rest.pline) >= inlined_line:
+    for this_tuple in tuple_list:
+        for line in this_tuple.mcpp_in_line:
+            if int(this_tuple.mcpp_in_line) >= inlined_line:
                 # Woah, use last result
                 break
-            result = rest.pline
+            result = this_tuple.mcpp_in_line
     return result
 
 
@@ -183,14 +183,15 @@ class Lslint(Linter):
             mcpp_output = Linter.communicate(self, mcpp_path + ' -C', code)
             lines = mcpp_output.splitlines(False)
             lc = 0
-            OutputTuple = namedtuple('OutputTuple', 'pline tline file')
+            OutputTuple = namedtuple('OutputTuple', 'mcpp_in_line\
+                                                     orig_line file')
             preproc_bank = []
             for line in lines:
                 if(line.startswith('#line')):
                     message = line.split(' ')
                     # print('message:{0}'.format(message))
-                    preproc_bank.append(OutputTuple(pline=str(lc),
-                                                    tline=message[1],
+                    preproc_bank.append(OutputTuple(mcpp_in_line=str(lc),
+                                                    orig_line=message[1],
                                                     file=message[2]))
                 lc += 1
             code = mcpp_output
