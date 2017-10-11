@@ -17,7 +17,7 @@ import os
 import platform
 import re
 
-# from collections import namedtuple
+from collections import namedtuple
 
 '''
 SublimeLinter Installer
@@ -197,69 +197,70 @@ class Lslint(Linter):
             print('{0} |{1}'.format(get_auto_padding(o_n), o_l))
             o_n += 1
 
-        # mcpp_path = find_mcpp()
-        # if mcpp_path is not None:
-        #     # Capture mcpp output and store into a variable
-        #     mcpp_output = Linter.communicate(self, mcpp_path + ' -C', code)
-        #     lines = mcpp_output.splitlines(False)
-        #     l_n = 0
-        #     OutputTuple = namedtuple('OutputTuple', 'mcpp_in_line\
-        #                                              orig_line\
-        #                                              file')
-        #     preproc_bank = []
-        #     print('MCPP Output:')
-        #     for line in lines:
-        #         print('{0} |{1}'.format(get_auto_padding(l_n), line))
-        #         if(line.startswith('#line')):
-        #             message = line.split(' ')
-        #             # print('message:{0}'.format(message))
-        #             preproc_bank.append(OutputTuple(mcpp_in_line=str(l_n),
-        #                                             orig_line=message[1],
-        #                                             file=message[2]))
-        #         l_n += 1
-        #     code = mcpp_output
-        #     # print("DEBUG:: preproc_bank: {0}".format(preproc_bank[2]))
+        mcpp_path = find_mcpp()
+        # if mcpp_path is not None else Linter.communicate(self,cmd,code)
+        if mcpp_path is not None:
+            # Capture mcpp output and store into a variable
+            mcpp_output = Linter.communicate(self, mcpp_path + ' -C', code)
+            lines = mcpp_output.splitlines(False)
+            line_number = 0
+            OutputTuple = namedtuple('OutputTuple', 'mcpp_in_line\
+                                                     orig_line\
+                                                     file')
+            preproc_bank = []
+            print('MCPP Output:')
+            for line in lines:
+                print('{0} |{1}'.format(get_auto_padding(line_number), line))
+                if(line.startswith('#line')):
+                    message = line.split(' ')
+                    # print('message:{0}'.format(message))
+                    preproc_bank.append(OutputTuple(mcpp_in_line=str(line_number),
+                                                    orig_line=message[1],
+                                                    file=message[2]))
+                line_number += 1
+            code = mcpp_output
+            # print("DEBUG:: preproc_bank: {0}".format(preproc_bank[2]))
 
         linter_result = Linter.communicate(self, cmd, code)
-        # print("DEBUG:: LINTER_OUT output:\n{0}".format(linter_result))
-        # if mcpp_path is not None:
-        #    # Go through every error and replace the line number (from the
-        #    # inlined file) with the one from the script we fed the
-        #    # precompiler, to restore the link between the error and the code
-        #    # inside the editor so that we can properly show linting visual
-        #    # hints.
-        #    linter_output_lines = linter_result.splitlines(False)
-        #    # print('LINTER_OUT:{0}'.format(linter_output_lines))
-        #    # Get line at which the current file was inserted
-        #    # TODO: make sure multi-include works
-        #    fixed_output_lines = []
-        #    for iter_line in linter_output_lines:
-        #        # print('LINE:[{0}]'.format(iter_line))
-        #        if iter_line.startswith("TOTAL::") is False:
-        #            tokens = iter_line.split(',')
-        #            # print('Tokens:[{0}]'.format(tokens))
-        #            token = tokens[0]
-        #            # print("Token:{0}".format(token))
-        #            token = token.replace("ERROR:: (", "")
-        #            token = token.replace("WARN:: (", "")
-        #            # print("Token:{0}".format(token))
-        #            number = token.strip()
-        #            n_int = int(number)
-        #            # print("String attempt:{0}".format(number))
-        #            offset = getLastOffset(preproc_bank, n_int)
-        #            # print("Offset: {0}".format(offset))
-        #            something = n_int - int(offset)
-        #            new_line = iter_line.replace(number, str(something))
-        #            # print("Something: {0}".format(something))
-        #            # print("New Line: {0}".format(new_line))
-        #            fixed_output_lines.append(new_line)
-        #            continue
-        #        else:
-        #            fixed_output_lines.append(iter_line)
+        print("DEBUG:: LINTER_OUT output:\n{0}".format(linter_result))
+        if mcpp_path is not None:
+            # Go through every error and replace the line number (from the
+            # inlined file) with the one from the script we fed the
+            # precompiler, to restore the link between the error and the code
+            # inside the editor so that we can properly show linting visual
+            # hints.
+            linter_output_lines = linter_result.splitlines(False)
+            # print('LINTER_OUT:{0}'.format(linter_output_lines))
+            # Get line at which the current file was inserted
+            # TODO: make sure multi-include works
+            fixed_output_lines = []
+            for iter_line in linter_output_lines:
+                # print('LINE:[{0}]'.format(iter_line))
+                if iter_line.startswith("TOTAL::") is False:
+                    tokens = iter_line.split(',')
+                    # print('Tokens:[{0}]'.format(tokens))
+                    token = tokens[0]
+                    # print("Token:{0}".format(token))
+                    token = token.replace("ERROR:: (", "")
+                    token = token.replace("WARN:: (", "")
+                    # print("Token:{0}".format(token))
+                    number = token.strip()
+                    n_int = int(number)
+                    # print("String attempt:{0}".format(number))
+                    offset = getLastOffset(preproc_bank, n_int)
+                    # print("Offset: {0}".format(offset))
+                    something = n_int - int(offset)
+                    new_line = iter_line.replace(number, str(something))
+                    # print("Something: {0}".format(something))
+                    # print("New Line: {0}".format(new_line))
+                    fixed_output_lines.append(new_line)
+                    continue
+                else:
+                    fixed_output_lines.append(iter_line)
 
-        # print("New Lines: {0}".format(fixed_output_lines))
-        # Transform back into a string
-        # linter_result = "".join(str(x) for x in fixed_output_lines)
+            # print("New Lines: {0}".format(fixed_output_lines))
+            # Transform back into a string
+            linter_result = "".join(str(x) for x in fixed_output_lines)
 
         # print("DEBUG:: Linter output: {0}".format(linter_result))
         return linter_result
