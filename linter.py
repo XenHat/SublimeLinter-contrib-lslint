@@ -112,16 +112,30 @@ def remove_line_directives(my_string):
         return re.sub(r'(?m)^\#line.*\n?', '', my_string)
 
 
-def getLastOffset(tuple_list, inlined_line):
+def getLastOffset(T, inlined_line):
     """Yeah."""
     result = 0
-    for this_tuple in tuple_list:
-        for line in this_tuple.mcpp_in_line:
-            if int(this_tuple.mcpp_in_line) >= inlined_line:
+    for rest in T:
+        for line in rest.mcpp_in_line:
+            if int(rest.mcpp_in_line) >= inlined_line:
                 # Woah, use last result
                 break
-            result = this_tuple.mcpp_in_line
+            result = rest.mcpp_in_line
     return result
+
+
+def get_auto_padding(number):
+    """Automatically pad the number ."""
+    padding = ""
+    number = int(number)
+    if(number < 1000):
+        padding += " "
+    if(number < 100):
+        padding += " "
+    if(number < 10):
+        padding += " "
+
+    return str(number) + padding
 
 
 class Lslint(Linter):
@@ -176,29 +190,39 @@ class Lslint(Linter):
     @classmethod
     def run(self, cmd, code):
         """Override the default run command to inject preprocessor step."""
+        print('ORIGINAL_CODE:')
+        o_lines = code.splitlines(False)
+        o_n = 0
+        for o_l in o_lines:
+            print('{0} |{1}'.format(get_auto_padding(o_n), o_l))
+            o_n += 1
+
         mcpp_path = find_mcpp()
         # if mcpp_path is not None else Linter.communicate(self,cmd,code)
         if mcpp_path is not None:
             # Capture mcpp output and store into a variable
             mcpp_output = Linter.communicate(self, mcpp_path + ' -C', code)
             lines = mcpp_output.splitlines(False)
-            lc = 0
+            l_n = 0
             OutputTuple = namedtuple('OutputTuple', 'mcpp_in_line\
-                                                     orig_line file')
+                                                     orig_line\
+                                                     file')
             preproc_bank = []
+            print('MCPP Output:')
             for line in lines:
+                print('{0} |{1}'.format(get_auto_padding(l_n), line))
                 if(line.startswith('#line')):
                     message = line.split(' ')
                     # print('message:{0}'.format(message))
-                    preproc_bank.append(OutputTuple(mcpp_in_line=str(lc),
+                    preproc_bank.append(OutputTuple(mcpp_in_line=str(l_n),
                                                     orig_line=message[1],
                                                     file=message[2]))
-                lc += 1
+                l_n += 1
             code = mcpp_output
             # print("DEBUG:: preproc_bank: {0}".format(preproc_bank[2]))
 
         linter_result = Linter.communicate(self, cmd, code)
-        # print("DEBUG:: Linter output: {0}".format(linter_result))
+        print("DEBUG:: LINTER_OUT output:\n{0}".format(linter_result))
         if mcpp_path is not None:
             # Go through every error and replace the line number (from the
             # inlined file) with the one from the script we fed the
@@ -210,10 +234,10 @@ class Lslint(Linter):
             # Get line at which the current file was inserted
             # TODO: make sure multi-include works
             fixed_output_lines = []
-            for lint_line in linter_output_lines:
-                if lint_line.startswith("TOTAL::") is False:
-                    # print('LINE:[{0}]'.format(lint_line))
-                    tokens = lint_line.split(',')
+            for iter_line in linter_output_lines:
+                # print('LINE:[{0}]'.format(iter_line))
+                if iter_line.startswith("TOTAL::") is False:
+                    tokens = iter_line.split(',')
                     # print('Tokens:[{0}]'.format(tokens))
                     token = tokens[0]
                     # print("Token:{0}".format(token))
@@ -226,13 +250,13 @@ class Lslint(Linter):
                     offset = getLastOffset(preproc_bank, n_int)
                     # print("Offset: {0}".format(offset))
                     something = n_int - int(offset)
-                    new_line = lint_line.replace(number, str(something))
+                    new_line = iter_line.replace(number, str(something))
                     # print("Something: {0}".format(something))
                     # print("New Line: {0}".format(new_line))
                     fixed_output_lines.append(new_line)
                     continue
                 else:
-                    fixed_output_lines.append(lint_line)
+                    fixed_output_lines.append(iter_line)
 
             # print("New Lines: {0}".format(fixed_output_lines))
             # Transform back into a string
