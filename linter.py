@@ -189,6 +189,7 @@ class Lslint(Linter):
     @classmethod
     def run(self, cmd, code):
         """Override the default run command to inject preprocessor step."""
+        print('=== BEGIN LINTER DEBUG ===')
         print('ORIGINAL_CODE:')
         o_lines = code.splitlines(False)
         o_n = 0
@@ -260,4 +261,5 @@ class Lslint(Linter):
             linter_result = "".join(str(x)+"\n" for x in fixed_output_lines)
 
         # print("DEBUG:: Linter output: {0}".format(linter_result))
+        print('=== END LINTER DEBUG ===')
         return linter_result
