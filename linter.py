@@ -179,7 +179,7 @@ class Lslint(Linter):
         """Find native lslint executable."""
 
         # Look in System path first, then search if not found
-        lslint_binary_name = executable + ('.exe' if os.name == 'nt'
+        lslint_binary_name = (executable + '.exe' if os.name == 'nt'
                                            else executable)
         lslint_binary_path = fullpath(lslint_binary_name)
         if lslint_binary_path is None:
