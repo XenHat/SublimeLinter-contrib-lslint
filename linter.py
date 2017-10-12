@@ -116,11 +116,10 @@ def getLastOffset(tuples_list, inlined_line):
     """Yeah."""
     result = 0
     for this_tuple in tuples_list:
-        for line in this_tuple.mcpp_in_line:
-            if int(this_tuple.mcpp_in_line) >= inlined_line:
-                # Woah, use last result
-                break
-            result = this_tuple.mcpp_in_line
+        if int(this_tuple.mcpp_in_line) >= inlined_line:
+            # Woah, use last result
+            break
+        result = this_tuple.mcpp_in_line
     return result
 
 
