@@ -116,11 +116,10 @@ def getLastOffset(tuples_list, inlined_line):
     """Yeah."""
     result = 0
     for this_tuple in tuples_list:
-        for line in this_tuple.mcpp_in_line:
-            if int(this_tuple.mcpp_in_line) >= inlined_line:
-                # Woah, use last result
-                break
-            result = this_tuple.mcpp_in_line
+        if int(this_tuple.mcpp_in_line) >= inlined_line:
+            # Woah, use last result
+            break
+        result = this_tuple.mcpp_in_line
     return result
 
 
@@ -243,16 +242,14 @@ class Lslint(Linter):
                     # print("Token:{0}".format(token))
                     token = token.replace("ERROR:: (", "")
                     token = token.replace("WARN:: (", "")
-                    # print("Token:{0}".format(token))
-                    number = token.strip()
-                    n_int = int(number)
-                    # print("String attempt:{0}".format(number))
-                    offset = getLastOffset(preproc_bank, n_int) + 1
-                    # print("Offset: {0}".format(offset))
-                    something = n_int - int(offset)
-                    new_line = iter_line.replace(number, str(something))
-                    # print("Something: {0}".format(something))
-                    # print("New Line: {0}".format(new_line))
+                    number = int(token.strip())
+                    print("number: {0}".format(number))
+                    offset = getLastOffset(preproc_bank, number) + 1
+                    print("Offset: {0}".format(offset))
+                    tokminoff = number - int(offset)
+                    print("Token - offset: {0}".format(tokminoff))
+                    new_line = iter_line.replace(str(number), str(tokminoff))
+                    print("New Line: {0}".format(new_line))
                     fixed_output_lines.append(new_line)
                     continue
                 else:
@@ -260,7 +257,7 @@ class Lslint(Linter):
 
             # print("New Lines: {0}".format(fixed_output_lines))
             # Transform back into a string
-            linter_result = "".join(str(x) for x in fixed_output_lines)
+            linter_result = "".join(str(x)+"\n" for x in fixed_output_lines)
 
         # print("DEBUG:: Linter output: {0}".format(linter_result))
         return linter_result
