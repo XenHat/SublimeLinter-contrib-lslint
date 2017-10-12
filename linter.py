@@ -260,7 +260,7 @@ class Lslint(Linter):
 
             # print("New Lines: {0}".format(fixed_output_lines))
             # Transform back into a string
-            linter_result = "".join(str(x)+"\n" for x in fixed_output_lines)
+            linter_result = "".join(str(x) + "\n" for x in fixed_output_lines)
 
         # print("DEBUG:: Linter output: {0}".format(linter_result))
         print('=== END LINTER DEBUG ===')
