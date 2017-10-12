@@ -119,7 +119,7 @@ def getLastOffset(tuples_list, inlined_line):
         if int(this_tuple.mcpp_in_line) >= inlined_line:
             # Woah, use last result
             break
-        result = this_tuple.mcpp_in_line
+        result = result = this_tuple.mcpp_in_line - this_tuple.orig_line + 1
     return result
 
 
@@ -200,7 +200,7 @@ class Lslint(Linter):
         # if mcpp_path is not None else Linter.communicate(self,cmd,code)
         if mcpp_path is not None:
             # Capture mcpp output and store into a variable
-            mcpp_output = Linter.communicate(self, mcpp_path + ' -C', code)
+            mcpp_output = Linter.communicate(self, mcpp_path, code)
             lines = mcpp_output.splitlines(False)
             line_number = 0
             OutputTuple = namedtuple('OutputTuple', 'mcpp_in_line\
