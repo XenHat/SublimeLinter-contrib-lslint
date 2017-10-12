@@ -214,8 +214,8 @@ class Lslint(Linter):
                 if(line.startswith('#line')):
                     message = line.split(' ')
                     # print('message:{0}'.format(message))
-                    preproc_bank.append(OutputTuple(mcpp_in_line=str(line_number),
-                                                    orig_line=message[1],
+                    preproc_bank.append(OutputTuple(mcpp_in_line=line_number,
+                                                    orig_line=int(message[1]),
                                                     file=message[2]))
                 line_number += 1
             code = mcpp_output
@@ -247,7 +247,7 @@ class Lslint(Linter):
                     number = token.strip()
                     n_int = int(number)
                     # print("String attempt:{0}".format(number))
-                    offset = getLastOffset(preproc_bank, n_int)
+                    offset = getLastOffset(preproc_bank, n_int) + 1
                     # print("Offset: {0}".format(offset))
                     something = n_int - int(offset)
                     new_line = iter_line.replace(number, str(something))
