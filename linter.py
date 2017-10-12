@@ -112,15 +112,15 @@ def remove_line_directives(my_string):
         return re.sub(r'(?m)^\#line.*\n?', '', my_string)
 
 
-def getLastOffset(T, inlined_line):
+def getLastOffset(tuples_list, inlined_line):
     """Yeah."""
     result = 0
-    for rest in T:
-        for line in rest.mcpp_in_line:
-            if int(rest.mcpp_in_line) >= inlined_line:
+    for this_tuple in tuples_list:
+        for line in this_tuple.mcpp_in_line:
+            if int(this_tuple.mcpp_in_line) >= inlined_line:
                 # Woah, use last result
                 break
-            result = rest.mcpp_in_line
+            result = this_tuple.mcpp_in_line
     return result
 
 
