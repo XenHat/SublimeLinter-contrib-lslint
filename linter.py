@@ -119,7 +119,7 @@ def getLastOffset(tuples_list, inlined_line):
         if int(this_tuple.mcpp_in_line) >= inlined_line:
             # Woah, use last result
             break
-        result = result = this_tuple.mcpp_in_line - this_tuple.orig_line + 1
+        result = result = this_tuple.mcpp_in_line - this_tuple.orig_line + 2
     return result
 
 
