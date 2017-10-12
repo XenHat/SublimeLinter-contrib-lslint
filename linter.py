@@ -244,10 +244,10 @@ class Lslint(Linter):
                     token = token.replace("WARN:: (", "")
                     number = int(token.strip())
                     print("number: {0}".format(number))
-                    offset = getLastOffset(preproc_bank, number) + 1
+                    offset = getLastOffset(preproc_bank, number - 1)
                     print("Offset: {0}".format(offset))
-                    tokminoff = number - int(offset)
-                    print("Token - offset: {0}".format(tokminoff))
+                    tokminoff = number + int(offset)
+                    print("Token + offset: {0}".format(tokminoff))
                     new_line = iter_line.replace(str(number), str(tokminoff))
                     print("New Line: {0}".format(new_line))
                     fixed_output_lines.append(new_line)
