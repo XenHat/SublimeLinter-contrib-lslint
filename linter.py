@@ -243,16 +243,14 @@ class Lslint(Linter):
                     # print("Token:{0}".format(token))
                     token = token.replace("ERROR:: (", "")
                     token = token.replace("WARN:: (", "")
-                    # print("Token:{0}".format(token))
-                    number = token.strip()
-                    n_int = int(number)
-                    # print("String attempt:{0}".format(number))
-                    offset = getLastOffset(preproc_bank, n_int) + 1
-                    # print("Offset: {0}".format(offset))
-                    something = n_int - int(offset)
-                    new_line = iter_line.replace(number, str(something))
-                    # print("Something: {0}".format(something))
-                    # print("New Line: {0}".format(new_line))
+                    number = int(token.strip())
+                    print("number: {0}".format(number))
+                    offset = getLastOffset(preproc_bank, number) + 1
+                    print("Offset: {0}".format(offset))
+                    tokminoff = number - int(offset)
+                    print("Token - offset: {0}".format(tokminoff))
+                    new_line = iter_line.replace(str(number), str(tokminoff))
+                    print("New Line: {0}".format(new_line))
                     fixed_output_lines.append(new_line)
                     continue
                 else:
