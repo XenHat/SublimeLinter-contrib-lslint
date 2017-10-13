@@ -190,12 +190,12 @@ class Lslint(Linter):
     def run(self, cmd, code):
         """Override the default run command to inject preprocessor step."""
         print('=== BEGIN LINTER DEBUG ===')
-        print('ORIGINAL_CODE:')
-        o_lines = code.splitlines(False)
-        o_n = 0
-        for o_l in o_lines:
-            print('{0} |{1}'.format(get_auto_padding(o_n), o_l))
-            o_n += 1
+        # print('ORIGINAL_CODE:')
+        # o_lines = code.splitlines(False)
+        # o_n = 0
+        # for o_l in o_lines:
+        #    print('{0} |{1}'.format(get_auto_padding(o_n), o_l))
+        #    o_n += 1
 
         mcpp_path = find_mcpp()
         # if mcpp_path is not None else Linter.communicate(self,cmd,code)
@@ -209,9 +209,9 @@ class Lslint(Linter):
                                                      orig_line\
                                                      file')
             preproc_bank = []
-            print('MCPP Output:')
+            # print('MCPP Output:')
             for line in lines:
-                print('{0} |{1}'.format(get_auto_padding(line_number), line))
+                # print('{0} |{1}'.format(get_auto_padding(line_number), line))
                 if(line.startswith('#line')):
                     message = line.split(' ')
                     # print('message:{0}'.format(message))
@@ -223,7 +223,7 @@ class Lslint(Linter):
             # print("DEBUG:: preproc_bank: {0}".format(preproc_bank[2]))
 
         linter_result = Linter.communicate(self, cmd, code)
-        print("DEBUG:: LINTER_OUT output:\n{0}".format(linter_result))
+        # print("DEBUG:: LINTER_OUT output:\n{0}".format(linter_result))
         if mcpp_path is not None:
             # Go through every error and replace the line number (from the
             # inlined file) with the one from the script we fed the
@@ -242,15 +242,15 @@ class Lslint(Linter):
                     tokens = iter_line.split(',')
                     # print('Tokens:[{0}]'.format(tokens))
                     token = tokens[0]
-                    print("Token:{0}".format(token))
+                    # print("Token:{0}".format(token))
                     number = int(p.match(token).group(2).strip())
-                    print("number: '{0}'".format(number))
+                    # print("number: '{0}'".format(number))
                     offset = getLastOffset(preproc_bank, number)
-                    print("Offset: {0}".format(offset))
+                    # print("Offset: {0}".format(offset))
                     tokminoff = str(number + int(offset))
-                    print("Token + offset: {0}".format(tokminoff))
+                    # print("Token + offset: {0}".format(tokminoff))
                     new_line = re.sub(str(number), tokminoff, iter_line)
-                    print("New Line: {0}".format(new_line))
+                    # print("New Line: {0}".format(new_line))
                     fixed_output_lines.append(new_line)
                     continue
                 else:
