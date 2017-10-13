@@ -1,0 +1,9 @@
+SublimeLinter-contrib-lslint
+-------------------------------
+
+v1.3.8
+
+Second tentative for #6: Experimental support for mcpp preprocessor
+
+Please file issues at:
+https://github.com/XenHat/SublimeLinter-contrib-lslint/issues
