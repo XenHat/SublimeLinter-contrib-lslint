@@ -119,7 +119,7 @@ def getLastOffset(tuples_list, inlined_line):
         if int(this_tuple.mcpp_in_line) >= inlined_line:
             # Woah, use last result
             break
-        result = result = this_tuple.mcpp_in_line - this_tuple.orig_line + 2
+        result = abs(this_tuple.mcpp_in_line - this_tuple.orig_line + 2)
     return result
 
 
@@ -250,7 +250,7 @@ class Lslint(Linter):
                     offset = getLastOffset(preproc_bank, number - 1)
                     print("Offset: {0}".format(offset))
                     # tokminoff = number + int(offset)
-                    tokminoff = number - int(offset)
+                    tokminoff = number + int(offset)
                     print("Token + offset: {0}".format(tokminoff))
                     new_line = iter_line.replace(str(number), str(tokminoff))
                     print("New Line: {0}".format(new_line))
