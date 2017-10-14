@@ -114,12 +114,17 @@ def remove_line_directives(my_string):
 
 def getLastOffset(tuples_list, inlined_line):
     """Yeah."""
-    result = 0
+    result = 0  # Fallback if there is no directives.
     for this_tuple in tuples_list:
         if int(this_tuple.mcpp_in_line) >= inlined_line:
-            # Woah, use last result
+            # We reached a #line directive further than the one
+            # we are looking for; Do not store this instance and
+            # return the previous one instead. This assumes a few things.
             break
+        # The offset ends up being negative in some cases, even if right.
+        # Let's forcefully remove the negative part of the number.
         result = abs(this_tuple.mcpp_in_line - this_tuple.orig_line + 2)
+    # This will return 0 if there is no #line found
     return result
 
 
