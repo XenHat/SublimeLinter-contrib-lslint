@@ -123,7 +123,7 @@ def getLastOffset(tuples_list, inlined_line):
             break
         # The offset ends up being negative in some cases, even if right.
         # Let's forcefully remove the negative part of the number.
-        result = abs(this_tuple.mcpp_in_line - this_tuple.orig_line + 2)
+        result = this_tuple.mcpp_in_line - this_tuple.orig_line + 2
     # This will return 0 if there is no #line found
     return result
 
@@ -252,8 +252,8 @@ class Lslint(Linter):
                     # print("number: '{0}'".format(number))
                     offset = getLastOffset(preproc_bank, number)
                     # print("Offset: {0}".format(offset))
-                    tokminoff = str(number + int(offset))
-                    # print("Token + offset: {0}".format(tokminoff))
+                    tokminoff = str(number - int(offset))
+                    # print("Token - offset: {0}".format(tokminoff))
                     new_line = re.sub(str(number), tokminoff, iter_line)
                     # print("New Line: {0}".format(new_line))
                     fixed_output_lines.append(new_line)
