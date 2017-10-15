@@ -111,12 +111,6 @@ def find_mcpp():
         return None
 
 
-def remove_line_directives(my_string):
-        """Not a good solution."""
-        # return re.sub("^#line.*\n","",my_string)
-        return re.sub(r'(?m)^\#line.*\n?', '', my_string)
-
-
 def getLastOffset(tuples_list, inlined_line):
     """Yeah."""
     result = 0  # Fallback if there is no directives.
