@@ -114,6 +114,8 @@ def find_mcpp():
 def getLastOffset(tuples_list, inlined_line):
     """Yeah."""
     result = 0  # Fallback if there is no directives.
+    line = 0
+    filename = "<stdin>"
     for this_tuple in tuples_list:
         if int(this_tuple.mcpp_in_line) >= inlined_line - 1:
             # We reached a #line directive further than the one
@@ -122,7 +124,47 @@ def getLastOffset(tuples_list, inlined_line):
             break
         # The offset ends up being negative in some cases, even if right.
         # Let's forcefully remove the negative part of the number.
+        line += 1
         result = this_tuple.mcpp_in_line - this_tuple.orig_line + 2
+        filename = this_tuple.file
+
+    # print('result: {0},{1}'.format(result, filename))
+    # This will return 0 if there is no #line found
+    return (result, filename)
+
+
+def getLastStdin(tuples_list, inlined_line):
+    """Return the last line containing <stdin> up to an line number."""
+    # print("inlined_line: {0}".format(inlined_line))
+    result = -1  # Fallback if there is no directives.
+    for index in range(len(tuples_list)):
+        this_tuple = tuples_list[index]
+        if int(this_tuple.mcpp_in_line) >= inlined_line - 1:
+            break
+        if this_tuple.file == "<stdin>":
+            result = index
+
+    # print("Last stdin: {0}".format(result))
+    return result
+
+
+def getLastLine(tuples_list, inlined_line):
+    """Yeah."""
+    # print("inlined_line2: {0}".format(inlined_line))
+    result = 0  # Fallback if there is no directives.
+    line = 0
+    for this_tuple in tuples_list:
+        if int(this_tuple.mcpp_in_line) > inlined_line + 2:
+            # We reached a #line directive further than the one
+            # we are looking for; Do not store this instance and
+            # return the previous one instead. This assumes a few things.
+            break
+        # print("[{1}] line: '{0}'".format(this_tuple.file, line))
+        if this_tuple.file != '"<stdin>"':
+            result = line
+        line += 1
+
+    # print("Last line: {0}".format(result))
     # This will return 0 if there is no #line found
     return result
 
@@ -245,11 +287,27 @@ class Lslint(Linter):
                     # print('Tokens:[{0}]'.format(tokens))
                     token = tokens[0]
                     # print("Token:{0}".format(token))
+                    # print("Token1:{0}".format(tokens[1]))
                     number = int(p.match(token).group(2).strip())
                     # print("number: '{0}'".format(number))
-                    offset = getLastOffset(preproc_bank, number)
+                    # laststdin = getLastStdin(preproc_bank, number)
+                    # lastline = getLastLine(preproc_bank, laststdin)
+                    result = getLastOffset(preproc_bank, number)
+                    offset = result[0]
                     # print("Offset: {0}".format(offset))
+                    # tokminoff = str(number - int(offset))
                     tokminoff = str(number - int(offset))
+                    if result[1] != '"<stdin>"':
+                        # more work to do:
+                        # insert here code to stick tokminoff and result[1]
+                        # into the message ###
+                        index = getLastStdin(preproc_bank, number)
+                        # assert index != -1
+                        new_number = preproc_bank[index + 1].mcpp_in_line + 1
+                        offset = getLastOffset(preproc_bank, new_number)[0]
+                        tokminoff = str(new_number - int(offset))
+                        # TODO: Put somewhere
+                        # column = 1
                     # print("Token - offset: {0}".format(tokminoff))
                     new_line = re.sub(str(number), tokminoff, iter_line)
                     # print("New Line: {0}".format(new_line))
