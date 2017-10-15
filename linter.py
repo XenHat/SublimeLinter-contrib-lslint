@@ -96,9 +96,14 @@ def fullpath(program):
     return None
 
 
+def smart_bin_name(name):
+    """Return the proper binary name on all platforms."""
+    return name + ('.exe' if os.name == 'nt' else '')
+
+
 def find_mcpp():
         """Try to find mcpp preprocessor."""
-        mcpp_binary_name = 'mcpp' + '.exe' if os.name == 'nt' else None
+        mcpp_binary_name = smart_bin_name('mcpp')
         mcpp_binary_path = fullpath(mcpp_binary_name)
         if mcpp_binary_path is not None:
             if os.access(mcpp_binary_path, os.F_OK):
@@ -184,8 +189,7 @@ class Lslint(Linter):
         """Find native lslint executable."""
 
         # Look in System path first, then search if not found
-        lslint_binary_name = (executable + '.exe' if os.name == 'nt'
-                                           else executable)
+        lslint_binary_name = smart_bin_name(executable)
         lslint_binary_path = fullpath(lslint_binary_name)
         if lslint_binary_path is None:
             lslint_binary_path = find_linter(lslint_binary_name)
