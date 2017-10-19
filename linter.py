@@ -310,9 +310,6 @@ class Lslint(Linter):
                     # print("New Line: {0}".format(new_line))
                     fixed_output_lines.append(new_line)
                     continue
-                    # print("New Line: {0}".format(new_line))
-                    fixed_output_lines.append(new_line)
-                    continue
                 else:
                     fixed_output_lines.append(iter_line)
 
