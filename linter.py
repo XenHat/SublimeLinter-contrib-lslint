@@ -297,19 +297,19 @@ class Lslint(Linter):
                     # print("Offset: {0}".format(offset))
                     # tokminoff = str(number - int(offset))
                     tokminoff = str(number - int(offset))
+                    new_line = re.sub(str(number), tokminoff, iter_line)
                     if result[1] != '"<stdin>"':
-                        # more work to do:
-                        # insert here code to stick tokminoff and result[1]
-                        # into the message ###
                         index = getLastStdin(preproc_bank, number)
                         # assert index != -1
                         new_number = preproc_bank[index + 1].mcpp_in_line + 1
                         offset = getLastOffset(preproc_bank, new_number)[0]
                         tokminoff = str(new_number - int(offset))
-                        # TODO: Put somewhere
-                        # column = 1
-                    # print("Token - offset: {0}".format(tokminoff))
-                    new_line = re.sub(str(number), tokminoff, iter_line)
+                        # the next line is best moved up to avoid calling p.match() twice
+                        token_match = p.match(token)
+                        new_line = '{0}:: ({1:>3},  1): in file {2}: {3}'.format(token_match.group(1), tokminoff, result[1], new_line)
+                    # print("New Line: {0}".format(new_line))
+                    fixed_output_lines.append(new_line)
+                    continue
                     # print("New Line: {0}".format(new_line))
                     fixed_output_lines.append(new_line)
                     continue
