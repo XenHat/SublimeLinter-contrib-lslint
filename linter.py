@@ -246,7 +246,7 @@ class Lslint(Linter):
         if mcpp_path is not None:
             # Capture mcpp output and store into a variable
             opt = '-W0'
-            mcpp_output = Linter.communicate(self, mcpp_path + " " + opt, code)
+            mcpp_output = Linter.communicate(self, (mcpp_path, opt), code)
             lines = mcpp_output.splitlines(False)
             line_number = 0
             OutputTuple = namedtuple('OutputTuple', 'mcpp_in_line\
