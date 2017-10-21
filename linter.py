@@ -141,7 +141,7 @@ def getLastStdin(tuples_list, inlined_line):
         this_tuple = tuples_list[index]
         if int(this_tuple.mcpp_in_line) >= inlined_line - 1:
             break
-        if this_tuple.file == "<stdin>":
+        if this_tuple.file == '"<stdin>"':
             result = index
 
     # print("Last stdin: {0}".format(result))
