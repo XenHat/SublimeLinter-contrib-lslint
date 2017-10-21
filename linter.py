@@ -279,7 +279,7 @@ class Lslint(Linter):
             # Get line at which the current file was inserted
             # TODO: make sure multi-include works
             fixed_output_lines = []
-            p = re.compile('^\s*(ERROR|WARN)\:\:\s\(\s*(\d*)\.*$')
+            p = re.compile('^\s*(ERROR|\sWARN)\:\:\s\(\s*(\d*)\.*$')
             for iter_line in linter_output_lines:
                 # print('LINE:[{0}]'.format(iter_line))
                 if iter_line.startswith("TOTAL::") is False:
@@ -303,7 +303,7 @@ class Lslint(Linter):
                         offset = getLastOffset(preproc_bank, new_number)[0]
                         tokminoff = str(new_number - int(offset))
                         token_match = match.group(1)
-                        new_line += '\n {0}:: ({1:>3},  1): in file {2}: {3}'.format(token_match, tokminoff, result[1], new_line)
+                        new_line += '\n{0}:: ({1:>3},  1): in file {2}: {3}'.format(token_match, tokminoff, result[1], new_line)
                     # print("New Line: {0}".format(new_line))
                     fixed_output_lines.append(new_line)
                     continue
