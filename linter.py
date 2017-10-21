@@ -285,10 +285,8 @@ class Lslint(Linter):
                 if iter_line.startswith("TOTAL::") is False:
                     tokens = iter_line.split(',')
                     # print('Tokens:[{0}]'.format(tokens))
-                    token = tokens[0]
-                    # print("Token:{0}".format(token))
-                    # print("Token1:{0}".format(tokens[1]))
-                    number = int(p.match(token).group(2).strip())
+                    match = p.match(tokens[0])
+                    number = int(match.group(2))
                     # print("number: '{0}'".format(number))
                     # laststdin = getLastStdin(preproc_bank, number)
                     # lastline = getLastLine(preproc_bank, laststdin)
@@ -304,9 +302,8 @@ class Lslint(Linter):
                         new_number = preproc_bank[index + 1].mcpp_in_line + 1
                         offset = getLastOffset(preproc_bank, new_number)[0]
                         tokminoff = str(new_number - int(offset))
-                        # the next line is best moved up to avoid calling p.match() twice
-                        token_match = p.match(token)
-                        new_line = '{0}:: ({1:>3},  1): in file {2}: {3}'.format(token_match.group(1), tokminoff, result[1], new_line)
+                        token_match = match.group(1)
+                        new_line += '\n {0}:: ({1:>3},  1): in file {2}: {3}'.format(token_match, tokminoff, result[1], new_line)
                     # print("New Line: {0}".format(new_line))
                     fixed_output_lines.append(new_line)
                     continue
