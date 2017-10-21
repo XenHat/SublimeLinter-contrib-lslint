@@ -12,36 +12,15 @@
 """Provide an interface between lslint and SublimeLinter."""
 
 import sublime
-from SublimeLinter.lint import Linter, util
 import os
 import platform
 import re
-
+from SublimeLinter.lint import Linter, util
 from collections import namedtuple
 
 '''
 SublimeLinter Installer
 '''
-
-PKG_NAME = __package__.split('.')[0]
-PKGCTRL_SETTINGS = 'Package Control.sublime-settings'
-SUBLINTER_PKG = 'SublimeLinter'
-
-
-def plugin_loaded():
-    """Do something when the plugin is loaded."""
-    try:
-        from package_control import events
-        packagecontrol_settings = sublime.load_settings(PKGCTRL_SETTINGS)
-        sublinter_installed = (SUBLINTER_PKG in
-                               set(packagecontrol_settings.get(
-                                   'installed_packages', [])))
-        if events.install(PKG_NAME) and not sublinter_installed:
-            sublime.active_window().run_command('advanced_install_package',
-                                                {'packages': SUBLINTER_PKG})
-    except Exception as e:
-        print('%s' % (str(e)))
-
 
 def winpath(pf, firstp, cmd):
     """Get conditional path for Microsoft(R) Windows OS."""
