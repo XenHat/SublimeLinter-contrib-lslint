@@ -115,7 +115,7 @@ def getLastOffset(tuples_list, inlined_line):
     """Yeah."""
     result = 0  # Fallback if there is no directives.
     line = 0
-    filename = "<stdin>"
+    filename = '"<stdin>"'
     for this_tuple in tuples_list:
         if int(this_tuple.mcpp_in_line) >= inlined_line - 1:
             # We reached a #line directive further than the one
