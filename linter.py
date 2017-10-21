@@ -265,8 +265,6 @@ class Lslint(Linter):
                     match = p.match(tokens[0])
                     number = int(match.group(2))
                     # print("number: '{0}'".format(number))
-                    # laststdin = getLastStdin(preproc_bank, number)
-                    # lastline = getLastLine(preproc_bank, laststdin)
                     result = getLastOffset(preproc_bank, number)
                     offset = result[0]
                     # print("Offset: {0}".format(offset))
@@ -275,7 +273,6 @@ class Lslint(Linter):
                     new_line = re.sub(str(number), tokminoff, iter_line)
                     if result[1] != '"<stdin>"':
                         index = getLastStdin(preproc_bank, number)
-                        # assert index != -1
                         new_number = preproc_bank[index + 1].mcpp_in_line + 1
                         offset = getLastOffset(preproc_bank, new_number)[0]
                         tokminoff = str(new_number - int(offset))
