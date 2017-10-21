@@ -122,8 +122,6 @@ def getLastOffset(tuples_list, inlined_line):
             # we are looking for; Do not store this instance and
             # return the previous one instead. This assumes a few things.
             break
-        # The offset ends up being negative in some cases, even if right.
-        # Let's forcefully remove the negative part of the number.
         line += 1
         result = this_tuple.mcpp_in_line - this_tuple.orig_line + 2
         filename = this_tuple.file
