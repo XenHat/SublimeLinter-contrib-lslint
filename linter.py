@@ -22,6 +22,7 @@ from collections import namedtuple
 SublimeLinter Installer
 '''
 
+
 def winpath(pf, firstp, cmd):
     """Get conditional path for Microsoft(R) Windows OS."""
     arch = platform.architecture()[0][:-3]
@@ -277,7 +278,11 @@ class Lslint(Linter):
                         offset = getLastOffset(preproc_bank, new_number)[0]
                         tokminoff = str(new_number - int(offset))
                         token_match = match.group(1)
-                        new_line = '{0}:: ({1:>3},  1): in file {2}: {3}'.format(token_match, tokminoff, result[1], new_line)
+                        new_line = '{0}:: ({1:>3},  1): in file {2}: {3}'\
+                            .format(token_match,
+                                    tokminoff,
+                                    result[1],
+                                    new_line)
                     # print("New Line: {0}".format(new_line))
                     fixed_output_lines.append(new_line)
                     continue
