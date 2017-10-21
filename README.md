@@ -20,11 +20,7 @@ You're advised to install [Will Bond](https://wbond.net)'s [Package Control](htt
 
 ## Linter executable
 
-`Sublimelinter-contrib-lslint` looks for the generic `lslint` executable by name, therefore is compatible with most derivative versions of pclewis's original lslint. *Note: This linter plugin is configured to support version **1.0.6 or higher**.*
-
-The plugin will propose to install the [LSL](https://github.com/Makopo/sublime-text-lsl) package if it cannot detect `lslint` in your path.
-
-A more frequently updated version of `lslint` is available at [makopo/lslint](https://github.com/makopo/lslint), and is fully compatible with this linter.
+`Sublimelinter-contrib-lslint` is developed for [makopo/lslint](https://github.com/makopo/lslint) and will probably not work with pclewis' original binary.
 
 ## Installation
 
