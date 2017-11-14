@@ -195,7 +195,7 @@ class Lslint(Linter):
         #                               '-u',
         #                               '-w',
         #                               '-z']
-        return [self.executable_path, '-m', '-i']
+        return [self.executable_path, '-m', '-w', '-z', '-i']
 
     @classmethod
     def which(cls, executable):
