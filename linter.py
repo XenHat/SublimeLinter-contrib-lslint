@@ -157,6 +157,7 @@ def get_auto_padding(number):
         return str(number) + " "
     return str(number)
 
+
 class Lslint(Linter):
     """Main implementation of the linter interface."""
 
