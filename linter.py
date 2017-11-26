@@ -149,17 +149,13 @@ def getLastLine(tuples_list, inlined_line):
 
 def get_auto_padding(number):
     """Automatically pad the number ."""
-    padding = ""
-    number = int(number)
-    if(number < 1000):
-        padding += " "
-    if(number < 100):
-        padding += " "
     if(number < 10):
-        padding += " "
-
-    return str(number) + padding
-
+        return str(number) + "   "
+    if(number < 100):
+        return str(number) + "  "
+    if(number < 1000):
+        return str(number) + " "
+    return str(number)
 
 class Lslint(Linter):
     """Main implementation of the linter interface."""
