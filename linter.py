@@ -212,8 +212,8 @@ class Lslint(Linter):
         # o_lines = code.splitlines(False)
         # o_n = 0
         # for o_l in o_lines:
-        #    print('{0} |{1}'.format(get_auto_padding(o_n), o_l))
-        #    o_n += 1
+        #     print('{0} |{1}'.format(get_auto_padding(o_n), o_l))
+        #     o_n += 1
 
         mcpp_path = find_mcpp()
         # if mcpp_path is not None else Linter.communicate(self,cmd,code)
@@ -239,10 +239,9 @@ class Lslint(Linter):
                 line_number += 1
             code = mcpp_output
             # print("DEBUG:: preproc_bank: {0}".format(preproc_bank[2]))
+            linter_result = Linter.communicate(self, cmd, code)
+            # print("DEBUG:: LINTER_OUT output:\n{0}".format(linter_result))
 
-        linter_result = Linter.communicate(self, cmd, code)
-        # print("DEBUG:: LINTER_OUT output:\n{0}".format(linter_result))
-        if mcpp_path is not None:
             # Go through every error and replace the line number (from the
             # inlined file) with the one from the script we fed the
             # precompiler, to restore the link between the error and the code
@@ -288,6 +287,8 @@ class Lslint(Linter):
             # print("New Lines: {0}".format(fixed_output_lines))
             # Transform back into a string
             linter_result = "".join(str(x) + "\n" for x in fixed_output_lines)
+        else:
+            linter_result = Linter.communicate(self, cmd, code)
 
         # print("DEBUG:: Linter output: {0}".format(linter_result))
         # print('=== END LINTER DEBUG ===')
