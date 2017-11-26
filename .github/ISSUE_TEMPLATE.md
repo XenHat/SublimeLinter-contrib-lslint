@@ -26,7 +26,7 @@ default {
         integer wat = "";
     }
 }
-...
+```
 
 ## My environment
 
