@@ -1,23 +1,37 @@
-## Behavior
+# Description 
+Optional, remove me if none
 
-### Expected behavior
+### Offending code
+```lsl
+// Your Code Here
+default {
+    state_entry() {
+        wat
+    }
+}
+```
 
+## Linter output
+```
+// Replace this block of text with the similar output from Sublime Text's Console (View->Show Console)
+SublimeLinter: lslint output:
+TOTAL:: Errors: 0  Warnings: 0 
+```
+
+### Similar Code without the issue
+```lsl
+// Your Code Here
+default {
+    state_entry() {
+        integer wat = "";
+    }
+}
 ...
-
-### Actual behavior
-
-...
-
-## Steps to reproduce
-
-  1. First step
-  2. Second step
-  3. Third step
 
 ## My environment
 
 * Operating system: `...`
 * Sublime Text Build `...` on branch `stable`
-* lslint version `...` from `source`
+* lslint version `...` from `release`
 * SublimeLinter version `...`
 * SublimeLinter-contrib-lslint version `...`
