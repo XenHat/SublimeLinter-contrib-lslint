@@ -215,7 +215,6 @@ class Lslint(Linter):
         mcpp_path = find_mcpp()
         # if mcpp_path is not None else Linter.communicate(self,cmd,code)
         if mcpp_path is not None:
-            # Capture mcpp output and store into a variable
             opt = '-W0'
             mcpp_output = Linter.communicate(self, (mcpp_path, opt), code)
             lines = mcpp_output.splitlines(False)
@@ -223,8 +222,12 @@ class Lslint(Linter):
             OutputTuple = namedtuple('OutputTuple', 'mcpp_in_line\
                                                      orig_line\
                                                      file')
+            MCPPMessage = namedtuple('MCPPMessage', 'source\
+                                                     line\
+                                                     message')
             preproc_bank = []
             # print('MCPP Output:')
+            mcpp_messages = []
             for line in lines:
                 # print('{0} |{1}'.format(get_auto_padding(line_number), line))
                 if(line.startswith('#line')):
@@ -233,10 +236,17 @@ class Lslint(Linter):
                     preproc_bank.append(OutputTuple(mcpp_in_line=line_number,
                                                     orig_line=int(message[1]),
                                                     file=message[2]))
+
+                elif(line.startswith('<stdin>:')):
+                    # Capture mcpp output and store into a variable
+                    message = line.split(':')
+                    mcpp_messages.append(MCPPMessage(
+                        source=message[0],
+                        line=message[1],
+                        message=message[3]))
                 line_number += 1
-            code = mcpp_output
-            # print("DEBUG:: preproc_bank: {0}".format(preproc_bank[2]))
-            linter_result = Linter.communicate(self, cmd, code)
+            # print("DEBUG:: preproc_bank: {0}".format(preproc_bank[0]))
+            linter_result = Linter.communicate(self, cmd, mcpp_output)
             # print("DEBUG:: LINTER_OUT output:\n{0}".format(linter_result))
 
             # Go through every error and replace the line number (from the
@@ -255,8 +265,8 @@ class Lslint(Linter):
                 if iter_line.startswith("TOTAL::") is False:
                     tokens = iter_line.split(',')
                     # print('Tokens:[{0}]'.format(tokens))
-                    match = p.match(tokens[0])
-                    number = int(match.group(2))
+                    rres = p.match(tokens[0])
+                    number = int(rres.group(2))
                     # print("number: '{0}'".format(number))
                     result = getLastOffset(preproc_bank, number)
                     offset = result[0]
@@ -264,18 +274,18 @@ class Lslint(Linter):
                     # tokminoff = str(number - int(offset))
                     tokminoff = str(number - int(offset))
                     new_line = re.sub(str(number), tokminoff, iter_line)
+                    # print("result[1]="+result[1])
                     if result[1] != '"<stdin>"':
                         index = getLastStdin(preproc_bank, number)
                         new_number = preproc_bank[index + 1].mcpp_in_line + 1
                         offset = getLastOffset(preproc_bank, new_number)[0]
                         tokminoff = str(new_number - int(offset))
-                        token_match = match.group(1)
+                        token_match = rres.group(1)
                         new_line = '{0}:: ({1:>3},  1): in file {2}: {3}'\
                             .format(token_match,
                                     tokminoff,
                                     result[1],
                                     new_line)
-                    # print("New Line: {0}".format(new_line))
                     fixed_output_lines.append(new_line)
                     continue
                 else:
@@ -283,7 +293,16 @@ class Lslint(Linter):
 
             # print("New Lines: {0}".format(fixed_output_lines))
             # Transform back into a string
-            linter_result = "".join(str(x) + "\n" for x in fixed_output_lines)
+            # Add messages from MCPP first
+            mcpp_msg_out = ""
+            for this_tuple in mcpp_messages:
+                mcpp_msg_out += "ERROR:: ({0},1): {1}\n".format(
+                    this_tuple.line, this_tuple.message)
+            print("MCPP:\n"+mcpp_msg_out)
+            linter_result = mcpp_msg_out
+            linter_result += "".join(str(x) + "\n" for x in fixed_output_lines)
+
+            print("LINTER:\n"+linter_result)
         else:
             linter_result = Linter.communicate(self, cmd, code)
 
