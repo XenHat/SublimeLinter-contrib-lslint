@@ -266,27 +266,30 @@ class Lslint(Linter):
                     tokens = iter_line.split(',')
                     # print('Tokens:[{0}]'.format(tokens))
                     rres = p.match(tokens[0])
-                    number = int(rres.group(2))
-                    # print("number: '{0}'".format(number))
-                    result = getLastOffset(preproc_bank, number)
-                    offset = result[0]
-                    # print("Offset: {0}".format(offset))
-                    # tokminoff = str(number - int(offset))
-                    tokminoff = str(number - int(offset))
-                    new_line = re.sub(str(number), tokminoff, iter_line)
-                    # print("result[1]="+result[1])
-                    if result[1] != '"<stdin>"':
-                        index = getLastStdin(preproc_bank, number)
-                        new_number = preproc_bank[index + 1].mcpp_in_line + 1
-                        offset = getLastOffset(preproc_bank, new_number)[0]
-                        tokminoff = str(new_number - int(offset))
-                        token_match = rres.group(1)
-                        new_line = '{0}:: ({1:>3},  1): in file {2}: {3}'\
-                            .format(token_match,
+                    if rres is not None:
+                        number = int(rres.group(2))
+                        # print("number: '{0}'".format(number))
+                        result = getLastOffset(preproc_bank, number)
+                        offset = result[0]
+                        # print("Offset: {0}".format(offset))
+                        # tokminoff = str(number - int(offset))
+                        tokminoff = str(number - int(offset))
+                        new_line = re.sub(str(number), tokminoff, iter_line)
+                        # print("result[1]="+result[1])
+                        if result[1] != '"<stdin>"':
+                            index = getLastStdin(preproc_bank, number)
+                            new_number = preproc_bank[index + 1].mcpp_in_line + 1
+                            offset = getLastOffset(preproc_bank, new_number)[0]
+                            tokminoff = str(new_number - int(offset))
+                            token_match = rres.group(1)
+                            new_line = '{0}:: ({1:>3},  1): in file {2}: {3}'\
+                                .format(token_match,
                                     tokminoff,
                                     result[1],
                                     new_line)
-                    fixed_output_lines.append(new_line)
+                        fixed_output_lines.append(new_line)
+                    else:
+                            continue 
                     continue
                 else:
                     fixed_output_lines.append(iter_line)
