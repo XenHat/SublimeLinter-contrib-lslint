@@ -10,4 +10,4 @@ install:
 script:
   - flake8 . --max-line-length=79
   - pep257 . --add-ignore=D202
-  - pep8 . --max-line-length=79
+  - pycodestyle . --max-line-length=79
