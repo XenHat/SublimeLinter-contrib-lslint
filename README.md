@@ -26,6 +26,11 @@ You're advised to install [Will Bond](https://wbond.net)'s [Package Control](htt
 
 In Sublime Text select from the menu `Tools > Command Palette` (see also [Command Palette](http://docs.sublimetext.info/en/sublime-text-3/extensibility/command_palette.html)), select `Package Control: Install Package` and hit <kbd>Enter ↩</kbd>, then select `SublimeLinter-contrib-lslint` and hit <kbd>Enter ↩</kbd>.
 
+## Recommended plugins and settings
+
+* Enable inline tooltips (Command Palette => SublimeLinter: Enable Inline Tooltips)
+* Install `SublimeLinter Inline Errors` by `alexkuz`
+
 ## Contributing
 
 Please see [`.github/CONTRIBUTING.md`](.github/CONTRIBUTING.md).
