@@ -29,7 +29,7 @@ In Sublime Text select from the menu `Tools > Command Palette` (see also [Comman
 ## Recommended plugins and settings
 
 * Enable inline tooltips (Command Palette => SublimeLinter: Enable Inline Tooltips)
-* Install `SublimeLinter Inline Errors` by `alexkuz`:
+* Install `SublimeLinter Inline Errors` by `alexkuz` (Then disable `Show Errors on Save`!):
 ![Yrx66FO1.png](.github/Yrx66FO1.png)
 
 ## Contributing
