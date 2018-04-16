@@ -9,6 +9,10 @@ This [SublimeLinter 3](https://github.com/sublimelinter/sublimelinter3) plugin p
 This plugin applies linting to files that have the `lsl` and `ossl` syntax.
 If you do not know what a linter is or are new to SublimeLinter, please refer to the [SublimeLinter documentation](http://www.sublimelinter.com/en/latest).
 
+## Special warning
+
+Due to SublimeLinter4 beaking this plugin, you **need** to disable automatic package upgrade until a better solution is found/created. Sorry about that.
+
 ## Quick start
 
 You're advised to install [Will Bond](https://wbond.net)'s [Package Control](https://packagecontrol.io) (see the [installation](https://packagecontrol.io/installation) page there) for [Sublime Text](https://www.sublimetext.com), which makes finding, installing and **keeping packages up-to-date** much easier.
@@ -17,6 +21,8 @@ You're advised to install [Will Bond](https://wbond.net)'s [Package Control](htt
 
 * [Sublime Text](https://www.sublimetext.com)
 * [SublimeLinter 3](https://github.com/sublimelinter/sublimelinter3) (see [installation](http://sublimelinter.readthedocs.org/en/latest/installation.html))
+
+
 
 ## Linter executable
 
@@ -30,7 +36,7 @@ In Sublime Text select from the menu `Tools > Command Palette` (see also [Comman
 
 * Enable inline tooltips (Command Palette => SublimeLinter: Enable Inline Tooltips)
 * Install `SublimeLinter Inline Errors` by `alexkuz` (Then disable `Show Errors on Save`!):
-![Yrx66FO1.png](.github/Yrx66FO1.png)
+![Yrx66FO1.png](.github/Yrx66FO1.png) (Optional, not for everyone)
 
 ## Contributing
 
