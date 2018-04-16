@@ -20,17 +20,16 @@ You're advised to install [Will Bond](https://wbond.net)'s [Package Control](htt
 ### Requirements
 
 * [Sublime Text](https://www.sublimetext.com)
-* [SublimeLinter 3](https://github.com/sublimelinter/sublimelinter3) (see [installation](http://sublimelinter.readthedocs.org/en/latest/installation.html))
+* [SublimeLinter 3](https://github.com/sublimelinter/sublimelinter3) (You must install SublimeLinter 3 manually. SublimeLinter4 does not work with this plugin.)
 
+## Installation
+
+In Sublime Text select from the menu `Tools > Command Palette` (see also [Command Palette](http://docs.sublimetext.info/en/sublime-text-3/extensibility/command_palette.html)), select `Package Control: Install Package` and hit <kbd>Enter ↩</kbd>, then select `SublimeLinter-contrib-lslint` and hit <kbd>Enter ↩</kbd>.
 
 
 ## Linter executable
 
 `Sublimelinter-contrib-lslint` is developed for [makopo/lslint](https://github.com/makopo/lslint) and will probably not work with pclewis' original binary.
-
-## Installation
-
-In Sublime Text select from the menu `Tools > Command Palette` (see also [Command Palette](http://docs.sublimetext.info/en/sublime-text-3/extensibility/command_palette.html)), select `Package Control: Install Package` and hit <kbd>Enter ↩</kbd>, then select `SublimeLinter-contrib-lslint` and hit <kbd>Enter ↩</kbd>.
 
 ## Recommended plugins and settings
 
