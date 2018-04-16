@@ -17,7 +17,7 @@
     "dependencies": [
         {
             "name": "sublimelinter",
-            "load_order": "01",
+            "load_order": "00",
             "releases": [
                 {
                     "url": "https://codeload.github.com/SublimeLinter/SublimeLinter/zip/v3.10.10",
