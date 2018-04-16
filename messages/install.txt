@@ -5,6 +5,8 @@ This linter plugin for SublimeLinter provides an interface to lslint.
 
 ** IMPORTANT! **
 
+* Having SublimeLinter 4 installed is NOT RECOMMENDED, and UNTESTED
+* SublimeLinter3 will be automatically installed
 * lslint binaries are not part of this package, however they are
   required to be present in the **LSL package's proper folder**, or in your **PATH**.
 * language grammar, highlighting, completions and tooltips are not
