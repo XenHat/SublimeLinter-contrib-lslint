@@ -165,7 +165,7 @@ class Lslint(Linter):
     executable = 'lslint'
     version_args = '--version'
     version_requirement = '>= 1.0.6'
-    regex = r'''(?xi)(?:(?P<warning>\sWARN)|(?P<error>ERROR))\:\:\s\(\s*(?P<line>\d+),\s*(?P<col>\d+)\)\:\s(?P<message>.*)'''  # noqa: E501
+    regex = r'''(?xi)(?:(?P<warning>WARN)|(?P<error>ERROR))\:\:\s\(\s*(?P<line>\d+),\s*(?P<col>\d+)\)\:\s(?P<message>.*)'''  # noqa: E501
     multiline = True
     line_col_base = (1, 1)
     tempfile_suffix = 'lsl'
@@ -259,7 +259,7 @@ class Lslint(Linter):
             # Get line at which the current file was inserted
             # TODO: make sure multi-include works
             fixed_output_lines = []
-            p = re.compile('^\s*(ERROR|\sWARN)\:\:\s\(\s*(\d*)\.*$')
+            p = re.compile(u'^\s*?(ERROR|WARN)\:\:\s\(\s*(\d*)\.*$',re.UNICODE)
             for iter_line in linter_output_lines:
                 # print('LINE:[{0}]'.format(iter_line))
                 if iter_line.startswith("TOTAL::") is False:
