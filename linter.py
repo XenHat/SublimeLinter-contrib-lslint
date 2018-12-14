@@ -259,7 +259,7 @@ class Lslint(Linter):
             # Get line at which the current file was inserted
             # TODO: make sure multi-include works
             fixed_output_lines = []
-            p = re.compile(u'^\s*?(ERROR|WARN)\:\:\s\(\s*(\d*)\.*$',re.UNICODE)
+            p = re.compile(ru"^\s*?(ERROR|WARN)\:\:\s\(\s*(\d*)\.*$",re.UNICODE)
             for iter_line in linter_output_lines:
                 # print('LINE:[{0}]'.format(iter_line))
                 if iter_line.startswith("TOTAL::") is False:
