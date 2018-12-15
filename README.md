@@ -1,9 +1,9 @@
 # SublimeLinter-contrib-lslint
 ![](https://img.shields.io/badge/maintained%3F-seeking:_help_me!-yellow.svg?style=flat)
 [![Build Status](https://travis-ci.org/XenHat/SublimeLinter-contrib-lslint.svg?branch=master)](https://travis-ci.org/XenHat/SublimeLinter-contrib-lslint)
-[![Packagecontrol total downloads](https://img.shields.io/packagecontrol/dt/SublimeLinter-contrib-lslint.svg?style=flat-square)](https://packagecontrol.io/packages/SublimeLinter-contrib-lslint/)
-[![GitHub license](https://img.shields.io/github/license/XenHat/SublimeLinter-contrib-lslint.svg?style=flat-square)](https://github.com/XenHat/SublimeLinter-contrib-lslint/blob/master/LICENSE)
-[![GitHub issues](https://img.shields.io/github/issues/XenHat/SublimeLinter-contrib-lslint.svg?style=flat-square)](https://github.com/XenHat/SublimeLinter-contrib-lslint/issues?utf8=✓&q=is%3Aissue+is%3Aopen)
+[![Packagecontrol total downloads](https://img.shields.io/packagecontrol/dt/SublimeLinter-contrib-lslint.svg?style=flat)](https://packagecontrol.io/packages/SublimeLinter-contrib-lslint/)
+[![GitHub license](https://img.shields.io/github/license/XenHat/SublimeLinter-contrib-lslint.svg?style=flat)](https://github.com/XenHat/SublimeLinter-contrib-lslint/blob/master/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/XenHat/SublimeLinter-contrib-lslint.svg?style=flat)](https://github.com/XenHat/SublimeLinter-contrib-lslint/issues?utf8=✓&q=is%3Aissue+is%3Aopen)
 
 This [SublimeLinter 3](https://github.com/sublimelinter/sublimelinter3) plugin provides an interface to lslint.
 This plugin applies linting to files that have the `lsl` and `ossl` syntax.
