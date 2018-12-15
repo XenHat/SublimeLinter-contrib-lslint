@@ -186,7 +186,6 @@ class Lslint(Linter):
     @classmethod
     def which(cls, executable):
         """Find native lslint executable."""
-
         # Look in System path first, then search if not found
         lslint_binary_name = smart_bin_name(executable)
         lslint_binary_path = fullpath(lslint_binary_name)
