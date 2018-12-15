@@ -3,6 +3,7 @@ cache: pip
 python:
   - "3.3.6"
 install:
+  - pyenv versions
   - pip install flake8 pycodestyle pep257
 script:
   - flake8 . --max-line-length=80
