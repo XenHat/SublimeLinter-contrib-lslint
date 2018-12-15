@@ -299,9 +299,9 @@ class Lslint(Linter):
             # Add messages from MCPP first
             mcpp_msg_out = ""
             for this_tuple in mcpp_messages:
-                mcpp_msg_out += "ERROR:: ({0},1): {1}\n".format(
-                    this_tuple.line, this_tuple.message)
-            print("MCPP:\n"+mcpp_msg_out)
+                mcpp_msg_out += "ERROR:: ({0},1): {1}\n"\
+                    .format(this_tuple.line, this_tuple.message)
+            # print("MCPP:\n{0}".format(mcpp_msg_out))
             linter_result = mcpp_msg_out
             linter_result += "".join(str(x) + "\n" for x in fixed_output_lines)
 
