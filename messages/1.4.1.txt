@@ -4,11 +4,6 @@ v1.4.1
 
 Push all fixes I forgot to release. The linter should work again.
 
-- Added requirement for SublimeLinter3. It will be pulled automatically.
-  Sublime Linter 4 DOES NOT WORK!
-
-**Warning!!! To fix the plugin I had to create a dependency for sublimeLinter3. I do not know how this behaves with SublimeLinter4 installed.**
-
 A thousand apologies for the overdue release.
 Please file issues at:
 https://github.com/XenHat/SublimeLinter-contrib-lslint/issues
