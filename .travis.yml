@@ -2,7 +2,7 @@ language: python
 python:
   - "3.3.6"
 install:
-  - pip install flake8 pycodestyle pip257
+  - pip install flake8 pycodestyle pep257
 script:
   - flake8 . --max-line-length=80
   - pep257 . --add-ignore=D202
