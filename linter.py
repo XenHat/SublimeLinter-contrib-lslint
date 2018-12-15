@@ -8,7 +8,6 @@
 # Copyright (c) 2016-2017 XenHat
 #
 # License: MIT
-
 """Provide an interface between lslint and SublimeLinter."""
 
 import sublime
@@ -17,7 +16,6 @@ import platform
 import re
 from SublimeLinter.lint import Linter, util
 from collections import namedtuple
-
 '''
 SublimeLinter Installer
 '''
@@ -36,19 +34,14 @@ def find_linter(os_cmd):
     parfhalf = os.path.join(sublime.packages_path(), 'LSL')
     try:
         # Makopo's 'LSL' package
-        binpath = os.path.join(parfhalf,
-                               st_pf, os_cmd)
+        binpath = os.path.join(parfhalf, st_pf, os_cmd)
         if os.access(binpath, os.F_OK):
             return binpath
         # builder's brewery's 'LSL' package
         if st_pf == 'windows':
             binpath = winpath(st_pf, parfhalf, os_cmd)
         else:
-            binpath = os.path.join(parfhalf,
-                                   'bin',
-                                   'lslint',
-                                   st_pf,
-                                   os_cmd)
+            binpath = os.path.join(parfhalf, 'bin', 'lslint', st_pf, os_cmd)
         if os.access(binpath, os.F_OK):
             return binpath
     except IOError as e:
@@ -82,13 +75,13 @@ def smart_bin_name(name):
 
 
 def find_mcpp():
-        """Try to find mcpp preprocessor."""
-        mcpp_binary_name = smart_bin_name('mcpp')
-        mcpp_binary_path = fullpath(mcpp_binary_name)
-        if mcpp_binary_path is not None:
-            if os.access(mcpp_binary_path, os.F_OK):
-                return mcpp_binary_path
-        return None
+    """Try to find mcpp preprocessor."""
+    mcpp_binary_name = smart_bin_name('mcpp')
+    mcpp_binary_path = fullpath(mcpp_binary_name)
+    if mcpp_binary_path is not None:
+        if os.access(mcpp_binary_path, os.F_OK):
+            return mcpp_binary_path
+    return None
 
 
 def getLastOffset(tuples_list, inlined_line):
@@ -149,11 +142,11 @@ def getLastLine(tuples_list, inlined_line):
 
 def get_auto_padding(number):
     """Automatically pad the number ."""
-    if(number < 10):
+    if (number < 10):
         return str(number) + "   "
-    if(number < 100):
+    if (number < 100):
         return str(number) + "  "
-    if(number < 1000):
+    if (number < 1000):
         return str(number) + " "
     return str(number)
 
@@ -219,10 +212,12 @@ class Lslint(Linter):
             mcpp_output = Linter.communicate(self, (mcpp_path, opt), code)
             lines = mcpp_output.splitlines(False)
             line_number = 0
-            OutputTuple = namedtuple('OutputTuple', 'mcpp_in_line\
+            OutputTuple = namedtuple(
+                'OutputTuple', 'mcpp_in_line\
                                                      orig_line\
                                                      file')
-            MCPPMessage = namedtuple('MCPPMessage', 'source\
+            MCPPMessage = namedtuple(
+                'MCPPMessage', 'source\
                                                      line\
                                                      message')
             preproc_bank = []
@@ -230,20 +225,23 @@ class Lslint(Linter):
             mcpp_messages = []
             for line in lines:
                 # print('{0} |{1}'.format(get_auto_padding(line_number), line))
-                if(line.startswith('#line')):
+                if (line.startswith('#line')):
                     message = line.split(' ')
                     # print('message:{0}'.format(message))
-                    preproc_bank.append(OutputTuple(mcpp_in_line=line_number,
-                                                    orig_line=int(message[1]),
-                                                    file=message[2]))
+                    preproc_bank.append(
+                        OutputTuple(
+                            mcpp_in_line=line_number,
+                            orig_line=int(message[1]),
+                            file=message[2]))
 
-                elif(line.startswith('<stdin>:')):
+                elif (line.startswith('<stdin>:')):
                     # Capture mcpp output and store into a variable
                     message = line.split(':')
-                    mcpp_messages.append(MCPPMessage(
-                        source=message[0],
-                        line=message[1],
-                        message=message[3]))
+                    mcpp_messages.append(
+                        MCPPMessage(
+                            source=message[0],
+                            line=message[1],
+                            message=message[3]))
                 line_number += 1
             # print("DEBUG:: preproc_bank: {0}".format(preproc_bank[0]))
             linter_result = Linter.communicate(self, cmd, mcpp_output)
@@ -278,7 +276,8 @@ class Lslint(Linter):
                         # print("result[1]="+result[1])
                         if result[1] != '"<stdin>"':
                             index = getLastStdin(preproc_bank, number)
-                            new_number = preproc_bank[index + 1].mcpp_in_line + 1  # noqa: E501
+                            new_number = preproc_bank[
+                                index + 1].mcpp_in_line + 1  # noqa: E501
                             offset = getLastOffset(preproc_bank, new_number)[0]
                             tokminoff = str(new_number - int(offset))
                             token_match = rres.group(1)
@@ -289,7 +288,7 @@ class Lslint(Linter):
                                         new_line)
                         fixed_output_lines.append(new_line)
                     else:
-                            continue
+                        continue
                     continue
                 else:
                     fixed_output_lines.append(iter_line)
@@ -305,7 +304,7 @@ class Lslint(Linter):
             linter_result = mcpp_msg_out
             linter_result += "".join(str(x) + "\n" for x in fixed_output_lines)
 
-            print("LINTER:\n"+linter_result)
+            print("LINTER:\n" + linter_result)
         else:
             linter_result = Linter.communicate(self, cmd, code)
 
