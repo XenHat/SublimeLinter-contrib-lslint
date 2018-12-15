@@ -165,7 +165,7 @@ class Lslint(Linter):
     executable = 'lslint'
     version_args = '--version'
     version_requirement = '>= 1.0.6'
-    regex = r'''(?xi)(?:(?P<warning>WARN)|(?P<error>ERROR))\:\:\s\(\s*(?P<line>\d+),\s*(?P<col>\d+)\)\:\s(?P<message>.*)'''  # noqa: E501
+    regex = r'''(?xi)(?:\s(?P<warning>WARN)|(?P<error>ERROR))\:\:\s\(\s*(?P<line>\d+),\s*(?P<col>\d+)\)\:\s(?P<message>.*)'''  # noqa: E501
     multiline = True
     line_col_base = (1, 1)
     tempfile_suffix = 'lsl'
