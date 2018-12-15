@@ -3,11 +3,9 @@ python:
   - "3.6"
 # command to install dependencies
 install:
-  - pip install flake8
-  - pip install pycodestyle
-  - pip install pep257
+  - pip install flake8 pycodestyle pip257
 # command to run tests
 script:
-  - flake8 . --max-line-length=79
+  - flake8 . --max-line-length=80
   - pep257 . --add-ignore=D202
   - pycodestyle . --max-line-length=79
