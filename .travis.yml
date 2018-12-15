@@ -1,7 +1,7 @@
 language: python
 cache: pip
 python:
-  - "3.3.6"
+  - "3.6" # preinstalled
 install:
   - pyenv versions
   - pip install flake8 pycodestyle pep257
