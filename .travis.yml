@@ -7,4 +7,4 @@ install:
 script:
   - flake8 ./linter.py --max-line-length=80
   - pep257 ./linter.py --add-ignore=D202
-  - pycodestyle ./linter.py --max-line-length=79
+  - pycodestyle ./linter.py --max-line-length=80
