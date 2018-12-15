@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# coding: utf-8
+# -*- coding: utf-8 -*-
 #
 # Linter for the Linden Scripting Language
 # using SublimeLinter3, a code checking framework for Sublime Text 3
