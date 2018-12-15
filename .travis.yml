@@ -3,8 +3,6 @@ cache: pip
 python:
   - "3.6" # preinstalled
 install:
-  - pip install flake8 pycodestyle pep257
+  - pip install flake8 flake8-docstrings
 script:
   - flake8 ./linter.py --max-line-length=80
-  - pep257 ./linter.py --add-ignore=D202
-  - pycodestyle ./linter.py --max-line-length=80
