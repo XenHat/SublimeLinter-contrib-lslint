@@ -14,3 +14,10 @@ This linter plugin for SublimeLinter provides an interface to lslint.
 Before this plugin will activate, you *must* follow the installation instructions here:
 
 https://github.com/xenhat/SublimeLinter-contrib-lslint
+
+The short version is:
+
+* Uninstall Sublime Linter 4 if applicable
+* Add the following repository: https://github.com/SublimeLinter/SublimeLinter/tree/v3
+* Install Sublime Linter
+* Install lslint somewhere in your path
