@@ -14,7 +14,11 @@ If you do not know what a linter is or are new to SublimeLinter, please refer to
 ~~Due to SublimeLinter4 beaking this plugin, you **need** to disable automatic package upgrade until a better solution is found/created. Sorry about that.~~
 
 **This package only works with SublimeLinter v3.**
-You need to add the following repository to package control (`Command Palette -> Package control -> Add Repository`): `https://github.com/SublimeLinter/SublimeLinter/tree/v3`, then install SublimeLinter from Package Control.
+You need to add the following repository to package control (`Command Palette -> Package control -> Add Repository`):
+
+`https://github.com/SublimeLinter/SublimeLinter/tree/v3`
+
+then install SublimeLinter from Package Control.
 
 ## Quick start
 
