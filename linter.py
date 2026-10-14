@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 # Linter for the Linden Scripting Language
-# using SublimeLinter3, a code checking framework for Sublime Text 3
+# using SublimeLinter 4, a code checking framework for Sublime Text
 #
 # Written by XenHat
 # Copyright (c) 2016-2017 XenHat
@@ -24,7 +24,7 @@ SublimeLinter Installer
 def winpath(pf, firstp, cmd):
     """Get conditional path for Microsoft(R) Windows OS."""
     arch = platform.architecture()[0][:-3]
-    w = pf + (arch if platform.release() is not 'XP' else None)
+    w = pf + (arch if platform.release() != "XP" else None)
     return os.path.join(firstp, 'bin', 'lslint', w, cmd)
 
 
@@ -154,37 +154,24 @@ def get_auto_padding(number):
 class Lslint(Linter):
     """Main implementation of the linter interface."""
 
-    syntax = ('lsl', 'ossl')
-    executable = 'lslint'
-    version_args = '--version'
-    version_requirement = '>= 1.0.6'
+    # SublimeLinter 4: the syntax is chosen with a selector (see
+    # http://www.sublimelinter.com/en/stable/linter_settings.html#selector)
+    defaults = {
+        'selector': 'source.lsl, source.ossl'
+    }
+    # TODO: Add user-configurable setting for these
+    # '-m', '-l', '-S', '-#', '-i', '-u', '-w', '-z'
+    cmd = ['lslint', '-m', '-w', '-z', '-i']
     regex = r'''(?xi)(?:\s(?P<warning>WARN)|(?P<error>ERROR))\:\:\s\(\s*(?P<line>\d+),\s*(?P<col>\d+)\)\:\s(?P<message>.*)'''  # noqa: E501
     multiline = True
     line_col_base = (1, 1)
-    tempfile_suffix = 'lsl'
     error_stream = util.STREAM_BOTH
-    selectors = {}
+    # lslint prints its messages on stderr; SublimeLinter 4 only parses a
+    # combined stdout+stderr when there is no on_stderr handler
+    on_stderr = None
     word_re = None
-    inline_settings = None
-    inline_overrides = None
-    comment_re = None
 
-    @classmethod
-    def cmd(self):
-        """Override cmd definition/function."""
-        # TODO: Add user-configurable setting for these
-        # return [self.executable_path, '-m',
-        #                               '-l',
-        #                               '-S',
-        #                               '-#',
-        #                               '-i',
-        #                               '-u',
-        #                               '-w',
-        #                               '-z']
-        return [self.executable_path, '-m', '-w', '-z', '-i']
-
-    @classmethod
-    def which(cls, executable):
+    def which(self, executable):
         """Find native lslint executable."""
         # Look in System path first, then search if not found
         lslint_binary_name = smart_bin_name(executable)
@@ -193,7 +180,6 @@ class Lslint(Linter):
             lslint_binary_path = find_linter(lslint_binary_name)
         return lslint_binary_path
 
-    @classmethod
     def run(self, cmd, code):
         """Override the default run command to inject preprocessor step."""
         # print('=== BEGIN LINTER DEBUG ===')
@@ -208,7 +194,7 @@ class Lslint(Linter):
         # if mcpp_path is not None else Linter.communicate(self,cmd,code)
         if mcpp_path is not None:
             opt = '-W0'
-            mcpp_output = Linter.communicate(self, (mcpp_path, opt), code)
+            mcpp_output = self.communicate((mcpp_path, opt), code)
             lines = mcpp_output.splitlines(False)
             line_number = 0
             OutputTuple = namedtuple(
@@ -243,7 +229,7 @@ class Lslint(Linter):
                             message=message[3]))
                 line_number += 1
             # print("DEBUG:: preproc_bank: {0}".format(preproc_bank[0]))
-            linter_result = Linter.communicate(self, cmd, mcpp_output)
+            linter_result = self.communicate(cmd, mcpp_output)
             # print("DEBUG:: LINTER_OUT output:\n{0}".format(linter_result))
 
             # Go through every error and replace the line number (from the
@@ -305,7 +291,7 @@ class Lslint(Linter):
 
             print("LINTER:\n" + linter_result)
         else:
-            linter_result = Linter.communicate(self, cmd, code)
+            linter_result = self.communicate(cmd, code)
 
         # print("DEBUG:: Linter output: {0}".format(linter_result))
         # print('=== END LINTER DEBUG ===')
