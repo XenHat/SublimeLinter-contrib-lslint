@@ -5,20 +5,15 @@
 [![GitHub license](https://img.shields.io/github/license/XenHat/SublimeLinter-contrib-lslint.svg?style=flat)](https://github.com/XenHat/SublimeLinter-contrib-lslint/blob/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/XenHat/SublimeLinter-contrib-lslint.svg?style=flat)](https://github.com/XenHat/SublimeLinter-contrib-lslint/issues?utf8=✓&q=is%3Aissue+is%3Aopen)
 
-This [SublimeLinter 3](https://github.com/sublimelinter/sublimelinter3) plugin provides an interface to lslint.
+This [SublimeLinter](https://github.com/SublimeLinter/SublimeLinter) plugin provides an interface to lslint.
 This plugin applies linting to files that have the `lsl` and `ossl` syntax.
 If you do not know what a linter is or are new to SublimeLinter, please refer to the [SublimeLinter documentation](http://www.sublimelinter.com/en/latest).
 
-## Special warning
+## SublimeLinter version
 
-~~Due to SublimeLinter4 beaking this plugin, you **need** to disable automatic package upgrade until a better solution is found/created. Sorry about that.~~
+This version works with SublimeLinter 4 (tested with 4.30.1 on Sublime Text build 4200) and needs a syntax that defines the scopes `source.lsl` or `source.ossl`, for example the [LSL](https://packagecontrol.io/packages/LSL) package. The `lslint` binary is found on your PATH or in the `LSL` package folder.
 
-**This package only works with SublimeLinter v3.**
-You need to add the following repository to package control (`Command Palette -> Package control -> Add Repository`):
-
-`https://github.com/SublimeLinter/SublimeLinter/tree/v3`
-
-then install SublimeLinter from Package Control.
+It no longer works with SublimeLinter 3.
 
 ## Quick start
 
@@ -27,7 +22,7 @@ You're advised to install [Will Bond](https://wbond.net)'s [Package Control](htt
 ### Requirements
 
 * [Sublime Text](https://www.sublimetext.com)
-* [SublimeLinter 3](https://github.com/sublimelinter/sublimelinter3) (You must install SublimeLinter 3 manually. SublimeLinter4 does not work with this plugin.)
+* [SublimeLinter](https://packagecontrol.io/packages/SublimeLinter) 4
 
 ## Installation
 
